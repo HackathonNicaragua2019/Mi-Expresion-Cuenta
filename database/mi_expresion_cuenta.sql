@@ -1,10 +1,10 @@
 create database if not exists expresioncuenta;
-
+use  expresioncuenta;
 create table if not exists login
 (
 usuario varchar(25) not null,
 correo varchar(50) not null,
-contraseña varchar(8) not null,
+contrasena varchar(8) not null,
 primary key (usuario)
 );
 create table if not exists nivel
