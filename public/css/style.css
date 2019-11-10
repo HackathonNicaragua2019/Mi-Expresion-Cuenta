@@ -94,3 +94,30 @@ body {
 .navbar-brand img {
   border-style: none;
 }
+.container-menu {
+  margin: 0.5em 0.8em;
+}
+.container-menu h1 {
+  text-align: center;
+}
+.container-menu-one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-menu-two {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 1em 0;
+}
+.container-item {
+  width: 150px;
+  height: 100px;
+  border-radius: 7px;
+  box-shadow: -1px 9px 9px -1px #c2bac2;
+}
+:nth-child(1) {
+  margin-right: 1em;
+}
