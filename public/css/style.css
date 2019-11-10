@@ -142,6 +142,16 @@ body {
 .icon4 {
   background-image: url("../images/Icons_Modulo_1/icon4.svg");
 }
+.icon5 {
+  background-image: url("../images/Icons_Modulo_1/determinantes1.svg");
+}
+.icon6 {
+  background-image: url("../images/Icons_Modulo_1/determinantes2.svg");
+}
+.icon7 {
+  background-image: url("../images/Icons_Modulo_1/determinantes3.svg");
+}
+
 .subtitle-menu {
   padding: 0.5em;
   text-align: center;
