@@ -62,3 +62,35 @@ body {
     margin: 1.5em 0;
   }
 }
+.navbar-default {
+  background-color: #3e64ff;
+  border-radius: 7px;
+  margin: 0.4em;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar-default .navbar-toggle {
+  border-color: #fff;
+}
+.navbar-default .navbar-brand {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+}
+.logo-header {
+  width: 100px;
+  height: 30px;
+  background-image: url("../images/logo-Mi-Expresion-cuenta-08.png");
+  background-size: 100px 30px;
+  background-repeat: no-repeat;
+}
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-text {
+  color: #fff;
+}
+.navbar-brand img {
+  border-style: none;
+}
