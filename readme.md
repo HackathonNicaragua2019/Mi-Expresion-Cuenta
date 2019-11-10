@@ -2,7 +2,7 @@
 ![alt text](public/images/p.png)
 
 ## Acerca de Mi Expresión Cuenta
-xContribuir al mejoramiento de la habilidad lingüística de comunicación, mediante la expresión escrita en personas deficientes auditivas.
+Contribuir al mejoramiento de la habilidad lingüística de comunicación, mediante la expresión escrita en personas deficientes auditivas.
 
 ## Visión
 
