@@ -2,6 +2,7 @@
   
 ## Acerca de Mi Expresión Cuenta
 
+
 Apoyare el desarrollo de la comunicación ya que permiten construir elementos audiovisuales multimedios, que trasmiten mensajes a un público general. Actualmente se habla de inclusividad en los procesos cotidianos, no obstante muchas personas desconocen el término; pero ¿alguna vez has intentado comunicarte con una persona sorda?, ¿consideras que puedes entenderle?, estas son preguntas frecuentes de la comunicación.
 
 ## Misión 
