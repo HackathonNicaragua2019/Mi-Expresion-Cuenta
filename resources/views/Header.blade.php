@@ -13,7 +13,7 @@
                         <!-- Branding Image -->
                         <a class="navbar-brand" href="{{ url('/home') }}">
                             <!-- {{ config('app.name', 'Mi Expresión Cuenta') }} -->
-                            <img class="logo-header"/>
+                            <img class="logo-header" src="/images/logo-Mi-Expresion-cuenta-08.png"/>
                         </a>
                     </div>
     

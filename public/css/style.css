@@ -118,7 +118,7 @@ body {
 .container-menu-two .container-item {
   margin-right: 0.5em;
 }
-.container-item, .icon8 {
+.container-item {
   width: 150px;
   height: 100px;
   border-radius: 7px;
@@ -143,19 +143,16 @@ body {
   background-image: url("../images/Icons_Modulo_1/icon3.svg");
 }
 .icon4 {
-  background-image: url("../images/Icons_Modulo_1/icon4.svg");
-}
-.icon5 {
   background-image: url("../images/Icons_Modulo_1/determinantes1.svg");
 }
-.icon6 {
+.icon5 {
   background-image: url("../images/Icons_Modulo_1/determinantes2.svg");
 }
-.icon7 {
+.icon6 {
   background-image: url("../images/Icons_Modulo_1/determinantes3.svg");
 }
-.icon8 {
-  background-image: url("/public/images/Logotipo_finish-02.png");
+.icon7 {
+  background-image: url("../images/Icons_Modulo_1/determinantes1.svg");
 }
 .subtitle-menu {
   padding: 0.5em;
