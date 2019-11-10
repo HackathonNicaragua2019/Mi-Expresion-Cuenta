@@ -1,4 +1,4 @@
-![alt text](/timg/rompiendo los esquemas de comunicación.png)
+![alt text](/img/rompiendo los esquemas de comunicación.png)
 
 ## Acerca de Mi Expresión Cuenta
 
