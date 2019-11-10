@@ -69,17 +69,17 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a linhref="{{ url('/home') }}">Home</a>
+                        <a linhref="{{ url('/home') }}">Inicio</a>
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        <a href="{{ url('/login') }}">Iniciar sesión</a>
+                        <a href="{{ url('/register') }}">Registrarse</a>
                     @endif
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                  <a> Mi Expresión Cuenta</a>
+                  <a> Mi expresión cuenta</a>
                 </div>
             </div>
         </div>

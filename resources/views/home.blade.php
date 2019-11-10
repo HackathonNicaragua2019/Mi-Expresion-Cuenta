@@ -1,10 +1,11 @@
 @extends('layouts.app')
 @include('Header')
 @section('content')
+
 <section class="container-menu">
     <h1 class="title">Módulo 1</h1>
     <div class="container-menu-one">
-        <a href=""  class="container-item">
+        <a href="/moduloDeterminado"  class="container-item">
             <img class="icon1 icon-menu">
             <p class="subtitle-menu">Determinantes</p>
         </a>

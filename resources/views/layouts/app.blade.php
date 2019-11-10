@@ -14,6 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Customs Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/modal.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -22,5 +23,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/modal.js') }}"></script>
 </body>
 </html>

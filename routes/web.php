@@ -22,3 +22,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/moduloDeterminado', function () {
     return view('moduloDeterminado');
 });
+Route::get('/Actividades', function () {
+    return view('Actividades');
+});
