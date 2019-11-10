@@ -118,7 +118,7 @@ body {
 .container-menu-two .container-item {
   margin-right: 0.5em;
 }
-.container-item {
+.container-item, .icon8 {
   width: 150px;
   height: 100px;
   border-radius: 7px;
@@ -154,7 +154,9 @@ body {
 .icon7 {
   background-image: url("../images/Icons_Modulo_1/determinantes3.svg");
 }
-
+.icon8 {
+  background-image: url("/public/images/Logotipo_finish-02.png");
+}
 .subtitle-menu {
   padding: 0.5em;
   text-align: center;
