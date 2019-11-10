@@ -1,5 +1,5 @@
 
-![alt text](/img/rompiendo los esquemas de comunicación.png)
+![alt text](/img/title.png)
 
 ## Acerca de Mi Expresión Cuenta
 xContribuir al mejoramiento de la habilidad lingüística de comunicación, mediante la expresión escrita en personas deficientes auditivas.
