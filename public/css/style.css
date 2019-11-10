@@ -115,6 +115,9 @@ body {
   justify-content: center;
   margin: 5em 0;
 }
+.container-menu-two .container-item {
+  margin-right: 0.5em;
+}
 .container-item {
   width: 150px;
   height: 100px;
