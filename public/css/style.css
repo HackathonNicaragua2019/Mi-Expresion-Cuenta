@@ -29,6 +29,9 @@ body {
 }
 @media screen and (min-width: 320px) {
   #app {
+    background-color: #fff;
+  }
+  .background-login {
     height: 100vh;
     background-color: #3e64ff;
     display: flex;
@@ -42,10 +45,6 @@ body {
     margin: 0.8em;
     border-radius: 7px;
     text-align: center;
-  }
-  .navbar,
-  .panel-heading {
-    display: none;
   }
   .panel .panel-default {
     padding-top: 5em;
