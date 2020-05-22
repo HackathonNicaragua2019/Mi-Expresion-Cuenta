@@ -1,54 +1,46 @@
 @extends('layouts.app')
 @section('content')
 <div class="background-login">
+    
+    <section class="container-copy-login">
+        <img class="img login" src="/images/login.jpg"/>
+    </section>
     <section class="container-login">
         <div class="container-form">
-                            <div class="form-inputs">
+                            <div class="form">
+                                <img class="logo-header" src="/images/logo-Mi-Expresion-cuenta-08.png"/>
                                 <p class=" title">Iniciar sesión</p>
-                                <form class="form-horizontal form-login" method="POST" action="{{ route('login') }}">
+                                <form class="" method="POST" action="{{ route('login') }}">
                                     {{ csrf_field() }}
 
-                                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                        <!-- <label for="email" class="col-md-4 control-label">E-Mail Address</label> -->
-
-                                        <div class="col-md-6">
-                                            <input id="email" type="email" class="form-control inputs" name="email" placeholder="Correo del usuario" value="{{ old('email') }}" required autofocus>
+                                    <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
+                                            <input id="email" type="email" class="inputs" name="email" placeholder="Usuario" value="{{ old('email') }}" required autofocus>
 
                                             @if ($errors->has('email'))
                                                 <span class="help-block">
                                                     <strong>{{ $errors->first('email') }}</strong>
                                                 </span>
                                             @endif
-                                        </div>
                                     </div>
 
-                                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                        <!-- <label for="password" class="col-md-4 control-label">Password</label> -->
-
-                                        <div class="col-md-6">
-                                            <input id="password" type="password" class="form-control inputs" name="password" placeholder="Ingresa tu contraseña" required>
+                                    <div class=" {{ $errors->has('password') ? ' has-error' : '' }}">
+                                            <input id="password" type="password" class="inputs" name="password" placeholder="Contraseña" required>
 
                                             @if ($errors->has('password'))
                                                 <span class="help-block">
                                                     <strong>{{ $errors->first('password') }}</strong>
                                                 </span>
                                             @endif
-                                        </div>
                                     </div>
-
-                                    <div class="form-group">
-                                        <div class="col-md-6 col-md-offset-4">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordar contraseña
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <!--
+                                    <label class="remember">
+                                            <input type="radio" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordar contraseña
+                                    </label>
+                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         Forgot Your Password?
-                                    </a> -->
-                                    <button type="submit" class="btn btn-green btn-primary">
+                                    </a>
+                                    -->
+                                    <button type="submit" class="btn login  btn-blue ">
                                         Ingresar
                                     </button>
                                 </form>
