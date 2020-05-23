@@ -3,7 +3,6 @@
 <div class="background-login">
     
     <section class="container-copy-login">
-        <img class="img login" src="/images/login.jpg"/>
     </section>
     <section class="container-login">
         <div class="container-form">
@@ -13,7 +12,7 @@
                                 <form class="" method="POST" action="{{ route('login') }}">
                                     {{ csrf_field() }}
 
-                                    <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    <div class=" {{ $errors->has('email') ? ' has-error' : '' }}">
                                             <input id="email" type="email" class="inputs" name="email" placeholder="Usuario" value="{{ old('email') }}" required autofocus>
 
                                             @if ($errors->has('email'))
