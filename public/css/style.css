@@ -3,6 +3,12 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
 }
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
 .btn {
   border-radius: 25px;
   padding: 1em 1.5em;
@@ -19,7 +25,95 @@ body {
 .btn-blue:hover {
   background: #2d4cc7;
   color: #fff;
-  transform: scale(1.05);
+  transorm: scale(1.05);
+}
+@-moz-keyframes animationIn {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes animationIn {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@-o-keyframes animationIn {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes animationIn {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@-moz-keyframes animationOut {
+  from {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(25px);
+  }
+  to {
+    transform: translateY(-3000px);
+  }
+}
+@-webkit-keyframes animationOut {
+  from {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(25px);
+  }
+  to {
+    transform: translateY(-3000px);
+  }
+}
+@-o-keyframes animationOut {
+  from {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(25px);
+  }
+  to {
+    transform: translateY(-3000px);
+  }
+}
+@keyframes animationOut {
+  from {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(25px);
+  }
+  to {
+    transform: translateY(-3000px);
+  }
 }
 .background-login {
   height: 100vh;
@@ -35,6 +129,7 @@ body {
     grid-template-areas: 'container-login';
     justify-content: center;
     align-items: center;
+    padding: 1em;
   }
 }
 .container-copy-login {
@@ -109,34 +204,58 @@ body {
 .btn.login {
   margin-top: 3em;
 }
-.navbar-default {
-  background-color: color_azul;
-  border-radius: 25px;
-  margin: 0.4em;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #fff;
-}
-.navbar-default .navbar-toggle {
-  border-color: #fff;
-}
-.navbar-default .navbar-brand {
-  color: #fff;
+.header {
+  background: #3e64ff;
+  padding: 0.5em 1em;
+  border-radius: 7px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-style: none;
+  justify-content: space-between;
+  color: #fff;
+  margin: 0.5em;
 }
 .logo-header {
-  width: 100px;
-  height: 30px;
+  height: 3em;
+  width: auto;
 }
-.navbar-default .navbar-nav>li>a,
-.navbar-default .navbar-text {
-  color: #fff;
+.navbar {
+  display: inline-flex;
+  position: relative;
 }
-.navbar-brand img {
-  border-style: none;
+.navbar .items {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+.navbar .items li:nth-child(2) {
+  background: #fff;
+  border-radius: 50%;
+  height: 2em;
+  padding: 0.5em;
+  margin-left: 0.5em;
+}
+.navbar .icon-user {
+  height: auto;
+  width: 2em;
+}
+.navbar .subitems {
+  display: none;
+  position: absolute;
+  padding: 1em;
+  top: 5em;
+  background: #fff;
+  border-radius: 7px;
+  width: 90%;
+  text-align: center;
+  margin: 0;
+  border: 3px solid #3e64ff;
+}
+.navbar .subitems li a {
+  color: #3e64ff;
+}
+.navbar:hover .subitems {
+  display: block;
+  animation: animationIn 1s;
 }
 .container-menu {
   margin: 0.5em 0.8em;

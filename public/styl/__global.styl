@@ -2,6 +2,11 @@ body
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
 
+li
+    list-style none
+
+a
+    text-decoration: none
 .btn
     border-radius: 25px;
     padding: padding
@@ -18,4 +23,28 @@ body
   .btn-blue:hover
     background: colorBlueDark
     color:white;
-    transform: scale(1.05);
+    transorm: scale(1.05);
+
+@keyframes animationIn
+    from
+        transform: translateY(-10px)
+    to
+        transform: translateY(0)
+
+    
+
+
+@keyframes animationOut
+    from
+        transform: translateY(5px)
+        
+    60%
+        transform: translateY(-10px)
+    
+    75%
+        transform: translateY(25px)
+    
+    to
+        transform: translateY(-3000px)
+    
+
