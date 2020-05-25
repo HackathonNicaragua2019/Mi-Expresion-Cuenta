@@ -19,19 +19,28 @@ a
     color:white;
     width: 100%;
     outline: none
+    transition: .5s all;
+    cursor pointer
+    &:hover
+        transform: scale(1.05);
+    &.btn-green
+        background: colorGreen
   
   .btn-blue
     background: colorBlue
-    transition: .5s all;
+
 
 .btn-blue:hover
     background: colorBlueDark
     color:white;
-    transorm: scale(1.05);
+    box-shadow: shadow
+
 .title 
    font-size: 2.5em
    font-weight: bold
    color: #000
+.active
+    display block
 
    @media screen and (max-width 376px)
        font-size: 1.8em

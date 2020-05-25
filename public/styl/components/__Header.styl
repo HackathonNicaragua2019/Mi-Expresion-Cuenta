@@ -7,9 +7,20 @@
     justify-content: space-between
     color: white;
     margin: .5em
+    &.activity
+        background: transparent
+       
+        
 .logo-header
     height 3em  
-    width:  auto 
+    width:  auto
+    transition: .5s
+    &.activity
+        width 3em
+    @media screen and (max-width 425px)
+        height 2em
+    &:hover 
+        transform: scale(1.05)
 .navbar
     display inline-flex
     position relative
