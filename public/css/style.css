@@ -18,6 +18,7 @@ a {
   border: 0 none;
   color: #fff;
   width: 100%;
+  outline: none;
 }
 .btn-blue {
   background: #3e64ff;
@@ -483,4 +484,24 @@ b:nth-child(3).active {
 }
 .container-item:hover {
   transform: scale(1.1);
+}
+.container-item.articulos {
+  background: url("/images/articulos.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.container-item.demostrativo {
+  background: url("/images/demostrativo.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.container-item.posesivo {
+  background: url("/images/posesivo.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.container-item.numerales {
+  background: url("/images/numerales.svg");
+  background-repeat: no-repeat;
+  background-position: left;
 }
