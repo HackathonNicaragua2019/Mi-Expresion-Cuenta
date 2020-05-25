@@ -1,0 +1,56 @@
+
+.McButton
+    position: relative;
+    width: 45px;
+    height: 25px;
+    display: none
+    @media screen and (max-width 424px)
+        display: block
+
+b
+    position absolute
+    left 0
+    width 44px
+    height 4px
+    background-color: white
+    border-radius: 5px
+    transition: .2s ease-in
+    &:nth-child(1)
+        top 0
+
+    &:nth-child(2)
+        top 50%
+    &:nth-child(3)
+        top 100%
+
+    &:nth-child(1).active
+        animation: .3s forwards menu-positivo
+        animation-delay: .3s
+        top 50%
+    &:nth-child(2).active
+
+
+    &:nth-child(3).active
+        top 50%
+        animation: .3s forwards menu-negativo
+        animation-delay: .3s
+
+@keyframes menu-positivo
+    from
+        transform: rotateZ(0deg)
+
+    to
+        transform: rotateZ(135deg)
+
+
+@keyframes menu-negativo
+    from
+        transform: rotateZ(0deg)
+    to
+        transform: rotateZ(-135deg)
+
+@keyframes rotate
+    from
+        transform: rotateZ(0)
+    to
+        transform: rotateZ(90deg)

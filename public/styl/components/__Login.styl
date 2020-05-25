@@ -1,0 +1,74 @@
+
+
+
+  /*  LOGIN */
+.background-login
+    height: 100vh
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-areas: 'container-copy-login container-login'
+    padding: 2em
+    @media screen and (max-width 426px)
+        grid-template-columns: repeat(1,1fr)
+        grid-template-areas: 'container-login'
+        justify-content: center
+        align-items: center
+        padding: 1em
+
+
+
+.container-copy-login
+   grid-area: container-copy-login
+   background: url(/images/login.jpg)
+   background-origin: initial
+   background-position: center
+   background-repeat: no-repeat
+   background-size: contain
+
+
+.img.login
+   width: 100%
+   height: auto
+ 
+.container-login 
+   grid-area: container-login
+
+.container-form
+   display: flex
+   justify-content: center
+   align-items: center
+   height: 100%
+
+.form
+   text-align: center
+   background-color: #fff
+   padding: 4em 2.5em
+   border-radius: border__radius
+   box-shadow: 0px 0px 29px 0px rgba(224, 224, 224, 0.774)
+   width: 60%
+   max-width 28em
+   @media screen and (max-width 1025px)
+        width: 80%
+   @media screen and (max-width 769px)
+        width: 100%
+   @media screen and (max-width 426px)
+       padding: 3em 2em
+ 
+.inputs 
+   outline: none
+   border-radius: border__radius
+   font-family: 'Montserrat', sans-serif
+   padding: padding
+   box-shadow: 0px 0px 9px 0px rgba(224, 224, 224, 0.774)
+   border:none
+   width: 100%
+   margin-bottom: 2em
+   box-sizing: border-box
+ 
+.inputs:focus 
+   border:1px solid colorBlue
+ 
+.btn.login 
+    margin-top: 3em
+
+

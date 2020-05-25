@@ -1,0 +1,63 @@
+.header
+    background: colorBlue
+    padding: .5em 1em
+    border-radius: 7px;
+    display: flex
+    align-items: center
+    justify-content: space-between
+    color: white;
+    margin: .5em
+.logo-header
+    height 3em  
+    width:  auto 
+.navbar
+    display inline-flex
+    position relative
+    & .items
+        display: flex
+        cursor pointer
+        align-items: center
+        @media screen and (max-width 426px)
+            display none
+        & li:nth-child(2)
+            background: white
+            border-radius: 50%
+            height 2em
+            padding: .5em
+            margin-left: .5em
+    & .icon-user
+        height: auto;
+        width: 2em;
+
+    & .subitems
+        display: none
+        position absolute
+        padding 1em
+        top 5em
+        background white
+        border-radius: 7px
+        width: 15em 
+        text-align: center
+        margin 0 
+        border: 3px solid colorBlue
+        @media screen and (max-width 426px)
+            left -8.5em
+            width: 10em 
+        & li a
+            color colorBlue
+    &:hover .subitems
+        display: block
+        animation animationIn 1s
+        @media screen and (max-width 426px)
+            display: none
+            
+    & .subitems.active
+        display: block
+        animation animationIn 1s
+        
+        
+
+        
+
+        
+
