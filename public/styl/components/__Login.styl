@@ -6,7 +6,7 @@
     height: 100vh
     display: grid;
     grid-template-columns: repeat(2, 1fr)
-    grid-template-areas: 'container-copy-login container-login'
+    grid-template-areas: 'container-copy container-login'
     padding: 2em
     @media screen and (max-width 426px)
         grid-template-columns: repeat(1,1fr)
@@ -17,9 +17,12 @@
 
 
 
-.container-copy-login
-   grid-area: container-copy-login
-   background: url(/images/login.jpg)
+.container-copy
+   grid-area: container-copy
+   display: grid
+   align-items: center
+
+.login, .register
    background-origin: initial
    background-position: center
    background-repeat: no-repeat

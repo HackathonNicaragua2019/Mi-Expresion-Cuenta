@@ -4,11 +4,24 @@ body {
   font-size: 16px;
   color: #3c3c3c;
 }
+::-webkit-scrollbar {
+  width: 17px;
+  background: #eaeaea;
+}
+::-webkit-scrollbar-thumb {
+  background: #3e64ff;
+  border-radius: 10px;
+  transition: background ease-in-out 0.5s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2d4cc7;
+}
 li {
   list-style: none;
 }
 a {
   text-decoration: none;
+  color: #7e7e7e;
 }
 .btn {
   border-radius: 25px;
@@ -138,7 +151,7 @@ a {
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: 'container-copy-login container-login';
+  grid-template-areas: 'container-copy container-login';
   padding: 2em;
 }
 @media screen and (max-width: 426px) {
@@ -150,9 +163,13 @@ a {
     padding: 1em;
   }
 }
-.container-copy-login {
-  grid-area: container-copy-login;
-  background: url("/images/login.jpg");
+.container-copy {
+  grid-area: container-copy;
+  display: grid;
+  align-items: center;
+}
+.login,
+.register {
   background-origin: initial;
   background-position: center;
   background-repeat: no-repeat;
@@ -463,6 +480,7 @@ b:nth-child(3).active {
   margin-right: 2em;
   padding: 2em;
   transition: 0.5s;
+  position: relative;
 }
 @media screen and (max-width: 426px) {
   .container-item {
@@ -506,6 +524,33 @@ b:nth-child(3).active {
 }
 .container-item:hover {
   transform: scale(1.1);
+}
+.mimi-modal {
+  transition: 1s;
+  background: #fff;
+  border-radius: 30px;
+  padding: 1em 2em;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+.container-aprender,
+.container-practicar {
+  display: flex;
+  align-items: center;
+  transition: 1s;
+}
+.container-aprender:hover,
+.container-practicar:hover {
+  color: #3e64ff;
+}
+.icon-aprender,
+.icon-practicar {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5em;
 }
 .container-item.articulos {
   background: url("/images/articulos.svg");
@@ -608,4 +653,18 @@ b:nth-child(3).active {
 }
 .siguiente {
   grid-area: siguiente;
+}
+.baner-aprender {
+  width: 100%;
+  height: auto;
+}
+.title.aprender {
+  color: #3e64ff;
+}
+.parrafos {
+  font-size: 1.5em;
+  color: #7e7e7e;
+}
+.parrafos li {
+  color: #3e64ff;
 }

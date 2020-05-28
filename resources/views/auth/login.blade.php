@@ -2,7 +2,8 @@
 @section('content')
 <div class="background-login">
     
-    <section class="container-copy-login">
+    <section class="container-copy">
+        <img class="login" src="/images/login.svg" alt="imagen de registrar">
     </section>
     <section class="container-login">
         <div class="container-form">

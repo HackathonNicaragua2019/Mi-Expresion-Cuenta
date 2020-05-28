@@ -21,6 +21,7 @@
     margin-right: 2em  
     padding: 2em
     transition: .5s
+    position relative
     @media screen and ( max-width 426px)
         margin-right: 0
         margin-bottom: 2em
@@ -32,6 +33,7 @@
         background-repeat: no-repeat
         //background-origin: content-box;
         background-position: center;
+
     &.adjetivos
         background: url('/images/Adjetivos.svg')
         //background-size: cover;
@@ -64,4 +66,30 @@
         color #3c3c3c
     &:hover
         transform: scale(1.1)
+
+.mimi-modal
+    transition: 1s
+    background: white
+    border-radius: border__radius
+    padding: 1em 2em
+    position absolute  
+    width: 100%
+    bottom: 0
+    left 0
+    box-sizing: border-box
+    
+.container-aprender, .container-practicar
+    display: flex
+    align-items: center
+    transition: 1s
+    &:hover
+        color:colorBlue
+        
+
+.icon-aprender, .icon-practicar
+    width: 30px
+    height 30px
+    margin-right: .5em
+
+    
     

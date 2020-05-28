@@ -25,3 +25,7 @@ Route::get('/moduloDeterminado', function () {
 Route::get('/Actividades', function () {
     return view('Actividades');
 });
+
+Route::get('/ActividadesAprender', function () {
+    return view('ActividadesAprender');
+});
