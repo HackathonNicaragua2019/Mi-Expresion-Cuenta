@@ -255,8 +255,23 @@ a {
     height: 2em;
   }
 }
+.logo-header.idea:hover {
+  content: url("/images/icon_idea_hover.svg");
+}
 .logo-header:hover {
   transform: scale(1.05);
+}
+.icons-container {
+  display: flex;
+  align-items: center;
+  color: #3e64ff;
+  font-size: 1.2em;
+}
+.icons-container .atras {
+  margin-left: 1em;
+}
+.icons-container .pistas {
+  margin-right: 1em;
 }
 .navbar {
   display: inline-flex;
