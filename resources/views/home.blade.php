@@ -10,11 +10,11 @@
             <div class="mimi-modal">
                 <a href="/ActividadesAprender" class="container-aprender">
                     <img class="icon-aprender" src="/images/icon_aprender.svg" alt="Aprender">
-                    <p>Aprender</p>
+                    <p>Introducción</p>
                 </a>
                 <a href="/moduloDeterminado" class="container-practicar">
                     <img class="icon-practicar" src="/images/icon_practicar.svg" alt="Practicar">
-                    <p>Practicar</p>
+                    <p>Entrar</p>
                 </a>
             </div>
         </div>
@@ -24,11 +24,11 @@
             <div class="mimi-modal">
                 <a href="/ActividadesAprender" class="container-aprender">
                     <img class="icon-aprender" src="/images/icon_aprender.svg" alt="Aprender">
-                    <p>Aprender</p>
+                    <p>Introducción</p>
                 </a>
                 <a href="/moduloDeterminado" class="container-practicar">
                     <img class="icon-practicar" src="/images/icon_practicar.svg" alt="Practicar">
-                    <p>Practicar</p>
+                    <p>Entrar</p>
                 </a>
             </div>
             
@@ -41,11 +41,11 @@
             <div class="mimi-modal">
                 <a href="/ActividadesAprender" class="container-aprender">
                     <img class="icon-aprender" src="/images/icon_aprender.svg" alt="Aprender">
-                    <p>Aprender</p>
+                    <p>Introducción</p>
                 </a>
                 <a href="/moduloDeterminado" class="container-practicar">
                     <img class="icon-practicar" src="/images/icon_practicar.svg" alt="Practicar">
-                    <p>Practicar</p>
+                    <p>Entrar</p>
                 </a>
             </div>
         </div>
@@ -55,11 +55,11 @@
             <div class="mimi-modal">
                 <a href="/ActividadesAprender" class="container-aprender">
                     <img class="icon-aprender" src="/images/icon_aprender.svg" alt="Aprender">
-                    <p>Aprender</p>
+                    <p>Introducción</p>
                 </a>
                 <a href="/moduloDeterminado" class="container-practicar">
                     <img class="icon-practicar" src="/images/icon_practicar.svg" alt="Practicar">
-                    <p>Practicar</p>
+                    <p>Entrar</p>
                 </a>
             </div>
 
