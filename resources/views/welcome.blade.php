@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Mi Expresión Cuenta</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -69,7 +69,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a linhref="{{ url('/home') }}">Inicio</a>
+                        <a href="{{ url('/home') }}">Inicio</a>
                     @else
                         <a href="{{ url('/login') }}">Iniciar sesión</a>
                         <a href="{{ url('/register') }}">Registrarse</a>

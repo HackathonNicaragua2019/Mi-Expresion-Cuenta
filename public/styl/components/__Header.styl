@@ -1,14 +1,26 @@
 .header
-    background: colorBlue
+    
     padding: .5em 1em
     border-radius: 7px;
     display: flex
     align-items: center
     justify-content: space-between
     color: white;
-    margin: .5em
-    &.activity
+    &.activity,&.white
         background: transparent
+    &.blue
+        background: colorBlue
+.blue
+    color: colorBlue
+.white
+    color: white
+.center
+    display flex
+    align-items:center
+    justify-content: center
+.bold
+    font-weight: bold
+    
        
         
 .logo-header
@@ -40,14 +52,20 @@
         display: flex
         cursor pointer
         align-items: center
+        color:white
         @media screen and (max-width 426px)
             display none
-        & li:nth-child(2)
+        & .user
             background: white
             border-radius: 50%
             height 2em
             padding: .5em
             margin-left: .5em
+        & li
+            margin-right: 1em
+    & .marginlogin
+         margin-right: 2.5em
+
     & .icon-user
         height: auto;
         width: 2em;

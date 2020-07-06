@@ -230,17 +230,33 @@ a {
   margin-top: 3em;
 }
 .header {
-  background: #3e64ff;
   padding: 0.5em 1em;
   border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: #fff;
-  margin: 0.5em;
 }
-.header.activity {
+.header.activity,
+.header.white {
   background: transparent;
+}
+.header.blue {
+  background: #3e64ff;
+}
+.blue {
+  color: #3e64ff;
+}
+.white {
+  color: #fff;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bold {
+  font-weight: bold;
 }
 .logo-header {
   height: 3em;
@@ -281,18 +297,25 @@ a {
   display: flex;
   cursor: pointer;
   align-items: center;
+  color: #fff;
 }
 @media screen and (max-width: 426px) {
   .navbar .items {
     display: none;
   }
 }
-.navbar .items li:nth-child(2) {
+.navbar .items .user {
   background: #fff;
   border-radius: 50%;
   height: 2em;
   padding: 0.5em;
   margin-left: 0.5em;
+}
+.navbar .items li {
+  margin-right: 1em;
+}
+.navbar .marginlogin {
+  margin-right: 2.5em;
 }
 .navbar .icon-user {
   height: auto;

@@ -1,6 +1,7 @@
-<header class="header">
-    <a href="{{ url('/home') }}">
-        <img class="logo-header" src="/images/logo-Mi-Expresion-cuenta-08.png"/>
+<header  @if (Auth::guest()) class="header white" @endif class="header blue">
+    
+    <a href="{{ url('/') }}">
+        <img class="logo-header" @if (Auth::guest()) src="/images/Logotipo_mi_expresion_cuenta_blue.png"@endif src="/images/logo-Mi-Expresion-cuenta-08.png" />
     </a>
     <nav class="navbar">
         <a class="McButton" id="McButton">
@@ -9,10 +10,17 @@
             <b class="" id="McBar3"></b>
         </a>
         <ul class="items">
+            @auth
             <li>{{ Auth::user()->name }}</li>
-            <li><img class="icon-user" src="/images/user.svg"/></li>
+            <li class="user"><img class="icon-user" src="/images/user.svg"/></li>
+            @endauth
+            @if (Auth::guest())
+            <li ><a href="{{ route('login') }}" class="blue bold marginlogin">Iniciar sesión</a></li>
+            <li ><a href="{{ route('register') }}" class="blue bold" >Registrarte</a></li>
+            @endif
         </ul>
-        <Ul class="subitems">
+        @auth
+        <ul class="subitems">
             <li><a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -21,7 +29,8 @@
                                                     {{ csrf_field() }}
                 </form>
             </li>
-        </Ul>
+        </ul>
+        @endauth
     </nav>
 </header>
 
