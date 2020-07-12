@@ -15,9 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::resource('modulos','ModuloController');
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('home', 'HomeController');
 
 Route::get('/moduloDeterminado', function () {
     return view('moduloDeterminado');

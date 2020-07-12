@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        MiExpresionCuenta\Providers\AppServiceProvider::class,
+        MiExpresionCuenta\Providers\AuthServiceProvider::class,
+        // MiExpresionCuenta\Providers\BroadcastServiceProvider::class,
+        MiExpresionCuenta\Providers\EventServiceProvider::class,
+        MiExpresionCuenta\Providers\RouteServiceProvider::class,
 
     ],
 
