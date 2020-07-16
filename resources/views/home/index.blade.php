@@ -3,11 +3,10 @@
 @section('content')
 
 @foreach($modulos as $modulo)
-<h1></h1>
 <section class="container-menu">
     <h1 class="title">{{$modulo->nombre}}</h1>
-    @foreach($modulo->modulos as $tema)
     <div class="menu-item">
+    @foreach($modulo->modulos as $tema)
         <div class="container-item determinante">
             <p class="title-item">{{$tema->nombre}}</p>
             <span class="subtitle-item">4 clases</span>
@@ -22,9 +21,9 @@
                 </a>
             </div>
         </div>
+    @endforeach
     </div>
 </section>
-    @endforeach
 @endforeach
 
 @endsection

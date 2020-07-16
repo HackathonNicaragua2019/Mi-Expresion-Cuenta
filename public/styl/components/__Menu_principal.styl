@@ -5,10 +5,12 @@
         color: colorBlue
     
 .menu-item
-    display: flex
-    align-items: center
-    justify-content: center
-    margin: 2em 0
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    margin: 0 auto
+    grid-row-gap: 2.5em
+    max-width: 43em;
+
     @media screen and ( max-width 426px)
         display: grid
         margin: .5em
@@ -18,7 +20,7 @@
     height 20em
     border-radius: border__radius
     box-shadow: shadow 
-    margin-right: 2em  
+    margin-right: 0 auto  
     padding: 2em
     transition: .5s
     position relative
