@@ -13,7 +13,8 @@
 
     @media screen and ( max-width 426px)
         display: grid
-        margin: .5em
+        grid-template-columns: 1fr
+        
 
 .container-item
     width: 15em
@@ -25,8 +26,7 @@
     transition: .5s
     position relative
     @media screen and ( max-width 426px)
-        margin-right: 0
-        margin-bottom: 2em
+        margin: 0 auto
         width: 13em
 
     &.determinante

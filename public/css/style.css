@@ -508,7 +508,7 @@ b:nth-child(3).active {
 @media screen and (max-width: 426px) {
   .menu-item {
     display: grid;
-    margin: 0.5em;
+    grid-template-columns: 1fr;
   }
 }
 .container-item {
@@ -523,8 +523,7 @@ b:nth-child(3).active {
 }
 @media screen and (max-width: 426px) {
   .container-item {
-    margin-right: 0;
-    margin-bottom: 2em;
+    margin: 0 auto;
     width: 13em;
   }
 }
