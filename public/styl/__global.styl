@@ -1,7 +1,35 @@
+<<<<<<< HEAD
 body
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
 
+=======
+
+body
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px
+  color: #3c3c3c
+
+::-webkit-scrollbar
+    width: 17px
+    
+    background: color_GreyLight
+
+::-webkit-scrollbar-thumb
+    background: colorBlue
+    border-radius: 10px
+    transition: background ease-in-out .5s
+    &:hover
+        background: colorBlueDark
+  
+
+li
+    list-style none
+
+a
+    text-decoration: none
+    color:colorGrey
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
 .btn
     border-radius: 25px;
     padding: padding
@@ -10,6 +38,7 @@ body
     border: 0 none;
     color:white;
     width: 100%;
+<<<<<<< HEAD
   
   .btn-blue
     background: colorBlue
@@ -19,3 +48,55 @@ body
     background: colorBlueDark
     color:white;
     transform: scale(1.05);
+=======
+    outline: none
+    transition: .5s all;
+    cursor pointer
+    &:hover
+        transform: scale(1.05);
+    &.btn-green
+        background: colorGreen
+  
+  .btn-blue
+    background: colorBlue
+
+
+.btn-blue:hover
+    background: colorBlueDark
+    color:white;
+    box-shadow: shadow
+
+.title 
+   font-size: 2.5em
+   font-weight: bold
+   color: #000
+.active
+    display block
+
+   @media screen and (max-width 376px)
+       font-size: 1.8em
+
+@keyframes animationIn
+    from
+        transform: translateY(-10px)
+    to
+        transform: translateY(0)
+
+    
+
+
+@keyframes animationOut
+    from
+        transform: translateY(5px)
+        
+    60%
+        transform: translateY(-10px)
+    
+    75%
+        transform: translateY(25px)
+    
+    to
+        transform: translateY(-3000px)
+    
+
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98

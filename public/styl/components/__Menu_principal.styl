@@ -1,4 +1,5 @@
 .container-menu
+<<<<<<< HEAD
     margin: .5em .8em
     & h1
         text-align: center
@@ -33,3 +34,101 @@
     text-align: center
     font-weight: bolder
     margin-top: 1em 0
+=======
+    padding: .5em .8em
+    & h1
+        text-align: center
+        color: colorBlue
+    
+.menu-item
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    margin: 0 auto
+    grid-row-gap: 2.5em
+    max-width: 43em;
+
+    @media screen and ( max-width 426px)
+        display: grid
+        grid-template-columns: 1fr
+        
+
+.container-item
+    width: 15em
+    height 20em
+    border-radius: border__radius
+    box-shadow: shadow 
+    margin-right: 0 auto  
+    padding: 2em
+    transition: .5s
+    position relative
+    @media screen and ( max-width 426px)
+        margin: 0 auto
+        width: 13em
+
+    &.determinante
+        background: url('/images/determinantes.svg')
+        //background-size: cover;
+        background-repeat: no-repeat
+        //background-origin: content-box;
+        background-position: center;
+
+    &.adjetivos
+        background: url('/images/Adjetivos.svg')
+        //background-size: cover;
+        background-repeat: no-repeat
+        //background-origin: content-box;
+        background-position: center;
+    &.preposiciones
+        background: url('/images/Preposiciones.svg')
+        //background-size: cover;
+        background-repeat: no-repeat
+        //background-origin: content-box;
+        background-position: top;
+    &.conectores
+        background: url('/images/conectores.svg')
+        //background-size: cover;
+        background-repeat: no-repeat
+        //background-origin: content-box;
+        background-position: center;
+
+    & h1
+        margin 2em 0
+    & .title-item
+        font-size: 1.5em 
+        font-weight: bold
+        color:#3c3c3c
+
+    & .subtitle-item
+        font-size: 1em
+        margin-top: 1em
+        color #3c3c3c
+    &:hover
+        transform: scale(1.1)
+
+.mimi-modal
+    transition: 1s
+    background: white
+    border-radius: border__radius
+    padding: 1em 2em
+    position absolute  
+    width: 100%
+    bottom: 0
+    left 0
+    box-sizing: border-box
+    
+.container-aprender, .container-practicar
+    display: flex
+    align-items: center
+    transition: 1s
+    &:hover
+        color:colorBlue
+        
+
+.icon-aprender, .icon-practicar
+    width: 30px
+    height 30px
+    margin-right: .5em
+
+    
+    
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98

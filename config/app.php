@@ -171,11 +171,19 @@ return [
         /*
          * Application Service Providers...
          */
+<<<<<<< HEAD
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+=======
+        MiExpresionCuenta\Providers\AppServiceProvider::class,
+        MiExpresionCuenta\Providers\AuthServiceProvider::class,
+        // MiExpresionCuenta\Providers\BroadcastServiceProvider::class,
+        MiExpresionCuenta\Providers\EventServiceProvider::class,
+        MiExpresionCuenta\Providers\RouteServiceProvider::class,
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
 
     ],
 

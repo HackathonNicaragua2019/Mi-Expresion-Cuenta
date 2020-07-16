@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .navbar-default
     background-color: color_azul
     border-radius: border__radius
@@ -21,3 +22,109 @@
     color:white
 .navbar-brand img
     border-style: none
+=======
+.header
+    
+    padding: .5em 1em
+    border-radius: 7px;
+    display: flex
+    align-items: center
+    justify-content: space-between
+    color: white;
+    &.activity,&.white
+        background: transparent
+    &.blue
+        background: colorBlue
+.blue
+    color: colorBlue
+.white
+    color: white
+.center
+    display flex
+    align-items:center
+    justify-content: center
+.bold
+    font-weight: bold
+    
+       
+        
+.logo-header
+    height 3em  
+    width:  auto
+    transition: .5s
+    &.activity
+        width 3em
+    @media screen and (max-width 425px)
+        height 2em
+    &.idea:hover
+        content:url("/images/icon_idea_hover.svg");
+    &:hover 
+        transform: scale(1.05)
+.icons-container
+    display: flex
+    align-items: center
+    color:colorBlue
+    font-size: 1.2em
+    & .atras
+        margin-left: 1em
+    & .pistas
+        margin-right: 1em 
+
+.navbar
+    display inline-flex
+    position relative
+    & .items
+        display: flex
+        cursor pointer
+        align-items: center
+        color:white
+        @media screen and (max-width 426px)
+            display none
+        & .user
+            background: white
+            border-radius: 50%
+            height 2em
+            padding: .5em
+            margin-left: .5em
+        & li
+            margin-right: 1em
+    & .marginlogin
+         margin-right: 2.5em
+
+    & .icon-user
+        height: auto;
+        width: 2em;
+
+    & .subitems
+        display: none
+        position absolute
+        padding 1em
+        top 5em
+        background white
+        border-radius: 7px
+        width: 15em 
+        text-align: center
+        margin 0 
+        border: 3px solid colorBlue
+        @media screen and (max-width 426px)
+            left -8.5em
+            width: 10em 
+        & li a
+            color colorBlue
+    &:hover .subitems
+        display: block
+        animation animationIn 1s
+        @media screen and (max-width 426px)
+            display: none
+            
+    & .subitems.active
+        display: block
+        animation animationIn 1s
+        
+        
+
+        
+
+        
+
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
