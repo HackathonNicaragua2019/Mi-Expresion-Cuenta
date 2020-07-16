@@ -4,9 +4,9 @@ namespace MiExpresionCuenta;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Modulo extends Model
+class Temas extends Model
 {
-    public $table = 'modulos';
+    public $table = 'temas';
 
     protected $primaryKey='id';
 
@@ -14,11 +14,13 @@ class Modulo extends Model
 
     protected $fillable = [
         'nombre',
-        'descripcion'
+        'descripcion',
+        'imagen',
+        'idmodulo',
     ];
 
-    public function modulos()
+    public function temas()
     {
-        return $this->hasMany(Temas::class, 'idmodulo', 'id');
+        return $this->belongsTo(Modulo::class, 'idmodulo');
     }
 }

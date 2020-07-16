@@ -20,7 +20,9 @@ Route::resource('modulos','ModuloController');
 
 Auth::routes();
 
-Route::resource('home', 'HomeController');
+//Route::resource('home', 'HomeController');
+Route::get('home', 'HomeController@index')->name('home');
+
 
 Route::get('/moduloDeterminado', function () {
     return view('moduloDeterminado');

@@ -3,8 +3,9 @@
 namespace MiExpresionCuenta\Http\Controllers;
 
 use Illuminate\Http\Request;
-use MiExpresionCuenta\Home; 
-use DB;
+use MiExpresionCuenta\Home;
+use MiExpresionCuenta\Modulo; 
+
 class HomeController extends Controller
 {
     /**
@@ -24,20 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $modulo1_temas= DB::table('temas as tm')
-        ->join('modulos as md', 'md.id', '=','tm.idmodulo')
-        ->select('md.nombre as Modulo ','tm.nombre as NombreTemas','tm.imagen' )
-        ->where('md.id','=','1')
-        ->orderBy('tm.id','asc')
-        ->get();
-
-        $modulo2_temas= DB::table('temas as tm')
-        ->join('modulos as md', 'md.id', '=','tm.idmodulo')
-        ->select('md.nombre as Modulo ','tm.nombre as NombreTemas','tm.imagen' )
-        ->where('md.id','=','2')
-        ->orderBy('tm.id','asc')
+        
+        $modulos= Modulo::with(['modulos' => function ( $query ){
+            $query->with(['temas']);
+        }])
+        ->whereHas('modulos')
         ->get();
         
-        return view('home.index',['modulo1_temas' => $modulo1_temas, 'modulo2_temas' => $modulo2_temas]);
+        return view('home.index',compact('modulos'));
     }
 }
