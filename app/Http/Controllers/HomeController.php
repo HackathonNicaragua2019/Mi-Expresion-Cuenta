@@ -4,7 +4,8 @@ namespace MiExpresionCuenta\Http\Controllers;
 
 use Illuminate\Http\Request;
 use MiExpresionCuenta\Home;
-use MiExpresionCuenta\Modulo; 
+use MiExpresionCuenta\Modulo;
+
 
 class HomeController extends Controller
 {
@@ -34,4 +35,6 @@ class HomeController extends Controller
         
         return view('home.index',compact('modulos'));
     }
+
+
 }

@@ -4,11 +4,11 @@ namespace MiExpresionCuenta;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Temas extends Model
+class Subtemas extends Model
 {
-    public $table = 'temas';
+    public $table = 'subtemas';
 
-    protected $primaryKey ='id';
+    protected $primarykey = 'id';
 
     public $timestamps = true;
 
@@ -16,11 +16,6 @@ class Temas extends Model
         'nombre',
         'descripcion',
         'imagen',
-        'idmodulo',
+        'idtema',
     ];
-
-    public function temas()
-    {
-        return $this->belongsTo(Modulo::class, 'idmodulo');
-    }
 }
