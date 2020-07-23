@@ -6,18 +6,17 @@
 
 @foreach($temas as $tema)
 <section class="container-menu">
-    <h1 class="title">Tema {{$tema->nombre}}</h1>
+    <h1 class="title">Subtema {{$tema->nombre}}</h1>
     <div class="menu-item">
     @foreach($subtema as $subtema)
-        <div class="container-item determinante">
+        <div class="container-item" style="background-image: url('{{$subtema->imagen}}'">
             <p class="title-item">{{$subtema->nombre}}</p>
-            <span class="subtitle-item">4 clases</span>
             <div class="mimi-modal">
                 <a href="/ActividadesAprender" class="container-aprender">
                     <img class="icon-aprender" src="/images/icon_aprender.svg" alt="Aprender">
                     <p>Aprender</p>
                 </a>
-                <a href="" class="container-practicar">
+                <a href="/Actividades" class="container-practicar">
                     <img class="icon-practicar" src="/images/icon_practicar.svg" alt="Practicar">
                     <p>Practicar</p>
                 </a>

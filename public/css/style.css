@@ -520,6 +520,8 @@ b:nth-child(3).active {
   padding: 2em;
   transition: 0.5s;
   position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 @media screen and (max-width: 426px) {
   .container-item {

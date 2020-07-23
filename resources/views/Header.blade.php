@@ -1,6 +1,6 @@
 <header  @if (Auth::guest()) class="header white" @endif class="header blue">
     
-    <a href="{{ url('/') }}">
+    <a href="{{ url('/home') }}">
         <img class="logo-header" @if (Auth::guest()) src="/images/Logotipo_mi_expresion_cuenta_blue.png"@endif src="/images/logo-Mi-Expresion-cuenta-08.png" />
     </a>
     <nav class="navbar">
