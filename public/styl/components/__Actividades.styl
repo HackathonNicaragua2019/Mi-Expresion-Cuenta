@@ -4,6 +4,7 @@
     justify-content: center
     align-items: center
     & .activity
+        max-width max_width_actividades
         padding: 2em
         @media screen and (max-width 425px)
                 padding: .5em
@@ -57,3 +58,49 @@
 
 .siguiente
     grid-area: siguiente
+.container-opciones
+    max-width 12em
+    background: color_GreyLight
+    color: white;
+    border-radius: 5px;
+    display: grid;
+    color colorGrey
+    font-weight: bold
+    transition: .5s all
+    & .opcion
+        padding: 1em;
+        text-align: center
+        display: none
+        cursor pointer
+        z-index: 2
+        &:hover
+            background-color colorBlue
+            border-radius: 5px;
+            color white
+    & .pordefecto
+        padding: 1em;
+        text-align: center
+        display: block
+        transition: .5s all
+        cursor pointer
+        text-align: left
+        display flex
+        align-items: center
+        justify-content: space-around
+        & .icon_seleccione
+            width: 16px
+            height auto
+    &:hover .pordefecto
+            background: colorGrey
+            color:white
+            border-radius: 5px;
+    &:hover .opcion
+         display block
+
+
+
+
+
+
+    
+

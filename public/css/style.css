@@ -619,6 +619,7 @@ b:nth-child(3).active {
   align-items: center;
 }
 .container-activity .activity {
+  max-width: 53em;
   padding: 2em;
 }
 @media screen and (max-width: 425px) {
@@ -693,6 +694,51 @@ b:nth-child(3).active {
 }
 .siguiente {
   grid-area: siguiente;
+}
+.container-opciones {
+  max-width: 12em;
+  background: #eaeaea;
+  color: #fff;
+  border-radius: 5px;
+  display: grid;
+  color: #7e7e7e;
+  font-weight: bold;
+  transition: 0.5s all;
+}
+.container-opciones .opcion {
+  padding: 1em;
+  text-align: center;
+  display: none;
+  cursor: pointer;
+  z-index: 2;
+}
+.container-opciones .opcion:hover {
+  background-color: #3e64ff;
+  border-radius: 5px;
+  color: #fff;
+}
+.container-opciones .pordefecto {
+  padding: 1em;
+  text-align: center;
+  display: block;
+  transition: 0.5s all;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.container-opciones .pordefecto .icon_seleccione {
+  width: 16px;
+  height: auto;
+}
+.container-opciones:hover .pordefecto {
+  background: #7e7e7e;
+  color: #fff;
+  border-radius: 5px;
+}
+.container-opciones:hover .opcion {
+  display: block;
 }
 .baner-aprender {
   width: 100%;
