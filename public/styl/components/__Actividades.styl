@@ -40,6 +40,8 @@
 
 .container-respuestas
     margin-bottom: 1em
+    display grid
+    grid-template-columns: .5fr 1fr
 .container-validacion
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -67,19 +69,22 @@
     color colorGrey
     font-weight: bold
     transition: .5s all
+    max-height: 3.3em
     & .opcion
         padding: 1em;
         text-align: center
         display: none
         cursor pointer
         z-index: 2
+        background: color_GreyLight
+        &:last-child
+            border-radius: 0 0 5px 5px 
         &:hover
             background-color colorBlue
-            border-radius: 5px;
             color white
+        &:last-child:hover 
+            border-radius:  0 0 5px 5px;
     & .pordefecto
-        padding: 1em;
-        text-align: center
         display: block
         transition: .5s all
         cursor pointer
@@ -87,15 +92,25 @@
         display flex
         align-items: center
         justify-content: space-around
+        padding: .5em
         & .icon_seleccione
             width: 16px
             height auto
+            transition: .5s all
     &:hover .pordefecto
-            background: colorGrey
-            color:white
-            border-radius: 5px;
+            background: #DADADA
+            border-radius: 5px 5px 0 0
+    &:hover .icon_seleccione
+        transform: rotate(180deg)
     &:hover .opcion
          display block
+.img_pregunta
+    width: 100%
+    height : auto
+    max-height: 27em
+.container-img-text
+    text-align: center
+
 
 
 

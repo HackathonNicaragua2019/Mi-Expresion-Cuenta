@@ -672,6 +672,8 @@ b:nth-child(3).active {
 }
 .container-respuestas {
   margin-bottom: 1em;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
 }
 .container-validacion {
   display: grid;
@@ -704,6 +706,7 @@ b:nth-child(3).active {
   color: #7e7e7e;
   font-weight: bold;
   transition: 0.5s all;
+  max-height: 3.3em;
 }
 .container-opciones .opcion {
   padding: 1em;
@@ -711,15 +714,19 @@ b:nth-child(3).active {
   display: none;
   cursor: pointer;
   z-index: 2;
+  background: #eaeaea;
+}
+.container-opciones .opcion:last-child {
+  border-radius: 0 0 5px 5px;
 }
 .container-opciones .opcion:hover {
   background-color: #3e64ff;
-  border-radius: 5px;
   color: #fff;
 }
+.container-opciones .opcion:last-child:hover {
+  border-radius: 0 0 5px 5px;
+}
 .container-opciones .pordefecto {
-  padding: 1em;
-  text-align: center;
   display: block;
   transition: 0.5s all;
   cursor: pointer;
@@ -731,14 +738,25 @@ b:nth-child(3).active {
 .container-opciones .pordefecto .icon_seleccione {
   width: 16px;
   height: auto;
+  transition: 0.5s all;
 }
 .container-opciones:hover .pordefecto {
-  background: #7e7e7e;
-  color: #fff;
-  border-radius: 5px;
+  background: #dadada;
+  border-radius: 5px 5px 0 0;
+}
+.container-opciones:hover .icon_seleccione {
+  transform: rotate(180deg);
 }
 .container-opciones:hover .opcion {
   display: block;
+}
+.img_pregunta {
+  width: 100%;
+  height: auto;
+  max-height: 27em;
+}
+.container-img-text {
+  text-align: center;
 }
 .baner-aprender {
   width: 100%;

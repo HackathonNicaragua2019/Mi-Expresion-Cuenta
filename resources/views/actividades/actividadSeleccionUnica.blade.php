@@ -8,7 +8,6 @@
         <h1 class="title">{{ $pregunta->nombre_pregunta }}</h1>
         <p class="enunciado"></p>
         <div class="container-respuestas">
-            <img class="img_pregunta" src="/images/posesivo.svg"/>
             <div class="container-opciones">
             <div for="opcion-por-defecto" class="pordefecto">
                 <p>Seleccione</p> 
@@ -18,6 +17,10 @@
                 <input name='' type="hidden" id="opcion-{{$opcion->id}}">
                 <label for="opcion-{{$opcion->id}}" class="opcion">{{ $opcion->nombre }}</label>
         @endforeach
+            </div>
+            <div class="container-img-text">
+                <img class="img_pregunta" src="{{ $pregunta->url_imagen }}"/>
+                <p>{{ $pregunta->nombre_imagen }}</p>
             </div>
         </div>
         @endforeach
