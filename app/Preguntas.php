@@ -13,6 +13,8 @@ class Preguntas extends Model
 
     protected $fillable = [
         'nombre_pregunta',
+        'url_imagen',
+        'nombre_imagen',
         'id_actividad',
         'created_at',
         'updated_at',
