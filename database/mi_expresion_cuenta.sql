@@ -142,7 +142,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `preguntas` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `nombre_pregunta` LONGTEXT NOT NULL,
+  `nombre_pregunta` VARCHAR(191) NOT NULL,
+  `url_imagen` VARCHAR(191) NOT NULL,
+  `nombre_imagen` VARCHAR(191) NOT NULL,
   `id_actividad` INT NOT NULL,
   
   `created_at` TIMESTAMP NULL DEFAULT NULL,
