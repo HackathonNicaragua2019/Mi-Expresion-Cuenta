@@ -16,7 +16,7 @@
                     <img class="icon-aprender" src="/images/icon_aprender.svg" alt="Aprender">
                     <p>Aprender</p>
                 </a>
-                <a href="/Actividades" class="container-practicar">
+                <a href="/actividad{{$subtema->id}}" class="container-practicar">
                     <img class="icon-practicar" src="/images/icon_practicar.svg" alt="Practicar">
                     <p>Practicar</p>
                 </a>
