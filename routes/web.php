@@ -25,6 +25,7 @@ Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('/{modulo}/{tema}', 'SubtemasController@subtema')->name('subtema');
 
+Route::get('/ActividadesAprender{idteoria}', 'TeoriaController@index')->name('teoria');
 /*
 Route::get('/moduloDeterminado', function () {
     return view('moduloDeterminado');
@@ -33,6 +34,4 @@ Route::get('/Actividades', function () {
     return view('Actividades');
 });
 
-Route::get('/ActividadesAprender', function () {
-    return view('ActividadesAprender');
-});
+
