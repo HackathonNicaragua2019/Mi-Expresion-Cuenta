@@ -74,12 +74,17 @@ CREATE TABLE IF NOT EXISTS `temas` (
   `idmodulo` INT NOT NULL,
   `idteoria` INT NOT NULL,
 
+  
   `created_at` TIMESTAMP NULL DEFAULT NULL,
   `updated_at` TIMESTAMP NULL DEFAULT NULL,
   `deleted_at` TIMESTAMP NULL DEFAULT NULL,
   
+<<<<<<< HEAD
 
    constraint idmodulo
+=======
+  constraint idmodulo
+>>>>>>> b69d2fca3253fc7070c9240caf4337ddbc3b23ff
   foreign key (idmodulo)
   references modulos(id)
   
@@ -88,6 +93,7 @@ CREATE TABLE IF NOT EXISTS `temas` (
   )
 ENGINE = InnoDB;
 
+<<<<<<< HEAD
 CREATE TABLE IF NO EXISTS `teoria`(
   `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `Descripcion` VARCHAR(150) NULL,
@@ -95,6 +101,8 @@ CREATE TABLE IF NO EXISTS `teoria`(
 
   
 )
+=======
+>>>>>>> b69d2fca3253fc7070c9240caf4337ddbc3b23ff
 -- -----------------------------------------------------
 -- Table `miexpresioncuenta`.`subtemas`
 -- -----------------------------------------------------
@@ -112,7 +120,11 @@ CREATE TABLE IF NOT EXISTS `subtemas` (
   `updated_at` TIMESTAMP NULL DEFAULT NULL,
   `deleted_at` TIMESTAMP NULL DEFAULT NULL,
   
+<<<<<<< HEAD
   constraint idtemas
+=======
+  constraint idtema
+>>>>>>> b69d2fca3253fc7070c9240caf4337ddbc3b23ff
   foreign key (idtema)
   references Temas(id)
   
@@ -151,7 +163,13 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `preguntas` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+<<<<<<< HEAD
   `nombre_pregunta` LONGTEXT NOT NULL,
+=======
+  `nombre_pregunta` VARCHAR(191) NOT NULL,
+  `url_imagen` VARCHAR(191) NOT NULL,
+  `nombre_imagen` VARCHAR(191) NOT NULL,
+>>>>>>> b69d2fca3253fc7070c9240caf4337ddbc3b23ff
   `id_actividad` INT NOT NULL,
   
   `created_at` TIMESTAMP NULL DEFAULT NULL,
@@ -267,6 +285,11 @@ INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `i
 INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Adjetivos', 'Adjetivos', '1','1');
 INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Conjunciones', 'Conjunciones', '1', '1');
 INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Adverbios', 'Adverbios', '1','1');
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`) VALUES ('Determinantes', 'Determinantes', '1');
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`) VALUES ('Preposiciones', 'Preposiciones', '1');
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`) VALUES ('Adjetivos', 'Adjetivos', '1');
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`) VALUES ('Conjunciones', 'Conjunciones', '1');
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`) VALUES ('Adverbios', 'Adverbios', '1');
 
 UPDATE `miexpresioncuenta`.`temas` SET `imagen` = '/images/determinantes.svg' WHERE (`id` = '1');
 UPDATE `miexpresioncuenta`.`temas` SET `imagen` = '/images/Adjetivos.svg' WHERE (`id` = '2');
@@ -274,7 +297,42 @@ UPDATE `miexpresioncuenta`.`temas` SET `imagen` = '/images/Preposiciones.svg' WH
 UPDATE `miexpresioncuenta`.`temas` SET `imagen` = '/images/conectores.svg' WHERE (`id` = '4');
 UPDATE `miexpresioncuenta`.`temas` SET `imagen` = '/images/conectores.svg' WHERE (`id` = '5');
 
+-- -----------------------------------------------------
+-- INSERT Table `subtemas`
+-- -----------------------------------------------------
+
 INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`) VALUES ('Artículos', 'Articulos', '/images/articulos.svg', '1');
 INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`) VALUES ('Demostrativo', 'Demostrativo', '/images/demostrativo.svg', '1');
 INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`) VALUES ('Posesivo', 'Posesivo', '/images/posesivo.svg', '1');
 INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`) VALUES ('Numerales', 'Numerales', '/images/numerales.svg', '1');
+
+-- -----------------------------------------------------
+-- INSERT Table `Actividades`
+-- -----------------------------------------------------
+INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Artículos', 'ActividadArticulos', 'actividades del subtema de articulo', '1');
+INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `idsubtema`) VALUES ('Actividades Demostrativos', 'ActividadDemostrativo', '2');
+-- -----------------------------------------------------
+-- INSERT Table `Preguntas`
+-- -----------------------------------------------------
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `id_actividad`) VALUES ('Seleccione el artículo que corresponde a la imagen.', '1');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `id_actividad`) VALUES ('Seleccione el demostrativo que corresponde a la imagen.', '2');
+
+-- -----------------------------------------------------
+-- INSERT Table `Opciones respuesta de cada preguntas`
+-- -----------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('La', '10', '1');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Los', '0', '1');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('El', '0', '1');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Las', '0', '1');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Un', '0', '1');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Unos', '0', '1');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Unas', '0', '1');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Esta', '10', '2');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Aquella', '0', '2');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ese', '0', '2');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Aquel', '0', '2');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Este', '0', '2');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Esa', '0', '2');
+
