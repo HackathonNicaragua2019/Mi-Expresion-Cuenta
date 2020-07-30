@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS `UserType` (
   `deleted_at` TIMESTAMP NULL DEFAULT NULL
   )
 ENGINE = InnoDB;
+
 -- -----------------------------------------------------
 -- Table `users`
 -- -----------------------------------------------------
@@ -34,8 +35,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   foreign key (idusertype)
   references UserType(id)
   
-  on delete cascade
-  on update cascade)
+  on delete (cascade)
+  on update (cascade)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
@@ -74,17 +75,11 @@ CREATE TABLE IF NOT EXISTS `temas` (
   `idmodulo` INT NOT NULL,
   `idteoria` INT NOT NULL,
 
-  
   `created_at` TIMESTAMP NULL DEFAULT NULL,
   `updated_at` TIMESTAMP NULL DEFAULT NULL,
   `deleted_at` TIMESTAMP NULL DEFAULT NULL,
   
-<<<<<<< HEAD
-
-   constraint idmodulo
-=======
   constraint idmodulo
->>>>>>> b69d2fca3253fc7070c9240caf4337ddbc3b23ff
   foreign key (idmodulo)
   references modulos(id)
   
@@ -93,7 +88,6 @@ CREATE TABLE IF NOT EXISTS `temas` (
   )
 ENGINE = InnoDB;
 
-<<<<<<< HEAD
 CREATE TABLE IF NO EXISTS `teoria`(
   `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `Descripcion` VARCHAR(150) NULL,
@@ -101,8 +95,6 @@ CREATE TABLE IF NO EXISTS `teoria`(
 
   
 )
-=======
->>>>>>> b69d2fca3253fc7070c9240caf4337ddbc3b23ff
 -- -----------------------------------------------------
 -- Table `miexpresioncuenta`.`subtemas`
 -- -----------------------------------------------------
@@ -120,11 +112,7 @@ CREATE TABLE IF NOT EXISTS `subtemas` (
   `updated_at` TIMESTAMP NULL DEFAULT NULL,
   `deleted_at` TIMESTAMP NULL DEFAULT NULL,
   
-<<<<<<< HEAD
   constraint idtemas
-=======
-  constraint idtema
->>>>>>> b69d2fca3253fc7070c9240caf4337ddbc3b23ff
   foreign key (idtema)
   references Temas(id)
   
@@ -163,13 +151,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `preguntas` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-<<<<<<< HEAD
   `nombre_pregunta` LONGTEXT NOT NULL,
-=======
   `nombre_pregunta` VARCHAR(191) NOT NULL,
   `url_imagen` VARCHAR(191) NOT NULL,
   `nombre_imagen` VARCHAR(191) NOT NULL,
->>>>>>> b69d2fca3253fc7070c9240caf4337ddbc3b23ff
   `id_actividad` INT NOT NULL,
   
   `created_at` TIMESTAMP NULL DEFAULT NULL,
