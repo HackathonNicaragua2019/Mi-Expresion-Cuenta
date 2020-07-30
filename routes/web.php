@@ -20,7 +20,6 @@ Route::resource('modulos','ModuloController');
 
 Auth::routes();
 
-//Route::resource('home', 'HomeController');
 Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('/{modulo}/{tema}', 'SubtemasController@subtema')->name('subtema');
@@ -29,7 +28,7 @@ Route::get('/ActividadesAprender{idteoria}', 'TeoriaController@index')->name('te
 /*
 Route::get('/moduloDeterminado', function () {
     return view('moduloDeterminado');
-});*/
+});
 Route::get('/Actividades', function () {
     return view('Actividades');
 });
