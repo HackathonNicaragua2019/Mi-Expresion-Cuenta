@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS `UserType` (
   `deleted_at` TIMESTAMP NULL DEFAULT NULL
   )
 ENGINE = InnoDB;
+
 -- -----------------------------------------------------
 -- Table `users`
 -- -----------------------------------------------------
@@ -34,8 +35,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   foreign key (idusertype)
   references UserType(id)
   
-  on delete cascade
-  on update cascade)
+  on delete (cascade)
+  on update (cascade)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
@@ -72,7 +73,8 @@ CREATE TABLE IF NOT EXISTS `temas` (
   `esvisible` BOOLEAN NOT NULL DEFAULT FALSE,
   `imagen` VARCHAR(45) NULL,
   `idmodulo` INT NOT NULL,
-  
+  `idteoria` INT NOT NULL,
+
   `created_at` TIMESTAMP NULL DEFAULT NULL,
   `updated_at` TIMESTAMP NULL DEFAULT NULL,
   `deleted_at` TIMESTAMP NULL DEFAULT NULL,
@@ -86,6 +88,13 @@ CREATE TABLE IF NOT EXISTS `temas` (
   )
 ENGINE = InnoDB;
 
+CREATE TABLE IF NO EXISTS `teoria`(
+  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `Descripcion` VARCHAR(150) NULL,
+  `imagen` VARCHAR(45) null
+
+  
+)
 -- -----------------------------------------------------
 -- Table `miexpresioncuenta`.`subtemas`
 -- -----------------------------------------------------
@@ -103,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `subtemas` (
   `updated_at` TIMESTAMP NULL DEFAULT NULL,
   `deleted_at` TIMESTAMP NULL DEFAULT NULL,
   
-  constraint idtema
+  constraint idtemas
   foreign key (idtema)
   references Temas(id)
   
@@ -255,6 +264,11 @@ INSERT INTO `miexpresioncuenta`.`modulos` (`nombre`, `nombrecorto`) VALUES ('Mó
 -- INSERT Table `temas`
 -- -----------------------------------------------------
 
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Determinantes', 'Determinantes', '1', '1');
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Preposiciones', 'Preposiciones', '1', '1');
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Adjetivos', 'Adjetivos', '1','1');
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Conjunciones', 'Conjunciones', '1', '1');
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Adverbios', 'Adverbios', '1','1');
 INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`) VALUES ('Determinantes', 'Determinantes', '1');
 INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`) VALUES ('Preposiciones', 'Preposiciones', '1');
 INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`) VALUES ('Adjetivos', 'Adjetivos', '1');

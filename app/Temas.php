@@ -17,6 +17,7 @@ class Temas extends Model
         'descripcion',
         'imagen',
         'idmodulo',
+        'idteoria',
     ];
 
     public function temas()
