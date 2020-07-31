@@ -1,10 +1,17 @@
+const fila = document.querySelector('.activity_pregunta_scroll_container');
+const btn_sigiente = document.getElementById('btn_sigiente');
+
+btn_sigiente.addEventListener('click', function (e ){
+  e.preventDefault();
+  fila.scrollLeft += fila.offsetWidth;
+});
 const McButton = document.querySelector("#McButton");
 const McBar1 = document.getElementById("McBar1");
 const McBar2 = document.getElementById("McBar2");
 const McBar3 = document.getElementById("McBar3");
 const subitems = document.querySelector(".subitems")
 
-  McButton.addEventListener("click", function() {
+McButton.addEventListener('click', function() {
 
     McButton.classList.toggle("active");
     McBar1.classList.toggle("active");

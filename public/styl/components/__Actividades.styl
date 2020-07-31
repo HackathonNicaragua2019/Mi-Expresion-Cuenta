@@ -15,6 +15,15 @@
             margin-top: 0
             @media screen and (max-width 425px)
                 font-size: 1.5em
+.activity_pregunta_scroll_container
+    overflow hidden 
+    scroll-behavior: smooth
+    width: 100%
+.activity_pregunta_scroll
+    display flex
+    flex-wrap: nowrap 
+.activity_pregunta
+    min-width: 100%  
 .enunciado
     font-size: 1.5em
     color: colorBlue
@@ -69,7 +78,7 @@
     color colorGrey
     font-weight: bold
     transition: .5s all
-    max-height: 3.3em
+    max-height: 4.3em
     & .opcion
         padding: 1em;
         text-align: center
@@ -104,6 +113,19 @@
         transform: rotate(180deg)
     &:hover .opcion
          display block
+    & input[type="radio"]
+        appearance none
+        margin 0
+        border none
+        outline: none
+
+input:checked + .opcion
+    background colorBlue
+    color white
+
+
+
+
 .img_pregunta
     width: 100%
     height : auto

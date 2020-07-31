@@ -15,7 +15,7 @@
                     <img class="icon-aprender" src="/images/icon_aprender.svg" alt="Aprender">
                     <p>Introducción</p>
                 </a>
-                <a href="/{{$modulo->nombre}}/tema{{$tema->id}}" class="container-practicar">
+                <a href="/{{$modulo->nombrecorto}}/tema{{$tema->id}}" class="container-practicar">
                     <img class="icon-practicar" src="/images/icon_practicar.svg" alt="Practicar">
                     <p>Entrar</p>
                 </a>
