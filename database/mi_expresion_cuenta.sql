@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-08-2020 a las 17:23:19
+-- Tiempo de generación: 02-08-2020 a las 20:08:33
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.2.31
 
@@ -269,20 +269,25 @@ INSERT INTO `temas` (`id`, `nombre`, `nombrecorto`, `Descripcion`, `esvisible`, 
 
 CREATE TABLE `teoria` (
   `id` int(11) NOT NULL,
-  `Descripcion` varchar(150) DEFAULT NULL,
-  `imagen` varchar(45) DEFAULT NULL
+  `titulo` varchar(150) DEFAULT NULL,
+  `imagen` varchar(45) DEFAULT NULL,
+  `introduccion` varchar(250) DEFAULT NULL,
+  `pregunta` varchar(250) DEFAULT NULL,
+  `respuestapregunta` varchar(500) DEFAULT NULL,
+  `ejemplos` varchar(150) DEFAULT NULL,
+  `imgejemplo` varchar(150) DEFAULT NULL,
+  `urlvideo` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `teoria`
 --
 
-INSERT INTO `teoria` (`id`, `Descripcion`, `imagen`) VALUES
-(1, 'PRUEBA DE INTRODUCCION INFORMACION - TEMA 1', NULL),
-(2, 'PRUEBA DE INTRODUCCION INFORMACION - TEMA 2', NULL),
-(3, 'PRUEBA DE INTRODUCCION INFORMACION - TEMA 3', NULL),
-(4, 'PRUEBA DE INTRODUCCION INFORMACION - TEMA 4', NULL),
-(5, 'PRUEBA DE INTRODUCCION INFORMACION - TEMA 5', NULL);
+INSERT INTO `teoria` (`id`, `titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES
+(1, 'Los determinantes', NULL, 'En este módulo aprenderás sobre los Determinantes, su clasificación y uso en la expresión escrita.', '¿Qué son los determinantes?', 'Los determinantes son palabras que van delante del nombre o sustantivos y sirven para delimitar\r\nel significado general de dicho nombre. Los determinantes concuerdan siempre en género y\r\nnúmero con los sustantivos que acompañan.', NULL, NULL, 'https://www.youtube.com/embed/zeYS3xsyRGI'),
+(2, 'Las preposiciones', NULL, 'En este módulo aprenderás sobre las Preposiciones, su clasificación y uso en la expresión escrita.', '¿Qué son las Preposiciones?', 'Las preposiciones son partes invariables de la oración (no tienen género ni número) que tienen la\r\nfunción de relacionar palabras (nombre, pronombre, adjetivo, verbo o adverbio) con su\r\ncomplemento. Pero su presencia es indispensable para el sentido de la oración.', 'Botella de cristal; mesa de madera; café con leche; lejos de aquí; loco de atar; voy hacia\r\nParís.', NULL, 'https://www.youtube.com/embed/1bGOgY1CmiU'),
+(3, 'Los Adjetivos', NULL, 'En este módulo aprenderás sobre los Adjetivos, su clasificación y uso en la expresión escrita.', '¿Qué son los Adjetivos?', 'El adjetivo constituye una categoría de palabras que se define a partir de diferentes criterios:  <br>Desde el punto de vista morfológico, se caracteriza por prestar flexión de género y\r\nnúmero: alta, altas, alto, altos. En este sentido, los adjetivos son palabras variables.\r\n Desde el punto de vista sintáctico, el adjetivo es el núcleo de los grupos adjetivales, que\r\nfuncionan como modificadores del sustantivo (Una casa más linda, La opera Real),', 'Estudio interesante\r\nDeportista ejemplar', NULL, 'https://www.youtube.com/embed/1bGOgY1CmiU'),
+(4, 'Las Conjunciones', NULL, 'En este módulo aprenderás sobre las Conjunciones, su clasificación y uso en la expresión escrita.', '¿Que son las Conjunciones?', 'Las conjunciones constituyen una clase de palabras invariables y generalmente átonas, cuya\r\nfunción es establecer relaciones entre las palabras, grupos sintácticos u oraciones.\r\nClases de conjunciones:\r\nLas conjunciones se dividen en dos grandes grupos, según el tipo de conexión que se establece\r\nentre los segmentos que relacionan, estas son conjunciones coordinantes y conjunciones\r\nsubordinantes.', NULL, NULL, 'https://www.youtube.com/embed/1bGOgY1CmiU');
 
 -- --------------------------------------------------------
 
@@ -522,5 +527,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
