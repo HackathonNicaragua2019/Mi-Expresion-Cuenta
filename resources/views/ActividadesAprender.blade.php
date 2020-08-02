@@ -3,31 +3,23 @@
 @section('content')
 
 <section class="container-activity">
+@foreach ($teoria as $app)
     <div class="activity">
         <h1 class="title aprender">Introducción</h1>
+        <p class="parrafos">{{ $app->introduccion}} </p>
         <img class="baner-aprender" src="/images/determinantes.svg" alt="images determinantes">
-        <h2 class="title aprender">Los determinantes</h2>
-        <p class="parrafos">
-    
-        <table>
-			@foreach ($teoria as $app)
-			<tr>
-					<td>{{ $app->id}}</td>
-					<td>{{ $app->titulo}}</td>
-              		<td>{{ $app->Descripcion}}</td>
-			</tr>
-			@endforeach
-		</table>
-                <br>
+        <h2 class="title aprender">{{ $app->titulo}}</h2>
+        <p class="parrafos">{{ $app->introduccion}}
             <br>
         </p>
-        <h3 class="title aprender">¿Qué son los determinantes?</h3>
-        <p class="parrafos">Los determinantes son palabras que van delante del nombre o sustantivos y sirven para delimitar
-            el significado general de dicho nombre. Los determinantes concuerdan siempre en género y
-            número con los sustantivos que acompañan.
-        </p>
+        <h3 class="title aprender">{{ $app->nombrecorto}} </h3>
+        <h3 class="title aprender">{{ $app->pregunta}}</h3>
+        <p class="parrafos">{{ $app->respuestapregunta}}</p>
+        <p class="title aprender">Ejemplo</p>
+        <p class="parrafos">{{ $app->ejemplos}}</p>
         <br>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/zeYS3xsyRGI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="{{ $app->urlvideo}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+    @endforeach
 </section>
 @endsection
