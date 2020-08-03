@@ -44,6 +44,10 @@ a {
 .btn-blue {
   background: #3e64ff;
 }
+.btn-white {
+  background: #fff;
+  color: #58a700;
+}
 .btn-blue:hover {
   background: #2d4cc7;
   color: #fff;
@@ -617,6 +621,7 @@ b:nth-child(3).active {
   padding: 0 2em;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .container-activity .activity {
   max-width: 53em;
@@ -690,7 +695,7 @@ b:nth-child(3).active {
 .container-validacion {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: 'comprobar . siguiente';
+  grid-template-areas: 'comprobar . guardar';
   column-gap: 5em;
   border-top: 1px solid #eaeaea;
   padding-top: 2em;
@@ -698,16 +703,22 @@ b:nth-child(3).active {
 @media screen and (max-width: 425px) {
   .container-validacion {
     grid-template-columns: repeat(1, 1fr);
-    grid-template-areas: 'comprobar' 'siguiente';
+    grid-template-areas: 'comprobar' 'guardar';
     row-gap: 1em;
   }
 }
 .comprobar {
   grid-area: comprobar;
   color: #7e7e7e;
+  display: none;
 }
-.siguiente {
-  grid-area: siguiente;
+.guardar {
+  grid-area: guardar;
+  display: none;
+  transition: 1s;
+}
+.guardar.active {
+  display: block;
 }
 .container-opciones {
   max-width: 12em;
@@ -765,6 +776,8 @@ b:nth-child(3).active {
 }
 .container-opciones input[type="radio"] {
   appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
   margin: 0;
   border: none;
   outline: none;
@@ -780,6 +793,176 @@ input:checked + .opcion {
 }
 .container-img-text {
   text-align: center;
+}
+.modal {
+  height: 100%;
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: absolute;
+  visibility: hidden;
+  z-index: 5;
+}
+.modal.active {
+  visibility: visible;
+}
+.contaner_modal {
+  background: #58a700;
+  padding: 2em;
+  max-width: 34em;
+  height: auto;
+  border-radius: 15px;
+  text-align: center;
+}
+.contaner_modal .titulo {
+  color: #fff;
+  font-size: 2.2em;
+  font-weight: bold;
+  margin: 0 0 1em 0;
+}
+.contaner_modal .icon {
+  width: 9.1em;
+  height: auto;
+}
+.contaner_modal .containerBtn {
+  text-align: right;
+}
+.contaner_modal .containerBtn button {
+  font-weight: bold;
+  max-width: 9.6em;
+}
+.contaner_modal .containerBtn button.red {
+  color: #ef4339;
+}
+.contaner_modal.red {
+  background: #ef4339;
+}
+@-moz-keyframes animationIn {
+  from {
+    transform: translateY(-3000px);
+  }
+  60% {
+    transform: translateY(25px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  90% {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes animationIn {
+  from {
+    transform: translateY(-3000px);
+  }
+  60% {
+    transform: translateY(25px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  90% {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@-o-keyframes animationIn {
+  from {
+    transform: translateY(-3000px);
+  }
+  60% {
+    transform: translateY(25px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  90% {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes animationIn {
+  from {
+    transform: translateY(-3000px);
+  }
+  60% {
+    transform: translateY(25px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  90% {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@-moz-keyframes animationOut {
+  from {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(25px);
+  }
+  to {
+    transform: translateY(-3000px);
+  }
+}
+@-webkit-keyframes animationOut {
+  from {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(25px);
+  }
+  to {
+    transform: translateY(-3000px);
+  }
+}
+@-o-keyframes animationOut {
+  from {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(25px);
+  }
+  to {
+    transform: translateY(-3000px);
+  }
+}
+@keyframes animationOut {
+  from {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(25px);
+  }
+  to {
+    transform: translateY(-3000px);
+  }
 }
 .baner-aprender {
   width: 100%;

@@ -3,6 +3,7 @@
     padding: 0 2em
     justify-content: center
     align-items: center
+    position relative
     & .activity
         max-width max_width_actividades
         padding: 2em
@@ -23,7 +24,8 @@
     display flex
     flex-wrap: nowrap 
 .activity_pregunta
-    min-width: 100%  
+    min-width: 100%
+    
 .enunciado
     font-size: 1.5em
     color: colorBlue
@@ -54,21 +56,29 @@
 .container-validacion
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-areas: 'comprobar . siguiente'
+    grid-template-areas: 'comprobar . guardar'
     column-gap: 5em;
     border-top: 1px solid color_GreyLight
     padding-top: 2em
     @media screen and (max-width 425px)
         grid-template-columns: repeat(1,1fr);
-        grid-template-areas: 'comprobar''siguiente';
+        grid-template-areas: 'comprobar''guardar';
         row-gap: 1em
 
 .comprobar
     grid-area: comprobar
     color:colorGrey
+    display: none
 
-.siguiente
-    grid-area: siguiente
+.guardar
+    grid-area: guardar
+    display: none
+    transition: 1s
+    &.active
+        display block
+
+    
+
 .container-opciones
     max-width 12em
     background: color_GreyLight
@@ -115,6 +125,8 @@
          display block
     & input[type="radio"]
         appearance none
+        -moz-appearance: none;
+        -webkit-appearance: none;
         margin 0
         border none
         outline: none
@@ -123,15 +135,91 @@ input:checked + .opcion
     background colorBlue
     color white
 
-
-
-
 .img_pregunta
     width: 100%
     height : auto
     max-height: 27em
 .container-img-text
     text-align: center
+
+.modal
+    height 100%
+    width: 100%
+    padding: 1em
+    display: flex
+    align-items: center
+    justify-content: center
+    box-sizing: border-box
+    position absolute
+    visibility: hidden
+    z-index: 5
+    &.active
+        visibility: visible
+.contaner_modal
+    background: colorGreen
+    padding: 2em
+    max-width 34em
+    height auto
+    border-radius: 15px
+    text-align: center
+    & .titulo
+        color:white
+        font-size: 2.2em
+        font-weight: bold
+        margin 0 0 1em 0
+    & .icon
+        width: 9.1em
+        height auto
+    & .containerBtn
+        text-align: right 
+        & button
+            font-weight: bold
+            max-width 9.6em
+            &.red
+                color colorRed
+        
+    &.red
+        background: colorRed
+
+/*-------------------------------------
+        ANIMATIONS
+----------------------------------------*/
+
+@keyframes animationIn{
+    from{
+        transform: translateY(-3000px)
+    }
+    60%{
+        transform: translateY(25px)
+    }
+    75%{
+        transform: translateY(-10px)
+    }
+    90%{
+        transform: translateY(5px)
+    }
+    to{
+        transform: translateY(0)
+    }
+}
+
+@keyframes animationOut{
+    from{
+        transform: translateY(5px)
+        }
+    60%{
+        transform: translateY(-10px)
+    }
+    75%{
+        transform: translateY(25px)
+    }
+    to{
+        transform: translateY(-3000px)
+    }
+}
+
+
+
 
 
 
