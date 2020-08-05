@@ -17,5 +17,12 @@ class Subtemas extends Model
         'descripcion',
         'imagen',
         'idtema',
+        'idteoria',
+        
     ];
+
+    public function subtemas()
+    {
+        return $this->belongsTo(Temas::class, 'idtema');
+    }
 }
