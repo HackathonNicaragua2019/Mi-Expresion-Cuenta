@@ -24,7 +24,8 @@ Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('/{modulo}/{tema}', 'SubtemasController@subtema')->name('subtema');
 
-Route::get('/ActividadesAprender{idteoria}', 'TeoriaController@index')->name('teoria');
+Route::get('/ActividadesAprender{idteoria}', 'TeoriaController@TeoriaTemas')->name('teoria');
+Route::get('/ActividadesAprender/{subtema}/{idsubtema}', 'TeoriaController@TeoriaSubtemas')->name('teoria');
 
 Route::get('/actividad{idsubtema}', 'ActividadesController@index')->name('actividades');
 
