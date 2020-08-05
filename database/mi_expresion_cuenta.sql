@@ -1,529 +1,337 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 02-08-2020 a las 20:08:33
--- Versión del servidor: 10.4.13-MariaDB
--- Versión de PHP: 7.2.31
+CREATE SCHEMA IF NOT EXISTS `miexpresioncuenta` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin ;
+USE `miexpresioncuenta` ;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+-- -----------------------------------------------------
+-- Table `UserType`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `UserType` (
+  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `nombre` VARCHAR(150) NULL,
+  `Descripcion` VARCHAR(150) NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL
+  )
+ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+  `name` VARCHAR(191) NOT NULL,
+  `email` VARCHAR(191) NOT NULL,
+  `email_verified_at` DATETIME NULL DEFAULT NULL,
+  `password` VARCHAR(191) NOT NULL,
+  `remember_token` VARCHAR(191) NULL DEFAULT NULL,
+  `idusertype` INT(10) NULL DEFAULT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL,
+  UNIQUE INDEX `users_email_unique` (`email` ASC),
+  
+  constraint idusertype
+  foreign key (idusertype)
+  references UserType(id)
+  
+  on delete (cascade)
+  on update (cascade)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+-- -----------------------------------------------------
+-- Table `miexpresioncuenta`.`modulo`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `modulos` (
+  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `nombre` VARCHAR(150) NULL,
+  `nombrecorto` VARCHAR(150) NULL,
+  `Descripcion` VARCHAR(150) NULL,
+  `Score` INT NULL,
+  
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL
+  )
+ENGINE = InnoDB;
 
---
--- Base de datos: `miexpresioncuenta`
---
+-- -----------------------------------------------------
+-- Table `temas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `temas` (
+  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `nombre` VARCHAR(150) NULL,
+  `nombrecorto` VARCHAR(150) NULL,
+  `Descripcion` VARCHAR(150) NULL,
+  `esvisible` BOOLEAN NOT NULL DEFAULT FALSE,
+  `imagen` VARCHAR(45) NULL,
+  `idmodulo` INT NOT NULL,
+  `idteoria` INT NOT NULL,
 
--- --------------------------------------------------------
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL,
+  
+  constraint idmodulo
+  foreign key (idmodulo)
+  references modulos(id)
+  
+  CONSTRAINT idteoria
+   FOREIGN KEY (idteoria) 
+   REFERENCES teoria(id);
 
---
--- Estructura de tabla para la tabla `actividades`
---
+  on delete cascade
+  on update cascade
+  )
+ENGINE = InnoDB;
 
-CREATE TABLE `actividades` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(191) NOT NULL,
-  `nombrecorto` varchar(150) DEFAULT NULL,
-  `descrpcion` varchar(191) NOT NULL,
-  `idsubtema` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `actividades`
---
-
-INSERT INTO `actividades` (`id`, `nombre`, `nombrecorto`, `descrpcion`, `idsubtema`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(2, 'Actividades Artículos', 'ActividadArticulos', 'actividades del subtema de articulo', 2, NULL, NULL, NULL),
-(3, 'Actividades Demostrativos', 'ActividadDemostrativo', '', 3, NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `homes`
---
-
-CREATE TABLE `homes` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2020_07_12_160340_create_homes_table', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `modulos`
---
-
-CREATE TABLE `modulos` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(150) DEFAULT NULL,
-  `nombrecorto` varchar(150) DEFAULT NULL,
-  `Descripcion` varchar(150) DEFAULT NULL,
-  `Score` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `modulos`
---
-
-INSERT INTO `modulos` (`id`, `nombre`, `nombrecorto`, `Descripcion`, `Score`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Módulo I:Mi expresión básica', 'modulo1_mi_expresion_basica', NULL, NULL, NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `opciones`
---
-
-CREATE TABLE `opciones` (
-  `id` int(11) NOT NULL,
-  `nombre` longtext NOT NULL,
-  `puntos` int(11) DEFAULT NULL,
-  `id_pregunta` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `opciones`
---
-
-INSERT INTO `opciones` (`id`, `nombre`, `puntos`, `id_pregunta`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(9, 'La', 10, 1, NULL, NULL, NULL),
-(10, 'Los', 0, 1, NULL, NULL, NULL),
-(11, 'El', 0, 1, NULL, NULL, NULL),
-(12, 'Las', 0, 1, NULL, NULL, NULL),
-(13, 'Un', 0, 1, NULL, NULL, NULL),
-(14, 'Unos', 0, 1, NULL, NULL, NULL),
-(15, 'Unas', 0, 1, NULL, NULL, NULL),
-(16, 'Esta', 10, 2, NULL, NULL, NULL),
-(17, 'Aquella', 0, 2, NULL, NULL, NULL),
-(18, 'Ese', 0, 2, NULL, NULL, NULL),
-(19, 'Aquel', 0, 2, NULL, NULL, NULL),
-(20, 'Este', 0, 2, NULL, NULL, NULL),
-(21, 'Esa', 0, 2, NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `password_resets`
---
-
-CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `preguntas`
---
-
-CREATE TABLE `preguntas` (
-  `id` int(11) NOT NULL,
-  `nombre_pregunta` longtext NOT NULL,
-  `id_actividad` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `preguntas`
---
-
-INSERT INTO `preguntas` (`id`, `nombre_pregunta`, `id_actividad`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Seleccione el artículo que corresponde a la imagen.', 2, NULL, NULL, NULL),
-(2, 'Seleccione el demostrativo que corresponde a la imagen.', 3, NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `resultados`
---
-
-CREATE TABLE `resultados` (
-  `id` int(11) NOT NULL,
-  `puntos_totales` int(11) DEFAULT NULL,
-  `user_id` int(10) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `resultado_de_preguntas`
---
-
-CREATE TABLE `resultado_de_preguntas` (
-  `id` int(11) NOT NULL,
-  `id_resultado` int(11) NOT NULL,
-  `id_preguntas` int(11) NOT NULL,
-  `id_opciones` int(11) NOT NULL,
-  `puntos` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `subtemas`
---
-
-CREATE TABLE `subtemas` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(150) DEFAULT NULL,
-  `nombrecorto` varchar(150) DEFAULT NULL,
-  `Descripcion` varchar(150) DEFAULT NULL,
-  `imagen` varchar(45) DEFAULT NULL,
-  `idtema` int(11) NOT NULL,
-  `esvisible` tinyint(1) NOT NULL DEFAULT 0,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `subtemas`
---
-
-INSERT INTO `subtemas` (`id`, `nombre`, `nombrecorto`, `Descripcion`, `imagen`, `idtema`, `esvisible`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(2, 'Artículos', 'Articulos', NULL, '/images/articulos.svg', 2, 0, NULL, NULL, NULL),
-(3, 'Demostrativo', 'Demostrativo', NULL, '/images/demostrativo.svg', 2, 0, NULL, NULL, NULL),
-(4, 'Posesivo', 'Posesivo', NULL, '/images/posesivo.svg', 2, 0, NULL, NULL, NULL),
-(5, 'Numerales', 'Numerales', NULL, '/images/numerales.svg', 2, 0, NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `temas`
---
-
-CREATE TABLE `temas` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(150) DEFAULT NULL,
-  `nombrecorto` varchar(150) DEFAULT NULL,
-  `Descripcion` varchar(150) DEFAULT NULL,
-  `esvisible` tinyint(1) NOT NULL DEFAULT 0,
-  `imagen` varchar(45) DEFAULT NULL,
-  `idmodulo` int(11) NOT NULL,
-  `idteoria` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `temas`
---
-
-INSERT INTO `temas` (`id`, `nombre`, `nombrecorto`, `Descripcion`, `esvisible`, `imagen`, `idmodulo`, `idteoria`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(2, 'Determinantes', 'Determinantes', NULL, 0, '/images/Adjetivos.svg', 1, 1, NULL, NULL, NULL),
-(3, 'Preposiciones', 'Preposiciones', NULL, 0, '/images/Preposiciones.svg', 1, 2, NULL, NULL, NULL),
-(4, 'Adjetivos', 'Adjetivos', NULL, 0, '/images/conectores.svg', 1, 3, NULL, NULL, NULL),
-(5, 'Conjunciones', 'Conjunciones', NULL, 0, '/images/conectores.svg', 1, 4, NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `teoria`
---
-
-CREATE TABLE `teoria` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `teoria`(
+   `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `titulo` varchar(150) DEFAULT NULL,
   `imagen` varchar(45) DEFAULT NULL,
   `introduccion` varchar(250) DEFAULT NULL,
   `pregunta` varchar(250) DEFAULT NULL,
   `respuestapregunta` varchar(500) DEFAULT NULL,
-  `ejemplos` varchar(150) DEFAULT NULL,
+  `ejemplos` varchar(250) DEFAULT NULL,
   `imgejemplo` varchar(150) DEFAULT NULL,
   `urlvideo` varchar(150) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `teoria`
---
+  
+)
+-- -----------------------------------------------------
+-- Table `miexpresioncuenta`.`subtemas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `subtemas` (
+  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `nombre` VARCHAR(150) NULL,
+  `nombrecorto` VARCHAR(150) NULL,
+  `Descripcion` VARCHAR(150) NULL,
+  `imagen` VARCHAR(45) NULL,
+  `idtema` INT NOT NULL,
+  `idteoria` int NOT NULL,
+  `esvisible` BOOLEAN NOT NULL DEFAULT FALSE,
+  
+  
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL,
+  
+  constraint idtemas
+  foreign key (idtema)
+  references Temas(id)
 
-INSERT INTO `teoria` (`id`, `titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES
-(1, 'Los determinantes', NULL, 'En este módulo aprenderás sobre los Determinantes, su clasificación y uso en la expresión escrita.', '¿Qué son los determinantes?', 'Los determinantes son palabras que van delante del nombre o sustantivos y sirven para delimitar\r\nel significado general de dicho nombre. Los determinantes concuerdan siempre en género y\r\nnúmero con los sustantivos que acompañan.', NULL, NULL, 'https://www.youtube.com/embed/zeYS3xsyRGI'),
-(2, 'Las preposiciones', NULL, 'En este módulo aprenderás sobre las Preposiciones, su clasificación y uso en la expresión escrita.', '¿Qué son las Preposiciones?', 'Las preposiciones son partes invariables de la oración (no tienen género ni número) que tienen la\r\nfunción de relacionar palabras (nombre, pronombre, adjetivo, verbo o adverbio) con su\r\ncomplemento. Pero su presencia es indispensable para el sentido de la oración.', 'Botella de cristal; mesa de madera; café con leche; lejos de aquí; loco de atar; voy hacia\r\nParís.', NULL, 'https://www.youtube.com/embed/1bGOgY1CmiU'),
-(3, 'Los Adjetivos', NULL, 'En este módulo aprenderás sobre los Adjetivos, su clasificación y uso en la expresión escrita.', '¿Qué son los Adjetivos?', 'El adjetivo constituye una categoría de palabras que se define a partir de diferentes criterios:  <br>Desde el punto de vista morfológico, se caracteriza por prestar flexión de género y\r\nnúmero: alta, altas, alto, altos. En este sentido, los adjetivos son palabras variables.\r\n Desde el punto de vista sintáctico, el adjetivo es el núcleo de los grupos adjetivales, que\r\nfuncionan como modificadores del sustantivo (Una casa más linda, La opera Real),', 'Estudio interesante\r\nDeportista ejemplar', NULL, 'https://www.youtube.com/embed/1bGOgY1CmiU'),
-(4, 'Las Conjunciones', NULL, 'En este módulo aprenderás sobre las Conjunciones, su clasificación y uso en la expresión escrita.', '¿Que son las Conjunciones?', 'Las conjunciones constituyen una clase de palabras invariables y generalmente átonas, cuya\r\nfunción es establecer relaciones entre las palabras, grupos sintácticos u oraciones.\r\nClases de conjunciones:\r\nLas conjunciones se dividen en dos grandes grupos, según el tipo de conexión que se establece\r\nentre los segmentos que relacionan, estas son conjunciones coordinantes y conjunciones\r\nsubordinantes.', NULL, NULL, 'https://www.youtube.com/embed/1bGOgY1CmiU');
+  CONSTRAINT  idteoriasubtema
+  FOREIGN KEY (idteoria)
+   REFERENCES teoria(id)
+  
+  on delete cascade
+  on update cascade
+)
+ENGINE = InnoDB;
 
--- --------------------------------------------------------
+-- -----------------------------------------------------
+-- Table `Actividades`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `actividades` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+  `nombre` VARCHAR(191) NOT NULL,
+  `nombrecorto` VARCHAR(150) NULL,
+  `descrpcion` VARCHAR(191) NOT NULL,
+  `idsubtema` INT NOT NULL,
+  
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL,
+  
+  constraint idsubtema
+  foreign key (idsubtema)
+  references subtemas(id)
+  
+  on delete cascade
+  on update cascade
+  
+)
+ENGINE = InnoDB;
 
---
--- Estructura de tabla para la tabla `users`
---
+-- -----------------------------------------------------
+-- Table `preguntas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `preguntas` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nombre_pregunta` VARCHAR(191) NOT NULL,
+  `url_imagen` VARCHAR(191) NOT NULL,
+  `nombre_imagen` VARCHAR(191) NOT NULL,
+  `id_actividad` INT NOT NULL,
+  
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL,
+  
+  constraint id_actividad
+  foreign key (id_actividad)
+  references actividades(id)
+  
+  on delete cascade
+  on update cascade
+  )
+ENGINE = InnoDB;
 
-CREATE TABLE `users` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Volcado de datos para la tabla `users`
---
+-- -----------------------------------------------------
+-- Table `opciones`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `opciones` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nombre` LONGTEXT NOT NULL,
+  `puntos` INT(11) NULL DEFAULT NULL,
+   `id_pregunta` INT NOT NULL,
+   
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL,
+  
+  constraint id_pregunta
+  foreign key (id_pregunta)
+  references preguntas(id)
+  
+  on delete cascade
+  on update cascade
+)
+ENGINE = InnoDB;
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Byron Clemente Mejia Carrion', 'carrionmejia756@gmail.com', '$2y$10$g.gt4A4j/bjODcP7axnVgOHFtikVTTyySi8G0q1IJsoFBvJy1chjC', NULL, '2020-07-30 14:17:08', '2020-07-30 14:17:08');
+-- -----------------------------------------------------
+-- Table `resultados`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `resultados` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `puntos_totales` INT(11) NULL DEFAULT NULL,
+  `user_id` INT(10) UNSIGNED NOT NULL,
+  
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL
+  
+  
+)
+ENGINE = InnoDB;
 
---
--- Índices para tablas volcadas
---
+-- -----------------------------------------------------
+-- Table `resultado_de_preguntas`
+-- -----------------------------------------------------
+ CREATE TABLE IF NOT EXISTS `resultado_de_preguntas` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id_resultado` INT  NOT NULL,
+  `id_preguntas` INT NOT NULL,
+  `id_opciones` INT  NOT NULL,
+  `puntos` INT(11) NOT NULL DEFAULT '0',
+  
+  constraint id_resultado
+  foreign key (id_resultado)
+  references resultados(id)
+  
+  on delete cascade
+  on update cascade,
+ 
+  constraint id_opciones
+  foreign key (id_opciones)
+  references opciones(id)
+  
+  on delete cascade
+  on update cascade,
+   
+  constraint id_preguntas
+  foreign key (id_preguntas)
+  references preguntas(id)
+  
+  on delete cascade
+  on update cascade
+  
+  
+ )
+ENGINE = InnoDB;
 
---
--- Indices de la tabla `actividades`
---
-ALTER TABLE `actividades`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idsubtema` (`idsubtema`);
+-- -----------------------------------------------------
+-- Table `password_resets`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `password_resets` (
+  `email` VARCHAR(191) NOT NULL,
+  `token` VARCHAR(191) NOT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  INDEX `password_resets_email_index` (`email` ASC))
+ENGINE = InnoDB;
 
---
--- Indices de la tabla `homes`
---
-ALTER TABLE `homes`
-  ADD PRIMARY KEY (`id`);
 
---
--- Indices de la tabla `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
+-- -----------------------------------------------------
+-- INSERT Table `modulos`
+-- -----------------------------------------------------
 
---
--- Indices de la tabla `modulos`
---
-ALTER TABLE `modulos`
-  ADD PRIMARY KEY (`id`);
+INSERT INTO `miexpresioncuenta`.`modulos` (`nombre`, `nombrecorto`) VALUES ('Módulo I:Mi expresión básica', 'modulo1_mi_expresion_basica');
 
---
--- Indices de la tabla `opciones`
---
-ALTER TABLE `opciones`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_pregunta` (`id_pregunta`);
+-- -----------------------------------------------------
+-- INSERT Table `temas`
+-- -----------------------------------------------------
 
---
--- Indices de la tabla `password_resets`
---
-ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`);
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Determinantes', 'Determinantes', '1', '1');
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Preposiciones', 'Preposiciones', '1', '2');
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Adjetivos', 'Adjetivos', '1','3');
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Conjunciones', 'Conjunciones', '1', '4');
 
---
--- Indices de la tabla `preguntas`
---
-ALTER TABLE `preguntas`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_actividad` (`id_actividad`);
+UPDATE `miexpresioncuenta`.`temas` SET `imagen` = '/images/determinantes.svg' WHERE (`id` = '1');
+UPDATE `miexpresioncuenta`.`temas` SET `imagen` = '/images/Adjetivos.svg' WHERE (`id` = '2');
+UPDATE `miexpresioncuenta`.`temas` SET `imagen` = '/images/Preposiciones.svg' WHERE (`id` = '3');
+UPDATE `miexpresioncuenta`.`temas` SET `imagen` = '/images/conectores.svg' WHERE (`id` = '4');
+UPDATE `miexpresioncuenta`.`temas` SET `imagen` = '/images/conectores.svg' WHERE (`id` = '5');
 
---
--- Indices de la tabla `resultados`
---
-ALTER TABLE `resultados`
-  ADD PRIMARY KEY (`id`);
+-- -----------------------------------------------------
+-- INSERT Table `subtemas`
+-- -----------------------------------------------------
 
---
--- Indices de la tabla `resultado_de_preguntas`
---
-ALTER TABLE `resultado_de_preguntas`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_resultado` (`id_resultado`),
-  ADD KEY `id_opciones` (`id_opciones`),
-  ADD KEY `id_preguntas` (`id_preguntas`);
+INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Artículos', 'Articulos', '/images/articulos.svg', '1', '5');
+INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Demostrativo', 'Demostrativo', '/images/demostrativo.svg', '1' ,'6');
+INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Posesivo', 'Posesivo', '/images/posesivo.svg', '1', '7');
+INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Numerales', 'Numerales', '/images/numerales.svg', '1', '8');
 
---
--- Indices de la tabla `subtemas`
---
-ALTER TABLE `subtemas`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idtemas` (`idtema`);
+-- -----------------------------------------------------
+-- INSERT Table `Actividades`
+-- -----------------------------------------------------
+INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Artículos', 'ActividadArticulos', 'actividades del subtema de articulo', '1');
+INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `idsubtema`) VALUES ('Actividades Demostrativos', 'ActividadDemostrativo', '2');
+-- -----------------------------------------------------
+-- INSERT Table `Preguntas`
+-- -----------------------------------------------------
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `id_actividad`) VALUES ('Seleccione el artículo que corresponde a la imagen.', '1');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `id_actividad`) VALUES ('Seleccione el demostrativo que corresponde a la imagen.', '2');
 
---
--- Indices de la tabla `temas`
---
-ALTER TABLE `temas`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idmodulo` (`idmodulo`),
-  ADD KEY `idteoria` (`idteoria`);
+-- -----------------------------------------------------
+-- INSERT Table `Opciones respuesta de cada preguntas`
+-- -----------------------------------------------------
 
---
--- Indices de la tabla `teoria`
---
-ALTER TABLE `teoria`
-  ADD PRIMARY KEY (`id`);
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('La', '10', '1');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Los', '0', '1');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('El', '0', '1');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Las', '0', '1');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Un', '0', '1');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Unos', '0', '1');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Unas', '0', '1');
 
---
--- Indices de la tabla `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Esta', '10', '2');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Aquella', '0', '2');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ese', '0', '2');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Aquel', '0', '2');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Este', '0', '2');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Esa', '0', '2');
 
---
--- AUTO_INCREMENT de las tablas volcadas
---
+-- -----------------------------------------------------
+-- INSERT Table `Opciones respuesta de cada preguntas`
+-- -----------------------------------------------------
 
---
--- AUTO_INCREMENT de la tabla `actividades`
---
-ALTER TABLE `actividades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
---
--- AUTO_INCREMENT de la tabla `homes`
---
-ALTER TABLE `homes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de la tabla `modulos`
---
-ALTER TABLE `modulos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de la tabla `opciones`
---
-ALTER TABLE `opciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
---
--- AUTO_INCREMENT de la tabla `preguntas`
---
-ALTER TABLE `preguntas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `resultados`
---
-ALTER TABLE `resultados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `resultado_de_preguntas`
---
-ALTER TABLE `resultado_de_preguntas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `subtemas`
---
-ALTER TABLE `subtemas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de la tabla `temas`
---
-ALTER TABLE `temas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT de la tabla `teoria`
---
-ALTER TABLE `teoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de la tabla `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `actividades`
---
-ALTER TABLE `actividades`
-  ADD CONSTRAINT `idsubtema` FOREIGN KEY (`idsubtema`) REFERENCES `subtemas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `opciones`
---
-ALTER TABLE `opciones`
-  ADD CONSTRAINT `id_pregunta` FOREIGN KEY (`id_pregunta`) REFERENCES `preguntas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `preguntas`
---
-ALTER TABLE `preguntas`
-  ADD CONSTRAINT `id_actividad` FOREIGN KEY (`id_actividad`) REFERENCES `actividades` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `resultado_de_preguntas`
---
-ALTER TABLE `resultado_de_preguntas`
-  ADD CONSTRAINT `id_opciones` FOREIGN KEY (`id_opciones`) REFERENCES `opciones` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `id_preguntas` FOREIGN KEY (`id_preguntas`) REFERENCES `preguntas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `id_resultado` FOREIGN KEY (`id_resultado`) REFERENCES `resultados` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `subtemas`
---
-ALTER TABLE `subtemas`
-  ADD CONSTRAINT `idtemas` FOREIGN KEY (`idtema`) REFERENCES `temas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `temas`
---
-ALTER TABLE `temas`
-  ADD CONSTRAINT `idmodulo` FOREIGN KEY (`idmodulo`) REFERENCES `modulos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `idteoria` FOREIGN KEY (`idteoria`) REFERENCES `teoria` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO `teoria` (`id`, `titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  (1, 'Los determinantes', NULL, 'En este módulo aprenderás sobre los Determinantes, su clasificación y uso en la expresión escrita.', '¿Qué son los determinantes?', 'Los determinantes son palabras que van delante del nombre o sustantivos y sirven para delimitar\r\nel significado general de dicho nombre. Los determinantes concuerdan siempre en género y\r\nnúmero con los sustantivos que acompañan.', NULL, NULL, 'https://www.youtube.com/embed/zeYS3xsyRGI');
+INSERT INTO `teoria` (`id`, `titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  (2, 'Las preposiciones', NULL, 'En este módulo aprenderás sobre las Preposiciones, su clasificación y uso en la expresión escrita.', '¿Qué son las Preposiciones?', 'Las preposiciones son partes invariables de la oración (no tienen género ni número) que tienen la\r\nfunción de relacionar palabras (nombre, pronombre, adjetivo, verbo o adverbio) con su\r\ncomplemento. Pero su presencia es indispensable para el sentido de la oración.', 'Botella de cristal; mesa de madera; café con leche; lejos de aquí; loco de atar; voy hacia\r\nParís.', NULL, 'https://www.youtube.com/embed/1bGOgY1CmiU');
+INSERT INTO `teoria` (`id`, `titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  (3, 'Los Adjetivos', NULL, 'En este módulo aprenderás sobre los Adjetivos, su clasificación y uso en la expresión escrita.', '¿Qué son los Adjetivos?', 'El adjetivo constituye una categoría de palabras que se define a partir de diferentes criterios:  <br>Desde el punto de vista morfológico, se caracteriza por prestar flexión de género y\r\nnúmero: alta, altas, alto, altos. En este sentido, los adjetivos son palabras variables.\r\n Desde el punto de vista sintáctico, el adjetivo es el núcleo de los grupos adjetivales, que\r\nfuncionan como modificadores del sustantivo (Una casa más linda, La opera Real),', 'Estudio interesante\r\nDeportista ejemplar', NULL, 'https://www.youtube.com/embed/1bGOgY1CmiU');
+INSERT INTO `teoria` (`id`, `titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  (4, 'Las Conjunciones', NULL, 'En este módulo aprenderás sobre las Conjunciones, su clasificación y uso en la expresión escrita.', '¿Que son las Conjunciones?', 'Las conjunciones constituyen una clase de palabras invariables y generalmente átonas, cuya\r\nfunción es establecer relaciones entre las palabras, grupos sintácticos u oraciones.\r\nClases de conjunciones:\r\nLas conjunciones se dividen en dos grandes grupos, según el tipo de conexión que se establece\r\nentre los segmentos que relacionan, estas son conjunciones coordinantes y conjunciones\r\nsubordinantes.', NULL, NULL, 'https://www.youtube.com/embed/1bGOgY1CmiU');
+INSERT INTO `teoria` (`id`, `titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  (5, 'Los Articulos', NULL, 'En este tema aprenderas sobre los Articulos, su clasificación y uso en la expresión escrita.', '¿Que son las Articulos?', 'Los artículos son determinantes que acompañan al nombre para indicarnos si se trata de un ser conocido o desconocido. Pueden ser de dos tipos: ', 'Artículo determinado (conocido): el, la, lo, los, las. \r\nArtículo indeterminado (desconocido): un, uno, una, unos, unas.  \r\n', NULL, NULL);
+INSERT INTO `teoria` (`id`, `titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  (6, 'Los Demostrativos', NULL, 'En este tema aprenderas sobre los Demostrativos, su clasificación y uso en la expresión escrita.', '¿Que son las Demostrativos?', 'Los demostrativos son determinantes que acompañan al nombre para indicarnos la proximidad o lejanía de un objeto. ', 'Esta niña: Nos indica que la niña está cerca de nosotros. \r\nEsa niña: nos indica que la niña está a una distancia media. \r\nAquella niña: nos indica que la niña está lejos de nosotros.\r\n', NULL, NULL);
+INSERT INTO `teoria` (`id`, `titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  (7, 'Los Posesivos', NULL, 'En este tema aprenderas sobre los Posesivos, su clasificación y uso en la expresión escrita.', '¿Que son las Posesivos?', 'Los posesivos son determinantes que acompañan al nombre para indicarnos a quién pertenece el objeto al que nos referimos, es decir, quién lo posee. \r\n', 'De un solo poseedor: el objeto o los objetos pertenecen a una sola persona.\r\n Ejemplo: Mi ordenador. \r\nDe varios poseedores: el objeto o los objetos pertenecen a varios personajes.\r\nEjemplo: Nuestro ordenador.\r\n', NULL, NULL);
+INSERT INTO `teoria` (`id`, `titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  (8, 'Los Numerales', NULL, 'En este tema aprenderas sobre los Numerales, su clasificación y uso en la expresión escrita.', '¿Que son las Numerales?', 'Son determinantes que acompañan al nombre para indicarnos cantidad u orden. Pueden ser de dos tipos', 'Cardinales: expresan una cantidad. \r\nEjemplo: Tengo dos cascos (¿Cuántos cascos tienes?)\r\nOrdinales: indican el lugar que ocupa un objeto.\r\nEjemplo: Llegó en octava posición (¿En qué lugar llegó?)\r\n', NULL, NULL);
