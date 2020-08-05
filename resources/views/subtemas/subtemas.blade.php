@@ -3,7 +3,6 @@
 @section('content')
 @include('HeaderActivity')
 
-
 @foreach($temas as $tema)
 <section class="container-menu">
     <h1 class="title">Subtema {{$tema->nombre}}</h1>
@@ -12,7 +11,7 @@
         <div class="container-item" style="background-image: url('{{$subtema->imagen}}'">
             <p class="title-item">{{$subtema->nombre}}</p>
             <div class="mimi-modal">
-                <a href="/ActividadesAprender" class="container-aprender">
+                <a href="/ActividadesAprender/{{$subtema->nombre}}/{{$subtema->idteoria}}" class="container-aprender">
                     <img class="icon-aprender" src="/images/icon_aprender.svg" alt="Aprender">
                     <p>Aprender</p>
                 </a>
@@ -23,6 +22,7 @@
             </div>
         </div>
     @endforeach
+
     </div>
 </section>
 @endforeach

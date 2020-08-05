@@ -1,17 +1,15 @@
 @extends('layouts.app')
-@include('HeaderActivity')
 @section('content')
+@include('HeaderActivity')
 
-<section class="container-activity">
+
 @foreach ($teoria as $app)
+<section class="container-activity">
     <div class="activity">
         <h1 class="title aprender">Introducción</h1>
         <p class="parrafos">{{ $app->introduccion}} </p>
         <img class="baner-aprender" src="/images/determinantes.svg" alt="images determinantes">
-        <h2 class="title aprender">{{ $app->titulo}}</h2>
-        <p class="parrafos">{{ $app->introduccion}}
-            <br>
-        </p>
+        <h2 class="title aprender">{{ $app->titulo}}</h2>    
         <h3 class="title aprender">{{ $app->nombrecorto}} </h3>
         <h3 class="title aprender">{{ $app->pregunta}}</h3>
         <p class="parrafos">{{ $app->respuestapregunta}}</p>
