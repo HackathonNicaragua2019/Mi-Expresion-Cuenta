@@ -11,7 +11,12 @@ btn_siguiente.addEventListener('click', function ( e ){
     fila.scrollLeft += fila.offsetWidth;
     modal_correcto.style.animationDelay = "1s"
     modal_correcto.style.animation = 'animationOut 1s forwards';
-  if (fila.offsetWidth === fila.scrollLeft) {
+  if ( fila.scrollLeft === 5088) {
+        
+        btn_guardar.classList.add('active');
+
+    }
+    if ( fila.scrollLeft === 4240) {
         
         btn_guardar.classList.add('active');
 
