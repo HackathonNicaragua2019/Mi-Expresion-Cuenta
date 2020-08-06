@@ -2,7 +2,8 @@
 @section('content')
 @include('HeaderActivity')
 <section class="container-activity">
-    <form class="activity" >
+    <form class="activity" method="POST" action="{{ route('actividades.store') }}">
+        
         <div class="activity_pregunta_scroll_container">
             <div class="activity_pregunta_scroll">
         @foreach($actvidades as $actividad)
@@ -17,7 +18,7 @@
                         <img class="icon_seleccione" src="/images/icon_flecha_lista.svg"/>
                     </div>
                     @foreach($pregunta->PreguntasOpciones as $opcion)
-                            <input name='preguntas[{{ $pregunta->id }}]' type="radio" id="opcion-{{$opcion->id}}" value="{{ $opcion->puntos }}">
+                            <input name='preguntas[{{ $pregunta->id }}]' type="radio" id="opcion-{{$opcion->id}}" value="{{ $opcion->puntos }}" required onClick=validarRespuestaCorrecta('opcion-{{$opcion->id}}')>
                             <label for="opcion-{{$opcion->id}}" class="opcion">{{ $opcion->nombre }}</label>
                     @endforeach
                 </div>
@@ -32,13 +33,16 @@
         </div>
         </div>
         <div class="container-validacion">
-                <button class="btn active comprobar">
+                <button class="btn active comprobar" id="btn_comprobar">
                     Comprobar
                 </button>
-                    <button id="btn_sigiente" class="btn btn-green siguiente">
-                        Siguiente
-                    </button>
+                <button  type="submit" class="btn btn-green guardar" id="btn_guardar">
+                    Guardar actividad
+                </button>
+                
         </div>
     </form>
+    @include('actividades.modalRespuestaCorrecta')
+    @include('actividades.modalRespuestaIncorrecta')
 </section>
 @endsection
