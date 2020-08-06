@@ -35,8 +35,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   foreign key (idusertype)
   references UserType(id)
   
-  on delete (cascade)
-  on update (cascade)
+  on delete cascade
+  on update cascade
+  )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
@@ -88,13 +89,14 @@ CREATE TABLE IF NOT EXISTS `temas` (
   )
 ENGINE = InnoDB;
 
-CREATE TABLE IF NO EXISTS `teoria`(
+CREATE TABLE IF NOT EXISTS `teoria`(
   `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `Descripcion` VARCHAR(150) NULL,
   `imagen` VARCHAR(45) null
 
   
 )
+ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `miexpresioncuenta`.`subtemas`
 -- -----------------------------------------------------
@@ -269,11 +271,7 @@ INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `i
 INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Adjetivos', 'Adjetivos', '1','1');
 INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Conjunciones', 'Conjunciones', '1', '1');
 INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`, `idteoria`) VALUES ('Adverbios', 'Adverbios', '1','1');
-INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`) VALUES ('Determinantes', 'Determinantes', '1');
-INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`) VALUES ('Preposiciones', 'Preposiciones', '1');
-INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`) VALUES ('Adjetivos', 'Adjetivos', '1');
-INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`) VALUES ('Conjunciones', 'Conjunciones', '1');
-INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `idmodulo`) VALUES ('Adverbios', 'Adverbios', '1');
+
 
 UPDATE `miexpresioncuenta`.`temas` SET `imagen` = '/images/determinantes.svg' WHERE (`id` = '1');
 UPDATE `miexpresioncuenta`.`temas` SET `imagen` = '/images/Adjetivos.svg' WHERE (`id` = '2');

@@ -2,8 +2,8 @@
 @section('content')
 @include('HeaderActivity')
 <section class="container-activity">
-    <form class="activity" method="POST" action="{{ route('actividades.store') }}">
-        
+    <form class="activity" method="POST" action="{{ route('actividad.store') }}">
+        {!! csrf_field() !!}
         <div class="activity_pregunta_scroll_container">
             <div class="activity_pregunta_scroll">
         @foreach($actvidades as $actividad)
@@ -18,7 +18,7 @@
                         <img class="icon_seleccione" src="/images/icon_flecha_lista.svg"/>
                     </div>
                     @foreach($pregunta->PreguntasOpciones as $opcion)
-                            <input name='preguntas[{{ $pregunta->id }}]' type="radio" id="opcion-{{$opcion->id}}" value="{{ $opcion->puntos }}" required onClick=validarRespuestaCorrecta('opcion-{{$opcion->id}}')>
+                            <input name='preguntas[{{ $pregunta->id }}]' type="radio" id="opcion-{{$opcion->id}}" value="{{ $opcion->puntos }}" required  onClick=validarRespuestaCorrecta('opcion-{{$opcion->id}}')>
                             <label for="opcion-{{$opcion->id}}" class="opcion">{{ $opcion->nombre }}</label>
                     @endforeach
                 </div>
