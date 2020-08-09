@@ -3,7 +3,7 @@
         <img class="logo-header" src="/images/icon_back.svg"/>
         <span class="atras">Atras</span>
     </a>
-    <a href="" class="icons-container">
+    <a href="" class="icons-container" style="display:none">
         <span class="pistas">Pistas</span>
         <img class="logo-header idea" src="/images/icon_idea.svg"/>
     </a>
