@@ -9,7 +9,6 @@
     @foreach($modulo->modulos as $tema)
         <div class="container-item" style="background-image: url('{{$tema->imagen}}'">
             <p class="title-item">{{$tema->nombre}}</p>
-            <span class="subtitle-item">4 clases</span>
             <div class="mimi-modal">
                 <a href="/ActividadesAprender{{$tema->idteoria}}" class="container-aprender">
                     <img class="icon-aprender" src="/images/icon_aprender.svg" alt="Aprender">
