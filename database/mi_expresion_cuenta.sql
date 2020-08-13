@@ -317,8 +317,8 @@ INSERT INTO `miexpresioncuenta`.`teoria` (`titulo`, `imagen`, `introduccion`, `p
 -- -----------------------------------------------------
 
 INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `esvisible`, `imagen`, `idmodulo`, `idteoria`) VALUES ('Determinantes', 'Determinantes', '1', '/images/determinantes.svg', '1', '1');
-INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `esvisible`, `imagen`, `idmodulo`, `idteoria`) VALUES ('Preposiciones', 'Preposiciones', '0', '/images/Adjetivos.svg', '1', '2');
-INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `esvisible`, `imagen`, `idmodulo`, `idteoria`) VALUES ('Adjetivos', 'Adjetivos', '0', '/images/Preposiciones.svg', '1', '3');
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `esvisible`, `imagen`, `idmodulo`, `idteoria`) VALUES ('Preposiciones', 'Preposiciones', '0', '/images/Preposiciones.svg', '1', '2');
+INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `esvisible`, `imagen`, `idmodulo`, `idteoria`) VALUES ('Adjetivos', 'Adjetivos', '0', '/images/Adjetivos.svg', '1', '3');
 INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `esvisible`, `imagen`, `idmodulo`, `idteoria`) VALUES ('Conjunciones', 'Conjunciones', '0', '/images/conectores.svg', '1', '4');
 INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `esvisible`, `imagen`, `idmodulo`, `idteoria`) VALUES ('Adverbios', 'Adverbios', '0', '/images/adverbios.svg', '1', '5');
 
@@ -335,7 +335,7 @@ INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `
 
 -- Preposiciones
 
-INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Preposiciones', 'Preposiciones', '/images/Adjetivos.svg', '2', '10');
+INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Preposiciones', 'Preposiciones', '/images/Preposiciones.svg', '2', '10');
 
 
 -- Adjetivos
