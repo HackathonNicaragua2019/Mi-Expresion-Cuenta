@@ -274,20 +274,43 @@ ENGINE = InnoDB;
 INSERT INTO `miexpresioncuenta`.`modulos` (`nombre`, `nombrecorto`) VALUES ('Módulo I:Mi expresión básica', 'modulo1_mi_expresion_basica');
 
 -- -----------------------------------------------------
--- INSERT Table `teoria`
+-- INSERT Table `teoria` - Modulos I
 -- -----------------------------------------------------
 
+-- Temas
 
 INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  ('Los determinantes', '/images/determinantes.svg', 'En este módulo aprenderás sobre los Determinantes, su clasificación y uso en la expresión escrita.', '¿Qué son los determinantes?', 'Los determinantes son palabras que van delante del nombre o sustantivos y sirven para delimitar\r\nel significado general de dicho nombre. Los determinantes concuerdan siempre en género y\r\nnúmero con los sustantivos que acompañan.', NULL, NULL, 'https://www.youtube.com/embed/zeYS3xsyRGI');
-INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  ('Los Adjetivos', '/images/Adjetivos.svg', 'En este módulo aprenderás sobre los Adjetivos, su clasificación y uso en la expresión escrita.', '¿Qué son los Adjetivos?', 'El adjetivo constituye una categoría de palabras que se define a partir de diferentes criterios:  <br>Desde el punto de vista morfológico, se caracteriza por prestar flexión de género y\r\nnúmero: alta, altas, alto, altos. En este sentido, los adjetivos son palabras variables.\r\n Desde el punto de vista sintáctico, el adjetivo es el núcleo de los grupos adjetivales, que\r\nfuncionan como modificadores del sustantivo (Una casa más linda, La opera Real),', 'Estudio interesante\r\nDeportista ejemplar', NULL, '');
-INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  ('Las preposiciones', '/images/Preposiciones.svg','En este módulo aprenderás sobre las Preposiciones, su clasificación y uso en la expresión escrita.', '¿Qué son las Preposiciones?', 'Las preposiciones son partes invariables de la oración (no tienen género ni número) que tienen la\r\nfunción de relacionar palabras (nombre, pronombre, adjetivo, verbo o adverbio) con su\r\ncomplemento. Pero su presencia es indispensable para el sentido de la oración.', 'Botella de cristal; mesa de madera; café con leche; lejos de aquí; loco de atar; voy hacia\r\nParís.', NULL, '');
+INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  ('Las Preposiciones', '/images/Preposiciones.svg', 'Las preposiciones son partes invariables de la oración (no tienen género ni número) que tienen la función de relacionar palabras (nombre, pronombre, adjetivo, verbo o adverbio) con sucomplemento. Pero su presencia es indispensable para el sentido de la oración.', '', 'Las preposiciones constituyen una clase cerrada de palabras, normalmente átonas y dotadas de valor relacional, que introducen un complemento que se denomina término con el que se forma un grupo sintáctico.', '', NULL, NULL);
+INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  ('Los Adjetivos', '/images/Adjetivos.svg', 'En este módulo aprenderás sobre los Adjetivos, su clasificación y uso en la expresión escrita.', '¿Qué son los Adjetivos?', 'El adjetivo constituye una categoría de palabras que se define a partir de diferentes criterios:  Desde el punto de vista morfológico, se caracteriza por prestar flexión de género y\r\nnúmero: alta, altas, alto, altos. En este sentido, los adjetivos son palabras variables.\r\n Desde el punto de vista sintáctico, el adjetivo es el núcleo de los grupos adjetivales, que\r\nfuncionan como modificadores del sustantivo (Una casa más linda, La opera Real),', 'Estudio interesante\r\nDeportista ejemplar', NULL, '');
 INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  ('Las Conjunciones', '/images/conectores.svg', 'En este módulo aprenderás sobre las Conjunciones, su clasificación y uso en la expresión escrita.', '¿Que son las Conjunciones?', 'Las conjunciones constituyen una clase de palabras invariables y generalmente átonas, cuya\r\nfunción es establecer relaciones entre las palabras, grupos sintácticos u oraciones.\r\nClases de conjunciones:\r\nLas conjunciones se dividen en dos grandes grupos, según el tipo de conexión que se establece\r\nentre los segmentos que relacionan, estas son conjunciones coordinantes y conjunciones\r\nsubordinantes.', NULL, NULL, '');
-INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  ('Los Adverbios', '/images/adverbios.svg', '','','', NULL, NULL, '');
-INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  ('Los Articulos', '/images/articulos.svg', 'En este tema aprenderas sobre los Articulos, su clasificación y uso en la expresión escrita.', '¿Que son las Articulos?', 'Los artículos son determinantes que acompañan al nombre para indicarnos si se trata de un ser conocido o desconocido. Pueden ser de dos tipos: ', 'Artículo determinado (conocido): el, la, lo, los, las. \r\nArtículo indeterminado (desconocido): un, uno, una, unos, unas.  \r\n', NULL, NULL);
+INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  ('Los Adverbios', '/images/adverbios.svg', '','¿Que son los adverbios?','Los adverbios son palabras invariables que complementan el significado de un verbo, un adjetivo u otro adverbio.', 'El gato duerme plácidamente en el sillón. (verbo + adverbio)', NULL, '');
+
+-- Subtemas Determinantes
+
+INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  ('Los Articulos', '/images/articulos.svg', 'En este tema aprenderas sobre los Articulos, su clasificación y uso en la expresión escrita.', '¿Que son las Articulos?', 'Los artículos son determinantes que acompañan al nombre para indicarnos si se trata de un ser conocido o desconocido. Pueden ser de dos tipos: ', 'Artículo determinado (conocido): el, la, lo, los, las. \r\nArtículo indeterminado (desconocido): un, uno, una, unos, unas.  \r\n', 'El gato duerme plácidamente en el sillón. (verbo + adverbio)', NULL);
 INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  ('Los Demostrativos', '/images/demostrativo.svg', 'En este tema aprenderas sobre los Demostrativos, su clasificación y uso en la expresión escrita.', '¿Que son las Demostrativos?', 'Los demostrativos son determinantes que acompañan al nombre para indicarnos la proximidad o lejanía de un objeto. ', 'Esta niña: Nos indica que la niña está cerca de nosotros. \r\nEsa niña: nos indica que la niña está a una distancia media. \r\nAquella niña: nos indica que la niña está lejos de nosotros.\r\n', NULL, NULL);
 INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  ('Los Posesivos', '/images/posesivo.svg', 'En este tema aprenderas sobre los Posesivos, su clasificación y uso en la expresión escrita.', '¿Que son las Posesivos?', 'Los posesivos son determinantes que acompañan al nombre para indicarnos a quién pertenece el objeto al que nos referimos, es decir, quién lo posee. \r\n', 'De un solo poseedor: el objeto o los objetos pertenecen a una sola persona.\r\n Ejemplo: Mi ordenador. \r\nDe varios poseedores: el objeto o los objetos pertenecen a varios personajes.\r\nEjemplo: Nuestro ordenador.\r\n', NULL, NULL);
 INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  ('Los Numerales', '/images/numerales.svg', 'En este tema aprenderas sobre los Numerales, su clasificación y uso en la expresión escrita.', '¿Que son las Numerales?', 'Son determinantes que acompañan al nombre para indicarnos cantidad u orden. Pueden ser de dos tipos', 'Cardinales: expresan una cantidad. \r\nEjemplo: Tengo dos cascos (¿Cuántos cascos tienes?)\r\nOrdinales: indican el lugar que ocupa un objeto.\r\nEjemplo: Llegó en octava posición (¿En qué lugar llegó?)\r\n', NULL, NULL);
 
+-- Subtemas Preposiciones
+INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`, `imgejemplo`, `urlvideo`) VALUES  ('Las Preposiciones', '/images/Preposiciones.svg', 'En la actualidad forman la clase de las preposiciones del español a, ante, bajo, cabe, con, contra, de, desde, durante, en, entre, hacía, hasta, mediante, para, por, según, sin, so, sobre, tras, versus y vía. ', '', 'El significado de las preposiciones es relacional, pues pone en contacto dos elementos: el elemento del que depende el grupo y el término de la preposición. En Lo pintó con Inés, la preposición con contribuye a indicar que el referente de su término Inés aporta la noción de “compañía” al proceso que representa pintó.', 'Cabe y so prácticamente no se usan en la lengua habitual.', NULL, NULL);
+
+-- Subtemas Adjetivos
+
+INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`) VALUES ('Los adjetivos calificativos', '/images/adjtivos_calificativos.svg', 'Los adjetivos calificativos denotan cualidades o propiedades que se agregan al significado del sustantivo.', 'Ejemplo:', 'Estudio interesante', 'Deportista ejemplar');
+INSERT INTO `teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`) VALUES ('Los adjetivos relacionales', '/images/adjetivos_relacionales.svg', 'Los adjetivos relacionales aportan rasgos que permiten clasificar personas o cosas.', 'Ejemplo:', 'Presidente honorario', 'Llamada telefónica');
+
+-- Subtemas Conjunciones
+
+INSERT INTO `miexpresioncuenta`.`teoria` (`titulo`, `imagen`, `introduccion`, `respuestapregunta`, `ejemplos`) VALUES ('Las conjunciones coordinantes', '/images/conjunciones_coordinantes.svg', 'Las conjunciones coordinantes unen elementos (palabras u oraciones) que están en el mismo nivel jerárquico, es decir, que realizan la misma función o pertenecen a la misma categoría gramatical.', 'Vinculan elementos sin establecer relaciones jerárquicas entre ellos.', 'Pueden ser copulativas, disyuntivas o adversativas.');
+INSERT INTO `miexpresioncuenta`.`teoria` (`titulo`, `imagen`, `introduccion`, `respuestapregunta`) VALUES ('Las conjunciones subordinantes', '/images/conjunciones_subordinantes.svg', 'Las conjunciones subordinantes establecen una relación entre dos proposiciones (oraciones) de distinta jerarquía. Una de ellas está subordinada a la otra, es decir, necesita de ella para tener significación plena, y además realiza una función sintáctica de la proposición principal.', 'Pueden ser de causa, consecuencia, condición y concesión.');
+
+-- Subtemas Adverbios
+
+INSERT INTO `miexpresioncuenta`.`teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`) VALUES ('Los adverbios de cantidad', '/images/adverbios_cantidad.svg', 'Expresan cantidad, grado o intensificación. Son, prototípicamente, los únicos adverbios que pueden modificar al adjetivo y a otro adverbio. Entre estos están: mas, menos, tanto (tan), nada, algo, mucho (muy), poco, todo, demasiado, cuan (to).', 'Ejemplo:', 'mas monedas', 'Pocos libros');
+INSERT INTO `miexpresioncuenta`.`teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`) VALUES ('Los adverbios de lugar', '/images/adverbios_lugar.svg', 'Expresan la ubicación, dirección, destino o término de un sustantivo. ', 'Entre estos están:', ' aquí, allí, acá, lejos, cerca, dentro, fuera, arriba, abajo, encima, debajo, delante, detrás. Este adverbio es fácil de reconocer ya que responde a la palabra dónde.', 'La silla está detrás de la pared.');
+INSERT INTO `miexpresioncuenta`.`teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`) VALUES ('Los adverbios de tiempo', '/images/adverbios_tiempo.svg', 'Expresan el tiempo que permanece la situación denotada por el predicado al que modifican. ', 'Entre estos están: ', ' antes, ahora, después, luego, ayer, hoy, mañana, siempre, nunca, jamás, temprano. Este adverbio es fácil de reconocer ya que responde a la palabra cuándo.', 'Ayer viaje');
+INSERT INTO `miexpresioncuenta`.`teoria` (`titulo`, `imagen`, `introduccion`, `pregunta`, `respuestapregunta`, `ejemplos`) VALUES ('Los adverbios de modo o manera', '/images/adverbios_modo_o_manera.svg', 'Expresa el modo en el que se realiza la acción del verbo. ', 'Entre estos están: ', 'así, bien, mal, mejor, peor. Este adverbio es fácil de reconocer ya que responde a la palabra cómo.', 'El niño comió enojado.');
 
 -- -----------------------------------------------------
 -- INSERT Table `temas`
@@ -303,10 +326,33 @@ INSERT INTO `miexpresioncuenta`.`temas` (`nombre`, `nombrecorto`, `esvisible`, `
 -- INSERT Table `subtemas`
 -- -----------------------------------------------------
 
+-- Determinantes
+
 INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Artículos', 'Articulos', '/images/articulos.svg', '1', '6');
 INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Demostrativo', 'Demostrativo', '/images/demostrativo.svg', '1' ,'7');
 INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Posesivo', 'Posesivo', '/images/posesivo.svg', '1', '8');
 INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Numerales', 'Numerales', '/images/numerales.svg', '1', '9');
+
+-- Preposiciones
+
+INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Preposiciones', 'Preposiciones', '/images/Adjetivos.svg', '2', '10');
+
+
+-- Adjetivos
+
+INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Calificativos', 'Calificativos', '/images/adjtivos_calificativos.svg', '3', '11');
+INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Relacionales', 'Relacionales', '/images/adjetivos_relacionales.svg', '3', '12');
+
+-- Conjunciones
+
+INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Coordinantes', 'Coordinantes', '/images/conjunciones_coordinantes.svg', '4', '13');
+INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Subordinantes', 'Subordinantes', '/images/conjunciones_subordinantes.svg', '4', '14');
+
+-- Adverbios
+INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Cantidad', 'Cantidad', '/images/adverbios_cantidad.svg', '5', '15');
+INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Lugar', 'Lugar', '/images/adverbios_lugar.svg', '5', '16');
+INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Tiempo', 'Tiempo', '/images/adverbios_tiempo.svg', '5', '17');
+INSERT INTO `miexpresioncuenta`.`subtemas` (`nombre`, `nombrecorto`, `imagen`, `idtema`, `idteoria`) VALUES ('Modo o manera', 'Modo_o_manera', '/images/adverbios_modo_o_manera.svg', '5', '18');
 
 -- -----------------------------------------------------
 -- INSERT Table `Actividades`
