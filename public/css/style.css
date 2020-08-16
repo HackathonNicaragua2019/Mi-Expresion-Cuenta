@@ -293,9 +293,20 @@ a {
 .icons-container .pistas {
   margin-right: 1em;
 }
+.fondo_azul {
+  background: #3e64ff;
+}
 .navbar {
   display: inline-flex;
   position: relative;
+}
+.navbar .invitado {
+  display: flex;
+}
+@media screen and (max-width: 426px) {
+  .navbar .invitado {
+    display: none;
+  }
 }
 .navbar .items {
   display: flex;
@@ -316,7 +327,7 @@ a {
   margin-left: 0.5em;
 }
 .navbar .items li {
-  margin-right: 1em;
+  margin: 0 auto;
 }
 .navbar .marginlogin {
   margin-right: 2.5em;
@@ -343,17 +354,12 @@ a {
     width: 10em;
   }
 }
+.navbar .subitems li {
+  padding: 0.5em;
+}
 .navbar .subitems li a {
   color: #3e64ff;
-}
-.navbar:hover .subitems {
-  display: block;
-  animation: animationIn 1s;
-}
-@media screen and (max-width: 426px) {
-  .navbar:hover .subitems {
-    display: none;
-  }
+  margin: 0 auto;
 }
 .navbar .subitems.active {
   display: block;
@@ -520,7 +526,7 @@ b:nth-child(3).active {
   height: 20em;
   border-radius: 30px;
   box-shadow: 0px 0px 9px 0px rgba(224,224,224,0.774);
-  margin-right: 0 auto;
+  margin: 0 auto;
   padding: 2em;
   transition: 0.5s;
   position: relative;
@@ -636,12 +642,16 @@ b:nth-child(3).active {
   .container-activity {
     display: block;
   }
-  .container-activity h1 {
+  .container-activity h1,
+  .container-activity h2,
+  .container-activity p {
     margin-top: 0;
   }
 }
 @media screen and (max-width: 425px) and (max-width: 425px) {
-  .container-activity h1 {
+  .container-activity h1,
+  .container-activity h2,
+  .container-activity p {
     font-size: 1.5em;
   }
 }
@@ -793,6 +803,9 @@ input:checked + .opcion {
 }
 .container-img-text {
   text-align: center;
+}
+.container-img-text p {
+  font-weight: bold;
 }
 .modal {
   height: 100%;
@@ -982,7 +995,8 @@ input:checked + .opcion {
 }
 .parrafos {
   font-size: 1.5em;
-  color: #7e7e7e;
+  color: #3c3c3c;
+  text-align: justify;
 }
 .parrafos li {
   color: #3e64ff;

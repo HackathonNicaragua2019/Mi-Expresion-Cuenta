@@ -3,6 +3,7 @@ const McBar1 = document.getElementById("McBar1");
 const McBar2 = document.getElementById("McBar2");
 const McBar3 = document.getElementById("McBar3");
 const subitems = document.querySelector(".subitems")
+const items = document.querySelector(".items")
 
 McButton.addEventListener('click', function() {
 
@@ -12,3 +13,9 @@ McButton.addEventListener('click', function() {
     McBar3.classList.toggle("active");
     subitems.classList.toggle("active")
   });
+
+items.addEventListener('click', function() {
+
+    subitems.classList.toggle("active")
+  });
+

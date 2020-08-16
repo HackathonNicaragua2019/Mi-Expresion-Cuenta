@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@include('Header')
 @section('content')
 <div class="background-login">
     

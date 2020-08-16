@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.actividades')
 @section('content')
 @include('HeaderActivity')
 <section class="container-activity">

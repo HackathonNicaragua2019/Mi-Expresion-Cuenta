@@ -14,13 +14,12 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-    @include('Header')
     <div id="app">
         @yield('content')
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
 
+    <script src="{{ asset('js/Actividades.js') }}"></script>
 </body>
 </html>

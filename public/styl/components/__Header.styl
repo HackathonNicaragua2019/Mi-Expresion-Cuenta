@@ -45,9 +45,15 @@
     & .pistas
         margin-right: 1em 
 
+.fondo_azul
+    background:colorBlue 
 .navbar
     display inline-flex
     position relative
+    & .invitado
+        display flex
+        @media screen and (max-width 426px)
+            display none
     & .items
         display: flex
         cursor pointer
@@ -62,7 +68,7 @@
             padding: .5em
             margin-left: .5em
         & li
-            margin-right: 1em
+            margin: 0 auto           
     & .marginlogin
          margin-right: 2.5em
 
@@ -84,17 +90,18 @@
         @media screen and (max-width 426px)
             left -8.5em
             width: 10em 
+        & li
+            padding: .5em
+            
         & li a
             color colorBlue
-    &:hover .subitems
-        display: block
-        animation animationIn 1s
-        @media screen and (max-width 426px)
-            display: none
-            
+            margin: 0 auto
+                        
     & .subitems.active
         display: block
         animation animationIn 1s
+
+    
         
         
 

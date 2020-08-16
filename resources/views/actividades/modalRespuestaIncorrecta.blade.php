@@ -4,7 +4,7 @@
             <img src="/images/icon_incorrecto.svg" alt="icono respuesta correcta" class="icon">
             <div class="containerBtn">
                 <button  class="btn btn-white red" id="btn_intentar">
-                            Internar nuevamente
+                            Intentar nuevamente
                 </button>
             </div>
         </div>          
