@@ -16,7 +16,9 @@
         <p class="title aprender">Ejemplo</p>
         <p class="parrafos">{{ $app->ejemplos}}</p>
         <br>
-        <iframe width="100%" height="auto" src="{{ $app->urlvideo}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="videoWrapper" style="--aspect-ratio: 3 / 4;">
+            <iframe src="{{ $app->urlvideo}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
     @endforeach
 </section>
