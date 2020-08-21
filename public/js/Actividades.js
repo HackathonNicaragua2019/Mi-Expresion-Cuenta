@@ -1,4 +1,5 @@
-const fila = document.querySelector('.activity_pregunta_scroll_container');
+const scroll = document.querySelector('.activity_pregunta_scroll_container');
+const contenedor = document.querySelector('.activity_pregunta_scroll');
 const btn_siguiente = document.getElementById('btn_siguiente');
 const modal_incorrecto = document.getElementById('modal_incorrecto');
 const modal_correcto = document.getElementById('modal_correcto');
@@ -8,20 +9,33 @@ const btn_guardar = document.querySelector('#btn_guardar');
 
 btn_siguiente.addEventListener('click', function ( e ){
   e.preventDefault();
-    fila.scrollLeft += fila.offsetWidth;
+    scroll.scrollLeft += scroll.offsetWidth;
     modal_correcto.style.animationDelay = "1s"
     modal_correcto.style.animation = 'animationOut 1s forwards';
-  if ( fila.scrollLeft === 5088) {
-        
-        btn_guardar.classList.add('active');
 
-    }
-    if ( fila.scrollLeft === 4240) {
-        
-        btn_guardar.classList.add('active');
+    esElFinal()
 
-    }
 });
+
+scroll.addEventListener('scroll', function(){
+
+   /* if (scroll.scrollLeft === (scroll.scrollWidth - contenedor.offsetWidth)) {
+        
+        btn_guardar.classList.add('active')
+        alert('listo para guadar')
+    }*/
+})
+
+function esElFinal(){
+    if (scroll.scrollLeft === (scroll.scrollWidth - contenedor.offsetWidth)) {
+        
+        btn_guardar.classList.add('active')
+        alert('listo para guadar')
+    }
+}
+
+
+
 
 
 function validarRespuestaCorrecta( idpregunta ){
@@ -45,6 +59,4 @@ btn_intentar.addEventListener('click',() =>{
     modal_incorrecto.style.animationDelay = "1s"
     modal_incorrecto.style.animation = 'animationOut 1s forwards';
 })
-
-
 

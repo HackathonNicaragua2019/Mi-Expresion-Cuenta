@@ -36,9 +36,9 @@
                 <button class="btn active comprobar" id="btn_comprobar">
                     Comprobar
                 </button>
-                <a href="/modulo1_mi_expresion_basica/tema1" type="submit" class="btn btn-green guardar" id="btn_guardar">
+                <button href="/modulo1_mi_expresion_basica/tema1" type="submit" class="btn btn-green guardar" id="btn_guardar">
                     Guardar actividad
-                </a>
+                </button>
                 
         </div>
     </form>
