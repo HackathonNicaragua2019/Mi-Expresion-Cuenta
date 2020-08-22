@@ -27,6 +27,7 @@
     position relative
     background-repeat: no-repeat
     background-position: center;
+    z-index 1
 
     @media screen and ( max-width 426px)
         margin: 0 auto
@@ -83,13 +84,16 @@
     left 0
     box-sizing: border-box
     
-.container-aprender, .container-practicar
+.container-aprender, .container-practicar, .btn-practicar, .btn-aprender
     display: flex
     align-items: center
     transition: 1s
-    &:hover
-        color:colorBlue
-        
+    &:hover 
+        color colorBlue
+.container-aprender:hover .content-pistas
+    display inline-flex
+.container-practicar:hover .content-pistas
+    display inline-flex
 
 .icon-aprender, .icon-practicar
     width: 30px

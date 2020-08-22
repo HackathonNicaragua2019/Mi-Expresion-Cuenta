@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @section('content')
-@include('HeaderActivity')
-
-
+<a href="{{ URL::previous() }}" class="icons-container">
+        <img class="logo-header" src="/images/icon_back.svg"/>
+        <span class="atras">Atras</span>
+</a>
 @foreach ($teoria as $app)
 <section class="container-activity">
     <div class="activity">

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@include('HeaderActivity')
 @foreach($modulos as $modulo)
 <section class="container-menu">
     <h1 class="title">{{$modulo->nombre}}</h1>

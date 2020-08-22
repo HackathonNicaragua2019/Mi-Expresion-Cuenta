@@ -18,4 +18,3 @@ items.addEventListener('click', function() {
 
     subitems.classList.toggle("active")
   });
-
