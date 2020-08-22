@@ -1,13 +1,16 @@
 .header
-    
     padding: .5em 1em
     border-radius: 7px;
     display: flex
     align-items: center
     justify-content: space-between
     color: white;
+    z-index: 6
     &.activity,&.white
         background: transparent
+    &.activity
+        position sticky
+        top 0  
     &.blue
         background: colorBlue
 .blue
@@ -31,7 +34,7 @@
         width 3em
     @media screen and (max-width 425px)
         height 2em
-    &.idea:hover
+    &.idea:hover, &.idea.active
         content:url("/images/icon_idea_hover.svg");
     &:hover 
         transform: scale(1.05)
@@ -40,10 +43,23 @@
     align-items: center
     color:colorBlue
     font-size: 1.2em
+    position relative
+    & .icons
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        background: white;
+        border-radius: 30px;
+        padding: 1em;
+        
     & .atras
         margin-left: 1em
     & .pistas
-        margin-right: 1em 
+        margin-right: 1em
+    &:hover .content-pistas
+        display: inline-flex
+        animation fadeInBottom 1s
+        
 
 .fondo_azul
     background:colorBlue 
@@ -87,6 +103,7 @@
         text-align: center
         margin 0 
         border: 3px solid colorBlue
+        z-index 7
         @media screen and (max-width 426px)
             left -8.5em
             width: 10em 
@@ -99,11 +116,35 @@
                         
     & .subitems.active
         display: block
-        animation animationIn 1s
+        animation fadeInBottom 1s
+.content-pistas
+    display: none;
+    position: fixed;
+    background: colorYellow;
+    color: colorBlack;
+    top: 10em;
+    right: 1em;
+    border-radius: 30px;
+    box-shadow: shadow
+    max-width: 15em;
+    padding: 2em;
+    z-index 6
+    align-items: center
+    box-sizing: border-box
+    &.active
+        display inline-flex
+        animation fadeInBottom 1s
+    & p
+        font-weight: bold
+        text-align: justify
+        & strong
+            color:colorBlue
+            font-weight: 800
 
-    
-        
-        
+.container-aprender:hover .content-pistas
+    display: inline-flex    
+    animation fadeInBottom 1s
+ 
 
         
 
