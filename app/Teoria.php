@@ -14,6 +14,7 @@ class Teoria extends Model
  
  protected $fillable =[
      'titulo',
+     
      'imagen',
      'introduccion',
      'pregunta',
