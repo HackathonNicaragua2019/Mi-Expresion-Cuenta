@@ -1,12 +1,26 @@
 @extends('layouts.actividades')
 @section('content')
-@include('HeaderActivity')
+<header class="header activity">
+    <a href="{{ URL::previous() }}" class="icons-container" @if (Request::is('home')) style="visibility :hidden " @endif>
+        <img class="logo-header" src="/images/icon_back.svg"/>
+        <span class="atras">Atras</span>
+    </a>
+    <div class="icons-container">
+        <div class="icons">
+            <span class="pistas">Pistas</span>
+            <img class="logo-header idea" src="/images/icon_idea.svg"/>
+        </div>
+        <div class="content-pistas">
+            <p id="texto-pistas-actividad"></p>
+        </div>
+    </div>
+</header>
 <section class="container-activity">
     <form class="activity" method="POST" action="">
-        
         <div class="activity_pregunta_scroll_container">
             <div class="activity_pregunta_scroll">
-        @foreach($actvidades as $actividad)
+        @foreach($actvidades as $actividad)</p>
+            <p id="ActividadPista" style="display:none">{{ $actividad->pista }}</p>
             @foreach($actividad->ActividadPreguntas as $pregunta)
             <div class="activity_pregunta">
             <h1 class="title">{{ $pregunta->nombre_pregunta }}</h1>

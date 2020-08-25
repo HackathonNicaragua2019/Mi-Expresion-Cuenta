@@ -30,7 +30,6 @@ function esElFinal(){
     if (scroll.scrollLeft === (scroll.scrollWidth - contenedor.offsetWidth)) {
         
         btn_guardar.classList.add('active')
-        alert('listo para guadar')
     }
 }
 
@@ -59,4 +58,7 @@ btn_intentar.addEventListener('click',() =>{
     modal_incorrecto.style.animationDelay = "1s"
     modal_incorrecto.style.animation = 'animationOut 1s forwards';
 })
+
+const ActividadPista = document.getElementById('ActividadPista').textContent;
+const textoPistas = document.getElementById('texto-pistas-actividad').innerHTML = ActividadPista;
 
