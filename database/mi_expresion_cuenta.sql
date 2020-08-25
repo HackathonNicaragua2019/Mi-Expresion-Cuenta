@@ -148,6 +148,7 @@ CREATE TABLE IF NOT EXISTS `actividades` (
   `nombrecorto` VARCHAR(150) NULL,
   `descrpcion` VARCHAR(191) NOT NULL,
   `idsubtema` INT NOT NULL,
+  `pista` varchar(191) NOT NULL,
   
   `created_at` TIMESTAMP NULL DEFAULT NULL,
   `updated_at` TIMESTAMP NULL DEFAULT NULL,
