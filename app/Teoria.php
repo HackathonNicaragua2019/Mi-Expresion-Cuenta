@@ -19,6 +19,11 @@ class Teoria extends Model
      'pregunta',
      'respuestapregunta',
      'imgejemplo',
+     'ejemplos2',
+     'ejemplos3',
+     'imgejemplo',
+     'imgejemplo2',
+     'imgejemplo3',
      'urlvideo'
 
  ];
@@ -35,3 +40,4 @@ class Teoria extends Model
 
 
 }
+
