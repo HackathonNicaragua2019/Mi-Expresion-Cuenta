@@ -14,11 +14,17 @@ class Teoria extends Model
  
  protected $fillable =[
      'titulo',
+     
      'imagen',
      'introduccion',
      'pregunta',
      'respuestapregunta',
      'imgejemplo',
+     'ejemplos2',
+     'ejemplos3',
+     'imgejemplo',
+     'imgejemplo2',
+     'imgejemplo3',
      'urlvideo'
 
  ];
@@ -35,3 +41,4 @@ class Teoria extends Model
 
 
 }
+

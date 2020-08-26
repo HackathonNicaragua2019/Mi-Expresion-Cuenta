@@ -15,7 +15,12 @@
         <h2 class="title aprender">{{ $app->pregunta}}</h2>
         <p class="parrafos">{{ $app->respuestapregunta}}</p>
         <p class="title aprender">Ejemplo</p>
+        <p class="parrafos">{{ $app->imgejemplo}}</p>
         <p class="parrafos">{{ $app->ejemplos}}</p>
+        <p class="parrafos">{{ $app->imgejemplo2}}</p>
+        <p class="parrafos">{{ $app->ejemplos2}}</p>
+        <p class="parrafos">{{ $app->imgejemplo3}}</p>
+        <p class="parrafos">{{ $app->ejemplos3}}</p>
         <br>
         <div class="videoWrapper" style="--aspect-ratio: 3 / 4;">
             <iframe src="{{ $app->urlvideo}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
