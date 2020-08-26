@@ -2,6 +2,12 @@
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
+<<<<<<< HEAD
+}
+.btn {
+  border-radius: 25px;
+  padding: 1em 1.5em;
+=======
   color: #3c3c3c;
 }
 ::-webkit-scrollbar {
@@ -26,11 +32,18 @@ a {
 .btn {
   border-radius: 25px;
   padding: 1.3em 1.5em;
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
   font-weight: 400;
   font-size: 16px;
   border: 0 none;
   color: #fff;
   width: 100%;
+<<<<<<< HEAD
+}
+.btn-blue {
+  background: #3e64ff;
+  transition: 0.5s all;
+=======
   outline: none;
   transition: 0.5s all;
   cursor: pointer;
@@ -43,6 +56,7 @@ a {
 }
 .btn-blue {
   background: #3e64ff;
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
 }
 .btn-white {
   background: #fff;
@@ -51,6 +65,16 @@ a {
 .btn-blue:hover {
   background: #2d4cc7;
   color: #fff;
+<<<<<<< HEAD
+  transform: scale(1.05);
+}
+.background-login {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: 'container-copy-login container-login';
+=======
   box-shadow: 0px 0px 9px 0px rgba(224,224,224,0.774);
 }
 .title {
@@ -404,6 +428,7 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: 'container-copy container-login';
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
   padding: 2em;
 }
 @media screen and (max-width: 426px) {
@@ -412,6 +437,13 @@ a {
     grid-template-areas: 'container-login';
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
+  }
+}
+.container-copy-login {
+  grid-area: container-copy-login;
+  background: url("/images/login.jpg");
+=======
     padding: 1em;
   }
 }
@@ -422,6 +454,7 @@ a {
 }
 .login,
 .register {
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
   background-origin: initial;
   background-position: center;
   background-repeat: no-repeat;
@@ -444,7 +477,11 @@ a {
   text-align: center;
   background-color: #fff;
   padding: 4em 2.5em;
+<<<<<<< HEAD
+  border-radius: 25px;
+=======
   border-radius: 30px;
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
   box-shadow: 0px 0px 29px 0px rgba(224,224,224,0.774);
   width: 60%;
   max-width: 28em;
@@ -464,16 +501,38 @@ a {
     padding: 3em 2em;
   }
 }
+<<<<<<< HEAD
+.title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 2em;
+}
+@media screen and (max-width: 376px) {
+  .title {
+    font-size: 1.8em;
+  }
+}
+.inputs {
+  outline: none;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1em 1.5em;
+=======
 .inputs {
   outline: none;
   border-radius: 30px;
   font-family: 'Montserrat', sans-serif;
   padding: 1.3em 1.5em;
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
   box-shadow: 0px 0px 9px 0px rgba(224,224,224,0.774);
   border: none;
   width: 100%;
   margin-bottom: 2em;
+<<<<<<< HEAD
+=======
   box-sizing: border-box;
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
 }
 .inputs:focus {
   border: 1px solid #3e64ff;
@@ -481,6 +540,77 @@ a {
 .btn.login {
   margin-top: 3em;
 }
+<<<<<<< HEAD
+.navbar-default {
+  background-color: color_azul;
+  border-radius: 25px;
+  margin: 0.4em;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar-default .navbar-toggle {
+  border-color: #fff;
+}
+.navbar-default .navbar-brand {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+}
+.logo-header {
+  width: 100px;
+  height: 30px;
+}
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-text {
+  color: #fff;
+}
+.navbar-brand img {
+  border-style: none;
+}
+.container-menu {
+  margin: 0.5em 0.8em;
+}
+.container-menu h1 {
+  text-align: center;
+}
+.container-menu .container-menu-one .container-item img {
+  border-style: none;
+}
+.container-menu-one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-menu-two {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 5em 0;
+}
+.container-menu-two .container-item {
+  margin-right: 0.5em;
+}
+.container-item {
+  width: 150px;
+  height: 100px;
+  border-radius: 25px;
+  box-shadow: -1px 9px 9px -1px #c2bac2;
+  background-color: transparent;
+}
+.icon-menu {
+  width: 150px;
+  height: 100px;
+}
+.subtitle-menu {
+  padding: 0.5em;
+  text-align: center;
+  font-weight: bolder;
+  margin-top: 1em 0;
+=======
 .header {
   padding: 0.5em 1em;
   border-radius: 7px;
@@ -1186,6 +1316,7 @@ input:checked + .opcion {
 }
 .parrafos li {
   color: #3e64ff;
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
 }
 iframe {
   border-radius: 30px;

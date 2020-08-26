@@ -28,17 +28,29 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
+<<<<<<< HEAD
+    App\Http\Kernel::class
+=======
     MiExpresionCuenta\Http\Kernel::class
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
+<<<<<<< HEAD
+    App\Console\Kernel::class
+=======
     MiExpresionCuenta\Console\Kernel::class
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
+<<<<<<< HEAD
+    App\Exceptions\Handler::class
+=======
     MiExpresionCuenta\Exceptions\Handler::class
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
 );
 
 /*

@@ -1,9 +1,16 @@
 <?php
 
+<<<<<<< HEAD
+namespace App\Http\Controllers\Auth;
+
+use App\User;
+use App\Http\Controllers\Controller;
+=======
 namespace MiExpresionCuenta\Http\Controllers\Auth;
 
 use MiExpresionCuenta\User;
 use MiExpresionCuenta\Http\Controllers\Controller;
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -58,7 +65,11 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
+<<<<<<< HEAD
+     * @return \App\User
+=======
      * @return \MiExpresionCuenta\User
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
      */
     protected function create(array $data)
     {

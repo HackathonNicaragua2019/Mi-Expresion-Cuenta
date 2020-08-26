@@ -12,7 +12,11 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+<<<<<<< HEAD
+$factory->define(App\User::class, function (Faker\Generator $faker) {
+=======
 $factory->define(MiExpresionCuenta\User::class, function (Faker\Generator $faker) {
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
     static $password;
 
     return [

@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
+namespace App\Http;
+=======
 namespace MiExpresionCuenta\Http;
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -16,7 +20,11 @@ class Kernel extends HttpKernel
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+<<<<<<< HEAD
+        \App\Http\Middleware\TrimStrings::class,
+=======
         \MiExpresionCuenta\Http\Middleware\TrimStrings::class,
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
     ];
 
@@ -27,12 +35,20 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
+<<<<<<< HEAD
+            \App\Http\Middleware\EncryptCookies::class,
+=======
             \MiExpresionCuenta\Http\Middleware\EncryptCookies::class,
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+<<<<<<< HEAD
+            \App\Http\Middleware\VerifyCsrfToken::class,
+=======
             \MiExpresionCuenta\Http\Middleware\VerifyCsrfToken::class,
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
@@ -54,7 +70,11 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
+<<<<<<< HEAD
+        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+=======
         'guest' => \MiExpresionCuenta\Http\Middleware\RedirectIfAuthenticated::class,
+>>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
 }

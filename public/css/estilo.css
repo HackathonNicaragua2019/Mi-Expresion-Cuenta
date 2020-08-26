@@ -1,0 +1,190 @@
+@import
+
+* {
+  box-sizing:border-box;
+}
+html,body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background:#ebebeb;
+}
+#header-dummie {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 90px;
+  background: #1b2a49;
+  box-shadow: inset 0px -3px 4px 0px rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header-dummie > p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  color: #ebebeb;
+}
+
+#test-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  position: absolute;
+  top: 200px;
+  left: 30px;
+  right:30px;
+}
+
+#loading-wrapper {
+  position:relative;
+  width:100vw;
+  height:100vh;
+  z-index:100;
+  background:#ebebeb;
+  overflow:hidden;
+}
+
+@keyframes expand-fill {
+  0%{border-width:10px;top:calc((100vh / 2) - 10px);left:calc((100vw / 2) - 10px);z-index:150;}
+  18.75%{border-width:60vw;top:calc((100vh / 2) - 60vw);left:calc((100vw / 2) - 60vw);z-index:150;}
+  49.9999%{border-width:60vw;top:calc((100vh / 2) - 60vw);left:calc((100vw / 2) - 60vw);z-index:150}
+  50%{border-width:60vw;top:calc((100vh / 2) - 60vw);left:calc((100vw / 2) - 60vw);z-index:100;}
+  100%{border-width:60vw;top:calc((100vh / 2) - 60vw);left:calc((100vw / 2) - 60vw);z-index:100;}
+}
+
+@keyframes move-before {
+  0%{left:calc((100vw / -2) + 25px);}
+  8.75%{left:calc((100vw / -2) + 25px);}
+  40%{left:20px;}
+  49.9999%{left:20px;}
+  50%{left:20px;}
+  100%{left:20px;}
+}
+
+@keyframes move-after {
+  0%{right:calc((100vw / -2) + 25px);}
+  8.75%{right:calc((100vw / -2) + 25px);}
+  40%{right:20px;}
+  49.9999%{right:20px;}
+  50%{right:20px;}
+  100%{right:20px;}
+}
+
+@keyframes orbit {
+  0%{transform:rotate(0);z-index:200;}
+  18.75%{transform:rotate(0);z-index:200;}
+  40%{transform:rotate(1600deg);z-index:200;}
+  49.9999%{transform:rotate(1600deg);z-index:200;}
+  50%{transform:rotate(1600deg);z-index:100;}
+  100%{transform:rotate(1600deg);z-index:100;}
+}
+
+@keyframes post-load {
+  0% {
+    margin-top:0;
+    height:100vh;
+    opacity:1;
+    box-shadow:0 -4px 5px 0 rgba(0,0,0,.75);
+  }
+  60% {
+    margin-top:90px;
+    height:calc(100vh-90px);
+    opacity:1;
+    box-shadow:0 -4px 5px 0 rgba(0,0,0,.75);
+  }
+  100% {
+    margin-top:90px;
+    height:calc(100vh-90px);
+    opacity:0;
+    box-shadow:0 -4px 5px 0 rgba(0,0,0,.75);
+  }
+}
+
+.loading-fill {
+  position:absolute;
+  top:calc((100vh / 2) - 10px);
+  left:calc((100vw / 2) - 10px);
+  height:0px;
+  width:0px;
+  border-width:10px;
+  border-style:solid;
+  border-radius:100%;
+}
+
+#loading-fill {
+  background:#1b2a49;
+  border-color:#1b2a49;
+  animation:expand-fill 8000ms infinite;
+}
+
+#loading-alt-fill {
+  background:#ebebeb;
+  border-color:#ebebeb;
+  animation:expand-fill 8000ms infinite 4000ms;
+}
+
+.loading-center {
+  width:50px;
+  height:50px;
+  border-radius: 100%;
+  position:absolute;
+  top:calc((100vh / 2) - 25px);
+  left:calc((100vw / 2) - 25px);
+}
+
+#loading-center {
+  z-index:200;
+  animation:orbit 8000ms ease-in infinite;
+}
+
+#loading-alt-center {
+  z-index:100;
+  animation:orbit 8000ms ease-in infinite 4000ms;
+}
+
+.loading-center::before, .loading-center::after {
+  content:"";
+  position:absolute;
+  display:inline-block;
+  height:10px;
+  width:10px;
+  border-radius:100%;
+  top: 20px;
+}
+
+#loading-center::before, #loading-center::after {
+  background:#ebebeb;
+}
+
+#loading-alt-center::before, #loading-alt-center::after {
+  background:#383838;
+}
+
+.loading-center::before {
+  left:calc((100vw / -2) + 25px);
+}
+
+#loading-center::before {
+  animation:move-before 8000ms ease-out infinite;
+}
+
+#loading-alt-center::before {
+  animation:move-before 8000ms ease-out infinite 4000ms;
+}
+
+.loading-center::after {
+  right:calc((100vw / -2) + 25px);
+}
+
+#loading-center::after {
+  animation:move-after 8000ms ease-out infinite;
+}
+
+#loading-alt-center::after {
+  animation:move-after 8000ms ease-out infinite 4000ms;
+}
+
+.post-load-wrapper {
+  animation:post-load 4s forwards;
+}
