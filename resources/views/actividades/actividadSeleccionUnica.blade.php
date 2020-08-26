@@ -6,12 +6,9 @@
         <span class="atras">Atras</span>
     </a>
     <div class="icons-container">
-        <div class="icons">
-            <span class="pistas">Pistas</span>
+        <div class="icons" id='pista_actividad'>
+            <span class="pistas" >Pistas</span>
             <img class="logo-header idea" src="/images/icon_idea.svg"/>
-        </div>
-        <div class="content-pistas">
-            <p id="texto-pistas-actividad"></p>
         </div>
     </div>
 </header>
@@ -21,6 +18,7 @@
             <div class="activity_pregunta_scroll">
         @foreach($actvidades as $actividad)</p>
             <p id="ActividadPista" style="display:none">{{ $actividad->pista }}</p>
+            <p id="imagen_pista" style="display:none">{{ $actividad->img_pista }}</p>
             @foreach($actividad->ActividadPreguntas as $pregunta)
             <div class="activity_pregunta">
             <h1 class="title">{{ $pregunta->nombre_pregunta }}</h1>
@@ -58,5 +56,6 @@
     </form>
     @include('actividades.modalRespuestaCorrecta')
     @include('actividades.modalRespuestaIncorrecta')
+    @include('actividades.modalPista')
 </section>
 @endsection

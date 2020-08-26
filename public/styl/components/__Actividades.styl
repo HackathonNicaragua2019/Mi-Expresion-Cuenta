@@ -53,6 +53,8 @@
     margin-bottom: 1em
     display grid
     grid-template-columns: .5fr 1fr
+    @media screen and (max-width: 426px)
+        grid-template-columns: 1fr
 .container-validacion
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -154,9 +156,11 @@ input:checked + .opcion
     box-sizing: border-box
     position absolute
     visibility: hidden
-    z-index: 5
+    z-index: 7
+    top 0
     &.active
         visibility: visible
+    
 .contaner_modal
     background: colorGreen
     padding: 2em
@@ -172,6 +176,10 @@ input:checked + .opcion
     & .icon
         width: 9.1em
         height auto
+        &.pista
+            width:100%
+            max-height: 20em
+            margin-bottom: .5em
     & .containerBtn
         text-align: right 
         & button
@@ -182,6 +190,13 @@ input:checked + .opcion
         
     &.red
         background: colorRed
+    &.pista
+        background: colorYellow
+        & .titulo
+            color:colorBlack
+            font-size: 1.5em            
+.coloryellow
+        color: colorYellow
 
 
 

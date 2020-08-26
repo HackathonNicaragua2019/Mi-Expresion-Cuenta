@@ -541,6 +541,7 @@ a {
   color: #3e64ff;
   font-size: 1.2em;
   position: relative;
+  cursor: pointer;
 }
 .icons-container .icons {
   display: flex;
@@ -1012,6 +1013,11 @@ b:nth-child(3).active {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
 }
+@media screen and (max-width: 426px) {
+  .container-respuestas {
+    grid-template-columns: 1fr;
+  }
+}
 .container-validacion {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1127,7 +1133,8 @@ input:checked + .opcion {
   box-sizing: border-box;
   position: absolute;
   visibility: hidden;
-  z-index: 5;
+  z-index: 7;
+  top: 0;
 }
 .modal.active {
   visibility: visible;
@@ -1150,6 +1157,11 @@ input:checked + .opcion {
   width: 9.1em;
   height: auto;
 }
+.contaner_modal .icon.pista {
+  width: 100%;
+  max-height: 20em;
+  margin-bottom: 0.5em;
+}
 .contaner_modal .containerBtn {
   text-align: right;
 }
@@ -1162,6 +1174,16 @@ input:checked + .opcion {
 }
 .contaner_modal.red {
   background: #ef4339;
+}
+.contaner_modal.pista {
+  background: #ffdc34;
+}
+.contaner_modal.pista .titulo {
+  color: #3c3c3c;
+  font-size: 1.5em;
+}
+.coloryellow {
+  color: #ffdc34;
 }
 .container-banner {
   overflow: hidden;

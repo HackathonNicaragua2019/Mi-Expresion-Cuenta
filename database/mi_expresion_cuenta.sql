@@ -149,6 +149,7 @@ CREATE TABLE IF NOT EXISTS `actividades` (
   `descrpcion` VARCHAR(191) NOT NULL,
   `idsubtema` INT NOT NULL,
   `pista` varchar(191) NOT NULL,
+  `img_pista` varchar(200) ,
   
   `created_at` TIMESTAMP NULL DEFAULT NULL,
   `updated_at` TIMESTAMP NULL DEFAULT NULL,

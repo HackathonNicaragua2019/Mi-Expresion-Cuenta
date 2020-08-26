@@ -6,6 +6,27 @@ const modal_correcto = document.getElementById('modal_correcto');
 const btn_intentar = document.getElementById('btn_intentar');
 const btn_guardar = document.querySelector('#btn_guardar');
 
+const modalPista = document.getElementById("modal_pista");
+const btn_pista_actividad = document.getElementById("pista_actividad");
+const btn_cerrar_pista = document.getElementById("btn_cerrar_pista");
+
+
+//mostrar modal de pista
+
+btn_pista_actividad.addEventListener('click', function() {
+ 
+    modalPista.classList.add('active');
+    modalPista.style.animation = 'animationIn 1s forwards';
+
+})
+
+btn_cerrar_pista.addEventListener('click', function() {
+ 
+    modalPista.style.animationDelay = "1s"
+    modalPista.style.animation = 'animationOut 1s forwards';
+
+})
+
 
 btn_siguiente.addEventListener('click', function ( e ){
   e.preventDefault();
@@ -60,5 +81,8 @@ btn_intentar.addEventListener('click',() =>{
 })
 
 const ActividadPista = document.getElementById('ActividadPista').textContent;
-const textoPistas = document.getElementById('texto-pistas-actividad').innerHTML = ActividadPista;
+const texto_modal_pista = document.getElementById('texto_modal_pista').innerHTML = ActividadPista;
+
+const imagen_pista = document.getElementById("imagen_pista").textContent;
+const img_pista_modal = document.getElementById("icon_pista").src = imagen_pista;
 
