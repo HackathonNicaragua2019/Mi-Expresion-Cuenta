@@ -3,17 +3,29 @@
     padding: 0 2em
     justify-content: center
     align-items: center
+    position relative
     & .activity
+        max-width max_width_actividades
         padding: 2em
         @media screen and (max-width 425px)
                 padding: .5em
     @media screen and (max-width 425px)
         display: block
                 
-        & h1
+        & h1, h2, p
             margin-top: 0
             @media screen and (max-width 425px)
                 font-size: 1.5em
+.activity_pregunta_scroll_container
+    overflow hidden 
+    scroll-behavior: smooth
+    width: 100%
+.activity_pregunta_scroll
+    display flex
+    flex-wrap: nowrap 
+.activity_pregunta
+    min-width: 100%
+    
 .enunciado
     font-size: 1.5em
     color: colorBlue
@@ -39,21 +51,144 @@
 
 .container-respuestas
     margin-bottom: 1em
+    display grid
+    grid-template-columns: .5fr 1fr
 .container-validacion
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-areas: 'comprobar . siguiente'
+    grid-template-areas: 'comprobar . guardar'
     column-gap: 5em;
     border-top: 1px solid color_GreyLight
     padding-top: 2em
     @media screen and (max-width 425px)
         grid-template-columns: repeat(1,1fr);
-        grid-template-areas: 'comprobar''siguiente';
+        grid-template-areas: 'comprobar''guardar';
         row-gap: 1em
 
 .comprobar
     grid-area: comprobar
     color:colorGrey
+    display: none
 
-.siguiente
-    grid-area: siguiente
+.guardar
+    grid-area: guardar
+    display: none
+    transition: 1s
+    &.active
+        display block
+
+    
+
+.container-opciones
+    max-width 12em
+    background: color_GreyLight
+    color: white;
+    border-radius: 5px;
+    display: grid;
+    color colorGrey
+    font-weight: bold
+    transition: .5s all
+    max-height: 4.3em
+    & .opcion
+        padding: 1em;
+        text-align: center
+        display: none
+        cursor pointer
+        z-index: 2
+        background: color_GreyLight
+        &:last-child
+            border-radius: 0 0 5px 5px 
+        &:hover
+            background-color colorBlue
+            color white
+        &:last-child:hover 
+            border-radius:  0 0 5px 5px;
+    & .pordefecto
+        display: block
+        transition: .5s all
+        cursor pointer
+        text-align: left
+        display flex
+        align-items: center
+        justify-content: space-around
+        padding: .5em
+        & .icon_seleccione
+            width: 16px
+            height auto
+            transition: .5s all
+    &:hover .pordefecto
+            background: #DADADA
+            border-radius: 5px 5px 0 0
+    &:hover .icon_seleccione
+        transform: rotate(180deg)
+    &:hover .opcion
+         display block
+    & input[type="radio"]
+        appearance none
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        margin 0
+        border none
+        outline: none
+
+input:checked + .opcion
+    background colorBlue
+    color white
+
+.img_pregunta
+    width: 100%
+    height : auto
+    max-height: 27em
+.container-img-text
+    text-align: center
+    & p
+        font-weight: bold
+
+.modal
+    height 100%
+    width: 100%
+    padding: 1em
+    display: flex
+    align-items: center
+    justify-content: center
+    box-sizing: border-box
+    position absolute
+    visibility: hidden
+    z-index: 5
+    &.active
+        visibility: visible
+.contaner_modal
+    background: colorGreen
+    padding: 2em
+    max-width 34em
+    height auto
+    border-radius: 15px
+    text-align: center
+    & .titulo
+        color:white
+        font-size: 2.2em
+        font-weight: bold
+        margin 0 0 1em 0
+    & .icon
+        width: 9.1em
+        height auto
+    & .containerBtn
+        text-align: right 
+        & button
+            font-weight: bold
+            max-width 9.6em
+            &.red
+                color colorRed
+        
+    &.red
+        background: colorRed
+
+
+
+
+
+
+
+
+    
+

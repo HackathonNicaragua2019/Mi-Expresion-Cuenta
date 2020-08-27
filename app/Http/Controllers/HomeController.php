@@ -1,16 +1,11 @@
 <?php
 
-<<<<<<< HEAD
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-=======
 namespace MiExpresionCuenta\Http\Controllers;
 
 use Illuminate\Http\Request;
 use MiExpresionCuenta\Home;
-use MiExpresionCuenta\Modulo; 
->>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
+use MiExpresionCuenta\Modulo;
+
 
 class HomeController extends Controller
 {
@@ -31,9 +26,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        return view('home');
-=======
         
         $modulos= Modulo::with(['modulos' => function ( $query ){
             $query->with(['temas']);
@@ -42,6 +34,7 @@ class HomeController extends Controller
         ->get();
         
         return view('home.index',compact('modulos'));
->>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
     }
+
+
 }

@@ -1,17 +1,9 @@
 @extends('layouts.app')
-<<<<<<< HEAD
-@section('content')
-<div class="background-login">
-    
-    <section class="container-copy-login">
-=======
-@include('Header')
 @section('content')
 <div class="background-login">
     
     <section class="container-copy">
         <img class="login" src="/images/login.svg" alt="imagen de registrar">
->>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
     </section>
     <section class="container-login">
         <div class="container-form">

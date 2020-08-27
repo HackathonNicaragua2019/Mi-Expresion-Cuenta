@@ -8,15 +8,16 @@ class Temas extends Model
 {
     public $table = 'temas';
 
-    protected $primaryKey='id';
+    protected $primaryKey ='id';
 
-    public $timestamps=true;
+    public $timestamps = true;
 
     protected $fillable = [
         'nombre',
         'descripcion',
         'imagen',
         'idmodulo',
+        'idteoria',
     ];
 
     public function temas()

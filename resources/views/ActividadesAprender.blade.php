@@ -1,24 +1,31 @@
 @extends('layouts.app')
-@include('HeaderActivity')
 @section('content')
-
+<a href="{{ URL::previous() }}" class="icons-container">
+        <img class="logo-header" src="/images/icon_back.svg"/>
+        <span class="atras">Atras</span>
+</a>
+@foreach ($teoria as $app)
 <section class="container-activity">
     <div class="activity">
-        <h1 class="title aprender">Introducción</h1>
-        <img class="baner-aprender" src="/images/determinantes.svg" alt="images determinantes">
-        <h2 class="title aprender">Los determinantes</h2>
-        <p class="parrafos">En este módulo aprenderás sobre los Determinantes, su clasificación y uso en la expresión escrita. 
-
-            <br>
-            <br>
-        </p>
-        <h3 class="title aprender">¿Qué son los determinantes?</h3>
-        <p class="parrafos">Los determinantes son palabras que van delante del nombre o sustantivos y sirven para delimitar
-            el significado general de dicho nombre. Los determinantes concuerdan siempre en género y
-            número con los sustantivos que acompañan.
-        </p>
+        <h1 class="title aprender">{{ $app->titulo}}</h1>
+        <p class="parrafos">{{ $app->introduccion}} </p>
+        <figure class="container-banner">
+            <img class="baner-aprender" src="{{ $app->imagen}}" alt="images sobre {{ $app->titulo}}">
+        </figure>
+        <h2 class="title aprender">{{ $app->pregunta}}</h2>
+        <p class="parrafos">{{ $app->respuestapregunta}}</p>
+        <p class="title aprender">Ejemplo</p>
+        <p class="parrafos">{{ $app->imgejemplo}}</p>
+        <p class="parrafos">{{ $app->ejemplos}}</p>
+        <p class="parrafos">{{ $app->imgejemplo2}}</p>
+        <p class="parrafos">{{ $app->ejemplos2}}</p>
+        <p class="parrafos">{{ $app->imgejemplo3}}</p>
+        <p class="parrafos">{{ $app->ejemplos3}}</p>
         <br>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/zeYS3xsyRGI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="videoWrapper" style="--aspect-ratio: 3 / 4;">
+            <iframe src="{{ $app->urlvideo}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
+    @endforeach
 </section>
 @endsection

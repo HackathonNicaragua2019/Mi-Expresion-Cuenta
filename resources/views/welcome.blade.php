@@ -5,15 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<<<<<<< HEAD
-        <title>Laravel</title>
-=======
         <title>Mi Expresión Cuenta</title>
->>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
+        <link  rel="icon"   href="{{ asset('images/favicon.png') }}" type="image/png" />
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        
         <!-- Styles -->
         <style>
             html, body {
@@ -73,11 +69,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-<<<<<<< HEAD
-                        <a linhref="{{ url('/home') }}">Inicio</a>
-=======
                         <a href="{{ url('/home') }}">Inicio</a>
->>>>>>> f4f9550ce00473f57194d4d8ee73c88b03ac9e98
                     @else
                         <a href="{{ url('/login') }}">Iniciar sesión</a>
                         <a href="{{ url('/register') }}">Registrarse</a>
