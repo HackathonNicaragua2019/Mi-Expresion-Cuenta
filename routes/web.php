@@ -28,9 +28,9 @@ Route::get('/ActividadesAprender{idteoria}', 'TeoriaController@index')->name('te
 
 Route::get('/actividad{idsubtema}', 'ActividadesController@index')->name('actividades');
 
-Route::post('/actividades', 'ActividadesController@store')->name('actividad.store');
+Route::post('/actividad{id}', 'ActividadesController@store')->name('actividad.store');
 
-Route::get('resultado/{id_resultado}', 'ResultadoController@show')->name('resultado.show');
+Route::get('/resultado{id_resultado}', 'ResultadoController@show')->name('resultado.show');
 /*
 Route::get('/moduloDeterminado', function () {
     return view('moduloDeterminado');

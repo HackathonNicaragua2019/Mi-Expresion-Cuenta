@@ -18,6 +18,7 @@ class Resultados extends Model
     ];
 
     protected $fillable = [
+        'id',
         'user_id',
         'puntos_totales',
         'created_at',

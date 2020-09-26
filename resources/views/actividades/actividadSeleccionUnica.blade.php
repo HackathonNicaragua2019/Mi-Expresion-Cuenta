@@ -2,7 +2,7 @@
 @section('content')
 @include('HeaderActivity')
 <section class="container-activity">
-    <form class="activity" method="POST" action="{{ route('actividad.store') }}">
+    <form class="activity" method="POST">
         {!! csrf_field() !!}
         <div class="activity_pregunta_scroll_container">
             <div class="activity_pregunta_scroll">

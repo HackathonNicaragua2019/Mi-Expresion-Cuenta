@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
-@include('HeaderActivity')
+
 <section class="container-activity">
-    Resultados
+    @foreach($resultado as $resul)
+    <p>Resultado  {{ $resul->puntos_totales }}</p>
+    @endforeach
 </section>
 @endsection

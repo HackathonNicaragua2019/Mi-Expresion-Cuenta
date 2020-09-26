@@ -29,7 +29,7 @@ class ActividadesController extends Controller
     public function store ( StoreActividadesRequest $request )
     {
         $opciones = Opciones::find(array_values($request->input('preguntas')));
-        print_r($opciones);
+        //print_r($opciones);
         $resultado = auth()->user()->userResultados()->create([
             'puntos_totales' => $opciones->sum('puntos')
         ]);
@@ -44,6 +44,6 @@ class ActividadesController extends Controller
 
         $resultado->preguntas()->sync($preguntas);
         
-        return redirect()->route('actividades.resultado.show', $resultado->id);
+        return redirect()->route('resultado.show', $resultado->id);
     }
 }
