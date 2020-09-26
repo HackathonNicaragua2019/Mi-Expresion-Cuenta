@@ -21,7 +21,7 @@ btn_siguiente.addEventListener('click', function ( e ){
 
 function validarRespuestaCorrecta( idpregunta ){
     
-    const opcionSeleccionada = document.getElementById(idpregunta).value;
+    const opcionSeleccionada = document.getElementById(idpregunta).dataset.puntos;
    
     //validando si el valor de la opcion seleccionada es difirente a 0, si lo es , es a respuesta correcta
     if(opcionSeleccionada != 0) {

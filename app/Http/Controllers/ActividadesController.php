@@ -27,13 +27,16 @@ class ActividadesController extends Controller
         return view('actividades.actividadSeleccionUnica', compact('actvidades'));
     }
     public function store ( StoreActividadesRequest $request )
-    {
+    {   /*
+        $opciones = $request->input('preguntas');
+        */
         $opciones = Opciones::find(array_values($request->input('preguntas')));
-        //print_r($opciones);
+        
+        print_r($opciones);
         $resultado = auth()->user()->userResultados()->create([
             'puntos_totales' => $opciones->sum('puntos')
         ]);
-
+            
         $preguntas = $opciones->mapWithKeys( function ( $opcion ) {
             return [$opcion->id_pregunta => [
                 'id_opcion' => $opcion->id,
