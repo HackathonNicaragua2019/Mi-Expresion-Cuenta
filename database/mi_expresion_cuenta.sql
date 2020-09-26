@@ -108,6 +108,7 @@ CREATE TABLE IF NOT EXISTS `temas` (
   )
 ENGINE = InnoDB;
 
+
 -- -----------------------------------------------------
 -- Table `miexpresioncuenta`.`subtemas`
 -- -----------------------------------------------------

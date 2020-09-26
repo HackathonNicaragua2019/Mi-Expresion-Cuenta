@@ -16,7 +16,8 @@
     </div>
 </header>
 <section class="container-activity">
-    <form class="activity" method="POST" action="">
+    <form class="activity" method="POST">
+        {!! csrf_field() !!}
         <div class="activity_pregunta_scroll_container">
             <div class="activity_pregunta_scroll">
         @foreach($actvidades as $actividad)</p>
@@ -32,7 +33,7 @@
                         <img class="icon_seleccione" src="/images/icon_flecha_lista.svg"/>
                     </div>
                     @foreach($pregunta->PreguntasOpciones as $opcion)
-                            <input name='preguntas[{{ $pregunta->id }}]' type="radio" id="opcion-{{$opcion->id}}" value="{{ $opcion->puntos }}" required onClick=validarRespuestaCorrecta('opcion-{{$opcion->id}}')>
+                            <input data-puntos="{{$opcion->puntos}}" name='preguntas[{{ $pregunta->id }}]' type="radio" id="opcion-{{$opcion->id}}" value="{{ $opcion->id }} @if(old("preguntas.$pregunta->id") == $opcion->id) checked @endif" required  onClick=validarRespuestaCorrecta('opcion-{{$opcion->id}}')>
                             <label for="opcion-{{$opcion->id}}" class="opcion">{{ $opcion->nombre }}</label>
                     @endforeach
                 </div>

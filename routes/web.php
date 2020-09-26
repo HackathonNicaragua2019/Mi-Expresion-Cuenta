@@ -29,6 +29,9 @@ Route::get('/ActividadesAprender/{subtema}/{idsubtema}', 'TeoriaController@Teori
 
 Route::get('/actividad{idsubtema}', 'ActividadesController@index')->name('actividades');
 
+Route::post('/actividad{id}', 'ActividadesController@store')->name('actividad.store');
+
+Route::get('/resultado{id_resultado}', 'ResultadoController@show')->name('resultado.show');
 /*
 Route::get('/moduloDeterminado', function () {
     return view('moduloDeterminado');
