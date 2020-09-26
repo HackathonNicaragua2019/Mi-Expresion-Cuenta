@@ -229,31 +229,31 @@ CREATE TABLE IF NOT EXISTS `resultados` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `resultado_de_preguntas`
+-- Table `preguntas_resultados`
 -- -----------------------------------------------------
- CREATE TABLE IF NOT EXISTS `resultado_de_preguntas` (
+ CREATE TABLE IF NOT EXISTS `preguntas_resultados` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `id_resultado` INT  NOT NULL,
-  `id_preguntas` INT NOT NULL,
-  `id_opciones` INT  NOT NULL,
+  `resultados_id` INT  NOT NULL,
+  `preguntas_id` INT NOT NULL,
+  `id_opcion` INT  NOT NULL,
   `puntos` INT(11) NOT NULL DEFAULT '0',
   
-  constraint id_resultado
-  foreign key (id_resultado)
+  constraint resultados_id
+  foreign key (resultados_id)
   references resultados(id)
   
   on delete cascade
   on update cascade,
  
-  constraint id_opciones
-  foreign key (id_opciones)
+  constraint id_opcion
+  foreign key (id_opcion)
   references opciones(id)
   
   on delete cascade
   on update cascade,
    
-  constraint id_preguntas
-  foreign key (id_preguntas)
+  constraint preguntas_id
+  foreign key (preguntas_id)
   references preguntas(id)
   
   on delete cascade
