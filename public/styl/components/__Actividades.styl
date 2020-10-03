@@ -160,6 +160,11 @@ input:checked + .opcion
     top 0
     &.active
         visibility: visible
+    &.resultado
+        width: 99%
+        
+        
+    
     
 .contaner_modal
     background: colorGreen
@@ -180,6 +185,8 @@ input:checked + .opcion
             width:100%
             max-height: 20em
             margin-bottom: .5em
+        &.icon_resultado
+            width: 80%
     & .containerBtn
         text-align: right 
         & button
@@ -194,9 +201,20 @@ input:checked + .opcion
         background: colorYellow
         & .titulo
             color:colorBlack
-            font-size: 1.5em            
+            font-size: 1.5em
+    &.resultado
+            background: colorYellow
+            p
+                color:black
+    & .subtitulo.resultado
+        font-size: 1.5em
+                
+    
+      
 .coloryellow
         color: colorYellow
+.color-black
+        color: black
 
 
 

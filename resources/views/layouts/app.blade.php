@@ -16,7 +16,9 @@
 <body>
     @include('Header')
     <div id="app">
+        @include('loader')
         @yield('content')
+
     </div>
 
     <!-- Scripts -->

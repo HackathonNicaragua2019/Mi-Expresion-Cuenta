@@ -81,5 +81,35 @@ a
     
     to
         transform: translateY(-3000px)
+
+.loader
+    background: colorBlue
+    display: flex;
+    justify-content: center;
+    align-items: center
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index 15
+    & .icon
+        width: 30%
+        animation-name: pulso;
+        animation-duration: 1s;
+        transition: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    &.inactive
+        display: none
+
+@keyframes pulso{
+    from{
+        transform: scale(.9)
+    }
+    to{
+        transform: scale(1)
+    }
+}
     
 
