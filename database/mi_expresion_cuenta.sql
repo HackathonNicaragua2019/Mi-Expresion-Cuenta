@@ -179,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `preguntas` (
   `created_at` TIMESTAMP NULL DEFAULT NULL,
   `updated_at` TIMESTAMP NULL DEFAULT NULL,
   `deleted_at` TIMESTAMP NULL DEFAULT NULL,
-  
+  `tipo_pregunta` varchar(190) NOT NULL,
   constraint id_actividad
   foreign key (id_actividad)
   references actividades(id)
