@@ -32,7 +32,7 @@ class ActividadesController extends Controller
         */
         $opciones = Opciones::find(array_values($request->input('preguntas')));
         
-        //print_r($opciones);
+        print_r($opciones);
         $resultado = auth()->user()->userResultados()->create([
             'puntos_totales' => $opciones->sum('puntos')
         ]);

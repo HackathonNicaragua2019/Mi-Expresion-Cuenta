@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/actcomplete', function () {
+    return view('/actividades/actividadCompleteEspacioEnBlanco');
+});
 
 Route::resource('modulos','ModuloController');
 
