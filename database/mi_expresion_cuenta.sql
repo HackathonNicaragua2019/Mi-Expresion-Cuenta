@@ -368,6 +368,8 @@ INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpc
 INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Demostrativos', 'Actividad Demostrativo', 'actividades del subtema de demostrativo','2');
 INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Posesivos', 'Actividad Posesivos', 'actividades del subtema de posesivos', '3');
 INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Numerales', 'Actividad Numerales', 'actividades del subtema de Numerales', '4');
+INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Preposiciones', 'Actividad Preposiciones', 'actividades del subtema de Preposiciones', '5');
+
 -- -----------------------------------------------------
 -- INSERT Table `Preguntas - artículo`
 -- -----------------------------------------------------
@@ -570,3 +572,22 @@ INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) V
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Tres', '0', '22');
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Cuatro', '0', '22');
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Cinco', '10', '22');
+
+-- -----------------------------------------------------
+-- INSERT Table `Preguntas - Preposiciones`
+-- -----------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione La preposicion que corresponde a la imagen.', '/images/img_actividades/unperro.svg', 'perro', '5');
+--INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Subraya las preposiciones en cada enunciado.', 'Fui a la playa.', '5');
+--INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Subraya las preposiciones en cada enunciado.', '/images/img_actividades/estabasobrelamesa.svg', 'Estaba sobre la mesa.', '5');
+ INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Subraya las preposiciones en cada enunciado.', '', 'Se cayó en medio de la calle.', '5');
+
+-- -----------------------------------------------------------------------
+-- INSERT Table `Opciones respuesta de preguntas - Actividad Numerales`
+-- -----------------------------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('durante', '10', '23');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('estos', '0', '23');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('ella', '0', '23');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('primero', '0', '23');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('la', '0', '23');
