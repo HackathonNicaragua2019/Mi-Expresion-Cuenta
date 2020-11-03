@@ -26,6 +26,8 @@
                         <p class="enunciado"></p>
                         @if ( $pregunta->tipo_pregunta === "complete_espacios_blanco" )
                             @include('actividades.actividadCompleteEspacioEnBlanco')
+                        @elseif ( $pregunta->tipo_pregunta === "subrayar" )
+                            @include('actividades.actividadSubraye')
                         @else
                         <div class="container-respuestas">
                             <div class="container-opciones">

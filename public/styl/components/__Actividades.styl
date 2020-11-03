@@ -29,7 +29,7 @@
 .enunciado
     font-size: 1.5em
     color: colorBlue
-    margin-bottom: 4em
+    //margin-bottom: 4em
     @media screen and (max-width 425px)
                 font-size: 1em
 
@@ -186,6 +186,9 @@ input:checked + .opcion
         @media screen and (max-width 425px)
             grid-template-columns: 1fr
             grid-template-areas: "img_container_pregunta""input-respuesta"
+    &.subrayar
+        grid-template-columns: 1fr
+        grid-template-areas: "img_container_pregunta"
 
     & .input-respuesta
         grid-area: input-respuesta

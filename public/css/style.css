@@ -1036,7 +1036,6 @@ b:nth-child(3).active {
 .enunciado {
   font-size: 1.5em;
   color: #3e64ff;
-  margin-bottom: 4em;
 }
 @media screen and (max-width: 425px) {
   .enunciado {
@@ -1227,6 +1226,10 @@ input:checked + .opcion {
     grid-template-columns: 1fr;
     grid-template-areas: "img_container_pregunta" "input-respuesta";
   }
+}
+.container-img-text.subrayar {
+  grid-template-columns: 1fr;
+  grid-template-areas: "img_container_pregunta";
 }
 .container-img-text .input-respuesta {
   grid-area: input-respuesta;
