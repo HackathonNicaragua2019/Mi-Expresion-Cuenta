@@ -151,5 +151,46 @@ function validarRespuestaCorrectaComplete( idpregunta ){
     
 }
 
+
+function validarPalabraSubrayada( palabra, idpregunta ){
+
     
+    const opciones = document.getElementsByName(`preguntas[${idpregunta}]`)
+
+    validarRespuestas(opciones,palabra )
+
+    
+}
+
+function validarRespuestas(opciones,palabra ){
+    
+    let respuesta = false;
+    let opcionesNombre;
+    let opcionesPuntos;
+    
+
+    for (let i = 0; i < opciones.length; i++) {
+        opcionesNombre = opciones[i].dataset.nombre.toLowerCase()
+        opcionesPuntos = opciones[i].dataset.puntos
+        if(palabra.toLowerCase() === opcionesNombre && opcionesPuntos != 0){
+            respuesta = true
+            opciones[i].setAttribute("checked","checked")
+        }
+    }
+
+    if(respuesta){
+        modal_correcto.classList.add('active');
+        modal_correcto.style.animation = 'animationIn 1s forwards';
+    }else{
+        modal_incorrecto.classList.add('active');
+        modal_incorrecto.style.animation = 'animationIn 1s forwards';
+    }
+}
+
+function disableselect(e) {
+    return false
+}
+
+
+
 

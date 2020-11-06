@@ -10,7 +10,9 @@
                 <div class="container-img-text subrayar">
                     <div class="img_container_pregunta">
                         <img class="img_pregunta" src="{{ $pregunta->url_imagen }}"/>
-                        <p>{{ $pregunta->nombre_imagen }}</p>
+                        @foreach(explode(' ', $pregunta->nombre_imagen) as $palabra) 
+                        <p onClick=validarPalabraSubrayada('{{$palabra}}',{{ $pregunta->id }}) data-pregunta="preguntas[{{ $pregunta->id }}]" >{{$palabra}}</p>
+                        @endforeach
                     </div>
                 </div>
             </div>

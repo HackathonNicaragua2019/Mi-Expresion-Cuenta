@@ -189,6 +189,20 @@ input:checked + .opcion
     &.subrayar
         grid-template-columns: 1fr
         grid-template-areas: "img_container_pregunta"
+        & p
+            font-size: 1.8em
+            cursor: pointer
+            display inline
+            &:hover
+                border-bottom: 2px solid colorBlue
+                border-bottom-width: 10px
+            &.active
+                border-bottom: 2px solid colorBlue
+                border-bottom-width: 10px
+                
+                
+                
+
 
     & .input-respuesta
         grid-area: input-respuesta
