@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+<g>
+	<g>
+		<defs>
+			<polygon id="SVGID_1_" points="282.681,108.675 197.333,108.675 111.985,108.675 64.474,181.846 197.333,332.89 330.194,181.846 
+							"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<polygon clip-path="url(#SVGID_2_)" fill="#CEE9F0" stroke="#817572" stroke-width="2.7406" stroke-miterlimit="10" points="
+			282.681,108.675 197.333,108.675 111.985,108.675 64.474,181.846 197.333,332.89 330.194,181.846 		"/>
+		
+			<rect x="48.536" y="181.851" clip-path="url(#SVGID_2_)" fill="#AED1D1" stroke="#817572" stroke-width="2.3831" stroke-miterlimit="10" width="393.888" height="194.813"/>
+		<polygon clip-path="url(#SVGID_2_)" fill="#C8E0E0" stroke="#817572" stroke-width="2.3831" stroke-miterlimit="10" points="
+			257.032,181.851 197.333,332.89 137.633,181.851 		"/>
+		<polygon clip-path="url(#SVGID_2_)" fill="#B9E0EA" stroke="#817572" stroke-width="2.3831" stroke-miterlimit="10" points="
+			137.634,181.851 197.333,108.675 257.034,181.851 		"/>
+		<polygon clip-path="url(#SVGID_2_)" fill="#FBFDFE" stroke="#817572" stroke-width="2.3831" stroke-miterlimit="10" points="
+			111.985,108.675 137.634,181.851 197.333,108.675 		"/>
+		<polygon clip-path="url(#SVGID_2_)" fill="#FBFDFE" stroke="#817572" stroke-width="2.3831" stroke-miterlimit="10" points="
+			282.682,108.675 257.034,181.851 197.334,108.675 		"/>
+	</g>
+	<polygon fill="none" stroke="#817572" stroke-width="5.6004" stroke-miterlimit="10" points="282.681,108.675 197.333,108.675 
+		111.985,108.675 64.474,181.846 197.333,332.89 330.194,181.846 	"/>
+	<polygon fill="#FFFFFF" points="247.301,262.428 250.323,275.013 262.907,278.034 250.323,281.058 247.301,293.642 
+		244.277,281.058 231.692,278.034 244.277,275.013 	"/>
+	<polygon fill="#FFFFFF" points="181.727,205.177 184.749,217.76 197.333,220.783 184.749,223.806 181.727,236.391 178.703,223.806 
+		166.118,220.783 178.703,217.76 	"/>
+	<polygon fill="#FFFFFF" points="311.129,67.11 316.5,89.472 338.86,94.841 316.5,100.212 311.129,122.573 305.758,100.212 
+		283.397,94.841 305.758,89.472 	"/>
+	<polygon fill="#FFFFFF" points="119.935,247.001 125.306,269.362 147.666,274.733 125.306,280.103 119.935,302.464 
+		114.563,280.103 92.204,274.733 114.563,269.362 	"/>
+</g>
+</svg>

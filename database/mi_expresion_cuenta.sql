@@ -577,7 +577,7 @@ INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) V
 -- INSERT Table `Preguntas - Preposiciones`
 -- -----------------------------------------------------
 
-INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione La preposicion que corresponde a la imagen.', '/images/img_actividades/unperro.svg', 'perro', '5');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione La preposicion que corresponde a la imagen.', '/images/img_actividades/estabasobrelamesa.svg', 'Estaba sobre la mesa', '5');
 --INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Subraya las preposiciones en cada enunciado.', 'Fui a la playa.', '5');
 --INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Subraya las preposiciones en cada enunciado.', '/images/img_actividades/estabasobrelamesa.svg', 'Estaba sobre la mesa.', '5');
  INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Subraya las preposiciones en cada enunciado.', '', 'Se cayó en medio de la calle.', '5');
