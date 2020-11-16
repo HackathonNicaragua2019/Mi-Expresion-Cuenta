@@ -175,7 +175,6 @@ CREATE TABLE IF NOT EXISTS `preguntas` (
   `url_imagen` VARCHAR(191) NOT NULL,
   `nombre_imagen` VARCHAR(191) NOT NULL,
   `id_actividad` INT NOT NULL,
-  
   `created_at` TIMESTAMP NULL DEFAULT NULL,
   `updated_at` TIMESTAMP NULL DEFAULT NULL,
   `deleted_at` TIMESTAMP NULL DEFAULT NULL,
@@ -369,6 +368,14 @@ INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpc
 INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Posesivos', 'Actividad Posesivos', 'actividades del subtema de posesivos', '3');
 INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Numerales', 'Actividad Numerales', 'actividades del subtema de Numerales', '4');
 INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Preposiciones', 'Actividad Preposiciones', 'actividades del subtema de Preposiciones', '5');
+INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades adjetivos', 'Actividad adjetivos calificativos', 'actividades del adjetivo calificativo', '6');
+INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades adjetivos', 'Actividad adjetivos calificativos', 'actividades del adjetivo relacional', '7');
+INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Conjunciones', 'Actividad conjunciones', 'actividades del subtema de conjunciones coordinantes', '8');
+INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Conjunciones', 'Actividad conjunciones', 'actividades del subtema de conjunciones subordinales', '9');
+INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Adverbios', 'Actividad adverbios', 'actividades del subtema de adverbios de cantidad', '10');
+INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Adverbios', 'Actividad adverbios', 'actividades del subtema de adverbios de lugar', '11');
+INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Adverbios', 'Actividad adverbios', 'actividades del subtema de adverbios de tiempo', '12');
+INSERT INTO `miexpresioncuenta`.`actividades` (`nombre`, `nombrecorto`, `descrpcion`, `idsubtema`) VALUES ('Actividades Adverbios', 'Actividad adverbios', 'actividades del subtema de adverbios de modo', '13');
 
 -- -----------------------------------------------------
 -- INSERT Table `Preguntas - artículo`
@@ -578,16 +585,457 @@ INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) V
 -- -----------------------------------------------------
 
 INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione La preposicion que corresponde a la imagen.', '/images/img_actividades/estabasobrelamesa.svg', 'Estaba sobre la mesa', '5');
---INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Subraya las preposiciones en cada enunciado.', 'Fui a la playa.', '5');
---INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Subraya las preposiciones en cada enunciado.', '/images/img_actividades/estabasobrelamesa.svg', 'Estaba sobre la mesa.', '5');
- INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Subraya las preposiciones en cada enunciado.', '', 'Se cayó en medio de la calle.', '5');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione La preposicion que corresponde a la imagen.', '/images/img_actividades/estamoscontralaviolencia.svg','Estamos contra La violencia' ,'5');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione La preposicion que corresponde a la imagen.', '/images/img_actividades/secayóenmediodelacalle.svg', 'Se cayó en medio de la calle', '5');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione La preposicion que corresponde a la imagen.', '/images/img_actividades/fuialaplaya.svg','Fui a la playa','5');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione La preposicion que corresponde a la imagen.', '/images/img_actividades/iremoshastamañana.svg','Iremos hasta mañana','5');
 
 -- -----------------------------------------------------------------------
--- INSERT Table `Opciones respuesta de preguntas - Actividad Numerales`
+-- INSERT Table `Opciones respuesta de preguntas - actividad de preposiciones`
 -- -----------------------------------------------------------------------
 
-INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('durante', '10', '23');
-INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('estos', '0', '23');
-INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('ella', '0', '23');
-INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('primero', '0', '23');
-INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('la', '0', '23');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('a', '0', '23');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('sobre', '10', '23');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('en, de', '0', '23');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Contra', '0', '23');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('hasta', '0', '23');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('a', '0', '24');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('sobre', '0', '24');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('en, de', '0', '24');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('contra', '10', '24');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('hasta', '0', '24');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('a', '0', '25');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('sobre', '0', '25');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('en, de', '10', '25');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('contra', '0', '25');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('hasta', '0', '25');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('a', '10', '26');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('sobre', '0', '26');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('en, de', '0', '26');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('contra', '0', '26');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('hasta', '0', '26');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('a', '0', '27');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('sobre', '0', '27');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('en, de', '0', '27');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('contra', '0', '27');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('hasta', '10', '27');
+
+-- -----------------------------------------------------
+-- INSERT Table `Preguntas - Abjetivos calificativos`
+-- -----------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione El adjetivo que se adapte el sustantivo en genero y número.', '/images/img_actividades/laniña.svg', 'La niña', '6');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione El adjetivo que se adapte el sustantivo en genero y número.', '/images/img_actividades/eljoven.svg','El Joven' ,'6');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione El adjetivo que se adapte el sustantivo en genero y número.', '/images/img_actividades/eldeportista.svg', 'Un Deportista', '6');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione El adjetivo que se adapte el sustantivo en genero y número.', '/images/img_actividades/lanave.svg','Una nave','6');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione El adjetivo que se adapte el sustantivo en genero y número.', '/images/img_actividades/Estoslibros.svg','Estos libros','6');
+
+-- -----------------------------------------------------------------------
+-- INSERT Table `Opciones respuesta de preguntas - Actividades adjetivos calificativos 1`
+-- -----------------------------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Estudiosa', '10', '28');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Estudiosas', '0', '28');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Árbol', '0', '28');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Moreno', '10', '29');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Morena', '0', '29');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Señora', '0', '29');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Fabuloso', '10', '30');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Fabulosa', '0', '30');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Corre', '0', '30');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Enormes', '0', '31');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Joven', '0', '31');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Enorme', '10', '31');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Apoyo', '0', '32');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Estudiar', '0', '32');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Bonitos', '10', '32');
+
+-- -----------------------------------------------------
+-- INSERT Table `Preguntas - Abjetivos calificativos 2`
+-- -----------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`, `tipo_pregunta`) VALUES ('Subraya el adjetivo calificativo.', '/images/img_actividades/edificios.svg', 'Edificios caros', '6','Subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`, `tipo_pregunta`) VALUES ('Subraya el adjetivo calificativo.', '/images/img_actividades/sirena.svg','Sirena bonita' ,'6','Subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`, `tipo_pregunta`) VALUES ('Subraya el adjetivo calificativo.', '/images/img_actividades/piedrapreciosa.svg', 'Piedra preciosa', '6','Subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`, `tipo_pregunta`) VALUES ('Subraya el adjetivo calificativo.', '/images/img_actividades/muchachofuerte.svg','Muchacho fuerte','6','Subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`, `tipo_pregunta`) VALUES ('Subraya el adjetivo calificativo.', '/images/img_actividades/enormegigante.svg','Enorme Gigante','6','Subrayar');
+
+-- -----------------------------------------------------------------------
+-- INSERT Table `Opciones respuesta de preguntas - Actividades adjetivos calificativos 2`
+-- -----------------------------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Bonita', '0', '33');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('caros', '10', '33');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('preciosa', '0', '33');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('fuerte', '10', '33');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('enorme', '0', '33');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('bonita', '10', '34');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('caros', '0', '34');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('preciosa', '0', '34');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('fuerte', '0', '34');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('enorme', '0', '34');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('bonita', '0', '35');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('caros', '0', '35');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('enorme', '0', '35');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('preciosa', '10', '35');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('fuerte', '0', '35');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('preciosa', '0', '36');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('bonito', '0', '36');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Enorme', '0', '36');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('caros', '0', '36');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('fuerte', '10', '36');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('enorme', '10', '37');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('fuerte', '0', '37');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Bonitos', '10', '37');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('caros', '10', '37');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('preciosa', '0', '37');
+
+-- -----------------------------------------------------
+-- INSERT Table `Preguntas - Abjetivos relacional`
+-- -----------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione El adjetivos que corresponden a cada sustantivo.', '/images/img_actividades/escuelasecundaria.svg', 'Escuela', '7');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione El adjetivos que corresponden a cada sustantivo.', '/images/img_actividades/plantaacuática.svg','Planta' ,'7');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`) VALUES ('Seleccione El adjetivos que corresponden a cada sustantivo.', '/images/img_actividades/viajeaéreo.svg', 'Viaje', '7');
+
+
+-- -----------------------------------------------------------------------
+-- INSERT Table `Opciones respuesta de preguntas - Actividades adjetivos relacional 1`
+-- -----------------------------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Primaria', '10', '38');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Secundaria', '10', '38');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Hogar', '0', '38');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Universidad', '0', '38');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Abanico', '0', '39');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Eléctrica', '10', '39');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Verde', '0', '39');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Acuática', '10', '39');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Aéreo', '10', '40');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Terrestre', '10', '40');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Parque', '0', '40');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Acuático', '10', '40');
+
+
+---------------------------------------------
+-- INSERT Table `Preguntas - conjunciones coordinales`
+-- -----------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya la conjunción coordinante en cada frase.', '/images/img_actividades/papáymamá.svg', 'Papá y mamá', '8','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya la conjunción coordinante en cada frase.', '/images/img_actividades/salesoentras.svg','Sales o entras' ,'8','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya la conjunción coordinante en cada frase.', '/images/img_actividades/niunamanzana.svg', 'Ni una manzana', '8','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya la conjunción coordinante en cada frase.', '/images/img_actividades/mecaiperomelevanté.svg','Caí pero me levante','8','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya la conjunción coordinante en cada frase.', '/images/img_actividades/.svg','Llevaba un sombrero, mas no le gustaba.','8','subrayar');
+
+-- -----------------------------------------------------------------------
+-- INSERT Table `Opciones respuesta de preguntas - Actividades conjunciones coordinales`
+-- -----------------------------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('o', '0', '41');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('y', '10', '41');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ni', '0', '41');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Pero', '0', '41');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Mas', '0', '41');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ni', '0', '42');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('pero', '0', '42');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('mas', '0', '42');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('o', '10', '42');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('y', '0', '42');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('o', '0', '43');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('mas', '0', '43');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ni', '10', '43');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('pero', '0', '43');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('y', '0', '43');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('pero', '10', '44');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ni', '0', '44');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('mas', '0', '44');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('y', '0', '44');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('o', '0', '44');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('y', '0', '45');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('o', '0', '45');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('mas', '10', '45');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('pero', '0', '45');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ni', '0', '45');
+
+---------------------------------------------
+-- INSERT Table `Preguntas - conjunciones coordinales 2`
+-- -----------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Une con una linea la frase que corresponde a cada enunciado.', 'Busqué, la pelota', 'y no la encontre', '8','une con una linea');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Une con una linea la frase que corresponde a cada enunciado.', 'Unas veces viene contento', 'y otras triste', '8','une con una linea');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Une con una linea la frase que corresponde a cada enunciado.', 'Iré a la playa', 'o la montaña', '8','une con una linea');
+
+-- -----------------------------------------------------------------------
+-- INSERT Table `Opciones respuesta de preguntas - Actividades conjunciones coordinales 2`
+-- -----------------------------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('o', '0', '46');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('y', '10', '46');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ni', '0', '46');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Pero', '0', '46');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Mas', '0', '46');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ni', '0', '47');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('pero', '0', '47');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('mas', '0', '47');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('o', '10', '47');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('y', '0', '47');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('o', '0', '48');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('mas', '0', '48');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ni', '10', '48');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('pero', '0', '48');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('y', '0', '48');
+
+---------------------------------------------
+-- INSERT Table `Preguntas - conjunciones subordinantes`
+-- -----------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya la conjunción coordinante en cada frase.', '/images/img_actividades/carroporquemeloregalaron.svg', 'Tenía un carro porque me lo regalaron', '9','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya la conjunción coordinante en cada frase.', '/images/img_actividades/conquelosladronesllevarondiner.svg','Conque los ladrones se llevaron el dinero' ,'9','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya la conjunción coordinante en cada frase.', '/images/img_actividades/irésitengotiempo.svg', 'Iré si tengo tiempo', '9','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya la conjunción coordinante en cada frase.', '/images/img_actividades/llegaréaunquecansadoooo.svg','Llegare aunque estoy cansado','9','subrayar');
+
+
+-- -----------------------------------------------------------------------
+-- INSERT Table `Opciones respuesta de preguntas - Actividades conjunciones subordinantes`
+-- -----------------------------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('conque', '0', '49');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('porque', '10', '49');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('si', '0', '49');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Auque', '0', '49');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('si', '0', '50');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('porque', '0', '50');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('conque', '10', '50');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('aunque', '0', '50');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('si', '0', '51');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('porque', '0', '51');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('conque', '10', '51');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('aunque', '0', '51');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('si', '0', '52');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('porque', '0', '52');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('conque', '10', '52');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('aunque', '0', '52');
+
+
+---------------------------------------------
+-- INSERT Table `Preguntas - conjunciones subordinantes 2`
+-- -----------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Encuentre las conjunciones subordinantes en la sopa de letra.', 'PORQUE.svg', 'porque', '9','sopa de letra');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Encuentre las conjunciones subordinantes en la sopa de letra.', 'CONQUE','Conque' ,'9','sopa de letra');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Encuentre las conjunciones subordinantes en la sopa de letra.', 'SI', 'si', '9','sopa de letra');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Encuentre las conjunciones subordinantes en la sopa de letra.', 'AUNQUE','aunque','9','sopa de letra');
+
+
+-- -----------------------------------------------------------------------
+-- INSERT Table `Opciones respuesta de preguntas - Actividades conjunciones subordinantes 2`
+-- -----------------------------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('conque', '0', '49');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('porque', '10', '49');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('si', '0', '49');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Auque', '0', '49');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('si', '0', '50');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('porque', '0', '50');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('conque', '10', '50');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('aunque', '0', '50');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('si', '0', '51');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('porque', '0', '51');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('conque', '10', '51');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('aunque', '0', '51');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('si', '0', '52');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('porque', '0', '52');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('conque', '10', '52');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('aunque', '0', '52');
+
+---------------------------------------------
+-- INSERT Table `Preguntas - adverbios de cantidad`
+-- -----------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('seleccione el advervio de cantidad relacionado a cada imagen.', '/images/img_actividades/adverbios/muchoslibros.svg', 'Libros', '10','seleccion');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('seleccione el advervio de cantidad relacionado a cada imagen.', '/images/img_actividades/adverbios/pocosespejos.svg', 'Espejos', '10','seleccion');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('seleccione el advervio de cantidad relacionado a cada imagen.', '/images/img_actividades/adverbios/demasiadodinero.svg', 'Dinero', '10','seleccion');
+
+-- -----------------------------------------------------------------------
+-- INSERT Table `Opciones respuesta de preguntas - Actividades adverbios de cantidad`
+-- -----------------------------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Muchos', '10', '53');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Mucho', '0', '53');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Tanto', '0', '53');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Nada', '0', '54');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Pocos', '10', '54');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Muy', '10', '54');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Cuanto', '0', '55');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Mucho', '0', '55');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Demasiado', '10', '55');
+
+---------------------------------------------
+-- INSERT Table `Preguntas - adverbios de lugar`
+-- -----------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya el adverbio de lugar que corresponde a la imagen del enunciado', '/images/img_actividades/adverbios/monedaencimamesa.svg', 'La moneda está encima de la mesa', '11','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya el adverbio de lugar que corresponde a la imagen del enunciado.', '/images/img_actividades/adverbios/sembrandounarbol.svg','Sembramos un árbol allí' ,'11','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya el adverbio de lugar que corresponde a la imagen del enunciado.', '/images/img_actividades/adverbios/elgatodebamesa.svg', 'El gato está debajo de la mesa.', '11','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya el adverbio de lugar que corresponde a la imagen del enunciado.', '/images/img_actividades/adverbios/pelotacercacancha.svg','La pelota está cerca de la cancha','11','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya el adverbio de lugar que corresponde a la imagen del enunciado.', '/images/img_actividades/adverbios/mamáfueradecasa.svg','Mamá está afuera de la casa','11','subrayar');
+
+
+-- -----------------------------------------------------------------------
+-- INSERT Table `Opciones respuesta de preguntas - Actividades adverbio de lugar`
+-- -----------------------------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Encima', '10', '56');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Allí', '0', '56');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Debajo', '0', '56');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Cerca', '0', '56');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Afuera', '0', '56');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Encima', '0', '57');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Allí', '10', '57');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Debajo', '0', '57');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Cerca', '0', '57');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Afuera', '0', '57');
+
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Encima', '0', '58');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Allí', '0', '58');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Debajo', '10', '58');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Cerca', '0', '58');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Afuera', '0', '58');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Encima', '0', '59');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Allí', '0', '59');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Debajo', '0', '59');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Cerca', '10', '59');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Afuera', '0', '59');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Encima', '0', '60');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Allí', '0', '60');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Debajo', '0', '60');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Cerca', '0', '60');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Afuera', '10', '60');
+
+---------------------------------------------
+-- INSERT Table `Preguntas - adverbios de tiempo`
+-- -----------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya el adverbio de tiempo que corresponde a la imagen del enunciado', '/images/img_actividades/adverbios/luegocomemo.svg', 'Luego comeremos', '12','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya el adverbio de tiempo que corresponde a la imagen del enunciado.', '/images/img_actividades/adverbios/dormirémañana.svg','Dormiré mañana.' ,'12','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya el adverbio de tiempo que corresponde a la imagen del enunciado.', '/images/img_actividades/adverbios/Despuesharelatarea.svg', 'Después haré la tarea.', '12','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya el adverbio de tiempo que corresponde a la imagen del enunciado.', '/images/img_actividades/adverbios/ayerviajé.svg','Ayer viajé.','12','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya el adverbio de tiempo que corresponde a la imagen del enunciado.', '/images/img_actividades/adverbios/siempreenmimente.svg','Siempre en mi mente.','12','subrayar');
+
+
+-- -----------------------------------------------------------------------
+-- INSERT Table `Opciones respuesta de preguntas - Actividades adverbio de tiempo`
+-- -----------------------------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Luego', '10', '61');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Mañana', '0', '61');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Despues', '0', '61');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ayer', '0', '61');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Siempre', '0','61');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Luego', '0', '62');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Mañana', '10', '62');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Despues', '0', '62');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ayer', '0', '62');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Siempre', '0', '62');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Luego', '0', '63');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Mañana', '0', '63');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Despues', '10', '63');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ayer', '0', '63');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Siempre', '0', '63');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Luego', '0', '64');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Mañana', '0', '64');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Despues', '0', '64');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ayer', '10', '64');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Siempre', '0', '64');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Luego', '0', '65');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Mañana', '0', '65');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Despues', '0', '65');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ayer', '0', '65');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Siempre', '10', '65');
+
+
+---------------------------------------------
+-- INSERT Table `Preguntas - adverbios de modo`
+-- -----------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya el adverbio de modo o manera que corresponde a la imagen del enunciado', '/images/img_actividades/adverbios/estoybien.svg', 'Estoy bien', '13','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya el adverbio de modo o manera que corresponde a la imagen del enunciado.', '/images/img_actividades/adverbios/elperroladraenojado.svg','El perro ladra enojado.' ,'13','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya el adverbio de modo o manera que corresponde a la imagen del enunciado.', '/images/img_actividades/adverbios/mamáfeliz.svg', 'Mamá está feliz..', '13','subrayar');
+INSERT INTO `miexpresioncuenta`.`preguntas` (`nombre_pregunta`, `url_imagen`, `nombre_imagen`, `id_actividad`,`tipo_pregunta`) VALUES ('Subraya el adverbio de modo o manera que corresponde a la imagen del enunciado.', '/images/img_actividades/adverbios/estudiantesaliómal.svg','El estudiante salió mal en clase.','13','subrayar');
+
+
+-- -----------------------------------------------------------------------
+-- INSERT Table `Opciones respuesta de preguntas - Actividades adverbio de modo`
+-- -----------------------------------------------------------------------
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Bien', '10', '66');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Enojado', '0', '66');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Feliz', '0', '66');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Mal', '0', '66');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Bien', '0', '67');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Enojado', '10', '67');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Feliz', '0', '67');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Mal', '0', '67');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Bien', '0', '68');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Enojado', '0', '68');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Feliz', '10', '68');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Mal', '0', '68');
+
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Bien', '10', '69');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Enojado', '0', '69');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Feliz', '0', '69');
+INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Mal', '10', '69');
