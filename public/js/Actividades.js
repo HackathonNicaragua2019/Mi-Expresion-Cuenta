@@ -191,6 +191,50 @@ function disableselect(e) {
     return false
 }
 
+/****************************************************
+ Logica de actividad de Arrastrar y soltar 
+  **************************************************/
+function validarArraste( idpregunta, idopcion ){
 
+    const opciones = document.getElementsByClassName(`preguntas[${idpregunta}]`)
+    const contenedor = document.getElementById(`caja-respuesta[${idpregunta}]`)
+
+    const element = document.querySelector(`[data-id='${idopcion}']`)
+        
+        element.addEventListener('dragend', e => {
+            console.log('Drag end')
+        })
+
+        element.addEventListener('drag', e => {
+            console.log('Drag')
+        })
+
+        contenedor.addEventListener('dragenter', e => {
+            console.log('entro en la caja')
+        })
+    
+        contenedor.addEventListener('dragleave', e => {
+            console.log('salio de la caja')
+        })
+    
+        contenedor.addEventListener('dragover', e => {
+            e.preventDefault();
+            console.log('Elemento encima de la caja')
+        })
+        contenedor.addEventListener('drop', e => {
+            console.log('se solto el elemento')
+            contenedor.appendChild(element)
+        })
+        
+  
+
+    
+    console.log(idpregunta, idopcion)
+   
+}
+
+
+
+  
 
 
