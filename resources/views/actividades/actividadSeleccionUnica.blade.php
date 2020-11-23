@@ -28,6 +28,8 @@
                             @include('actividades.actividadCompleteEspacioEnBlanco')
                         @elseif ( $pregunta->tipo_pregunta === "subrayar" )
                             @include('actividades.actividadSubraye')
+                        @elseif ( $pregunta->tipo_pregunta === "arrastre" )
+                            @include('actividades.actividadArrastrarySoltar')
                         @else
                         <div class="container-respuestas">
                             <div class="container-opciones">
