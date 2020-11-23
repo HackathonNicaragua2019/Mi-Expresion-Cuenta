@@ -194,46 +194,65 @@ function disableselect(e) {
 /****************************************************
  Logica de actividad de Arrastrar y soltar 
   **************************************************/
-function validarArraste( idpregunta, idopcion ){
-
-    const opciones = document.getElementsByClassName(`preguntas[${idpregunta}]`)
-    const contenedor = document.getElementById(`caja-respuesta[${idpregunta}]`)
-
-    const element = document.querySelector(`[data-id='${idopcion}']`)
-        
-        element.addEventListener('dragend', e => {
-            console.log('Drag end')
-        })
-
-        element.addEventListener('drag', e => {
-            console.log('Drag')
-        })
-
-        contenedor.addEventListener('dragenter', e => {
-            console.log('entro en la caja')
-        })
+function validarArrastres (idpregunta, idopcion ){
     
-        contenedor.addEventListener('dragleave', e => {
-            console.log('salio de la caja')
-        })
-    
-        contenedor.addEventListener('dragover', e => {
-            e.preventDefault();
-            console.log('Elemento encima de la caja')
-        })
-        contenedor.addEventListener('drop', e => {
-            console.log('se solto el elemento')
-            contenedor.appendChild(element)
-        })
-        
-  
-
-    
-    console.log(idpregunta, idopcion)
+    const contenedoropciones = document.getElementById(`contenedoropciones[${idpregunta}]`)
+    const contenedorarrastre = document.getElementById(`contenedorarrastre[${idpregunta}]`)
+    const opcionSeleccionda = document.getElementById(`opcion-${idopcion}`)
+    const cajarespuesta = document.getElementById(`caja-respuesta[${idpregunta}]`)
+            
    
+    console.log("nodo a checkear :" + idopcion)
+    console.log("nodo a checkear :" + opcionSeleccionda)
+
+        contenedoropciones.addEventListener("dragstart", e => {
+            e.dataTransfer.setData("id", e.target.id)
+            
+            e.target.classList.add("grabbing")
+    
+        })
+        contenedoropciones.addEventListener("drag", e => {
+           
+            
+            e.target.classList.add("grabbing")
+    
+        })  
+        contenedorarrastre.addEventListener('dragover', e => {
+
+            e.preventDefault()
+            e.target.classList.add("hover")
+        })
+        contenedorarrastre.addEventListener('dragleave', e => {
+
+            e.target.classList.remove("hover")
+        })
+        contenedorarrastre.addEventListener('drop', e => {
+            
+            e.target.classList.remove("hover")
+
+            const id = e.dataTransfer.getData("id")
+           
+            const opcion = document.getElementById(id)
+
+            
+            
+            if (opcion.dataset.puntos > 0  ) {
+                modal_correcto.classList.add('active');
+                modal_correcto.style.animation = 'animationIn 1s forwards';
+                opcionSeleccionda.setAttribute("checked","checked")
+
+                cajarespuesta.appendChild(opcion)
+            }else{
+                modal_incorrecto.classList.add('active');
+                modal_incorrecto.style.animation = 'animationIn 1s forwards';
+            }
+        })
 }
+            
 
-
+    
+            
+        
 
   
 
