@@ -8,7 +8,7 @@
                     </div>  
                 </div>
                 <div class="container-img-text complete-espacios">
-                    <input class="input-respuesta" data-puntos="" data-nombre="preguntas[{{ $pregunta->id }}]" name="" type="text" id="input-respuesta[{{ $pregunta->id }}]" value="" placeholder="Escribe aqui" onchange="validarRespuestaCorrectaComplete({{ $pregunta->id }})">
+                    <input class="input-respuesta" data-puntos="" data-nombre="preguntas[{{ $pregunta->id }}]" name="" type="text" id="input-respuesta[{{ $pregunta->id }}]" value="" placeholder="Escribe aqui" onchange="validarRespuestaCorrectaComplete({{ $pregunta->id }})" oninput="mostrarBtnComprobar()">
                     <div class="img_container_pregunta">
                         <img class="img_pregunta" src="{{ $pregunta->url_imagen }}"/>
                         <p>{{ $pregunta->nombre_imagen }}</p>

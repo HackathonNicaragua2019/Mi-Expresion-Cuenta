@@ -37,7 +37,7 @@ btn_siguiente.addEventListener('click', function ( e ){
     scroll.scrollLeft += scroll.offsetWidth;
     modal_correcto.style.animationDelay = "1s"
     modal_correcto.style.animation = 'animationOut 1s forwards';
-    //btn_comprobar.classList.remove('active')
+    btn_comprobar.classList.remove('active')
     esElFinal()
 
 });
@@ -97,16 +97,11 @@ const img_pista_modal = document.getElementById("icon_pista").src = imagen_pista
 
 //Actividad de complete espacios en blanco
 
-/*
-inputrespuesta.addEventListener('change', ()=>{
 
-    if(inputrespuesta.value.length >= 1){ // mostrar el btn validar solo cuando haya ingresado mas de dos caracteres en el input
-
-       // btn_comprobar.classList.add('active')
-       
-    }
-})
-*/
+function mostrarBtnComprobar(){
+    
+    btn_comprobar.classList.add('active')
+}
 
 btn_comprobar.addEventListener('click', ( e )=>{
     
