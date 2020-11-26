@@ -22,5 +22,6 @@
     <!-- Scripts -->
 
     <script src="{{ asset('js/Actividades.js') }}"></script>
+    <script src="{{ asset('js/dragdroptouch.js') }}"></script>
 </body>
 </html>

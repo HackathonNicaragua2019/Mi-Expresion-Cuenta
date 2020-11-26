@@ -1,6 +1,6 @@
 .header
     padding: .5em 1em
-    border-radius: 7px;
+    border-radius: borderHeader;
     display: flex
     align-items: center
     justify-content: space-between
@@ -10,7 +10,10 @@
         background: transparent
     &.activity
         position sticky
-        top 0  
+        top 0
+        background white
+        border-radius borderHeader
+        
     &.blue
         background: colorBlue
 .blue

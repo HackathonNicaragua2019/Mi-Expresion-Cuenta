@@ -37,7 +37,7 @@ btn_siguiente.addEventListener('click', function ( e ){
     scroll.scrollLeft += scroll.offsetWidth;
     modal_correcto.style.animationDelay = "1s"
     modal_correcto.style.animation = 'animationOut 1s forwards';
-    //btn_comprobar.classList.remove('active')
+    btn_comprobar.classList.remove('active')
     esElFinal()
 
 });
@@ -97,16 +97,11 @@ const img_pista_modal = document.getElementById("icon_pista").src = imagen_pista
 
 //Actividad de complete espacios en blanco
 
-/*
-inputrespuesta.addEventListener('change', ()=>{
 
-    if(inputrespuesta.value.length >= 1){ // mostrar el btn validar solo cuando haya ingresado mas de dos caracteres en el input
-
-       // btn_comprobar.classList.add('active')
-       
-    }
-})
-*/
+function mostrarBtnComprobar(){
+    
+    btn_comprobar.classList.add('active')
+}
 
 btn_comprobar.addEventListener('click', ( e )=>{
     
@@ -191,6 +186,69 @@ function disableselect(e) {
     return false
 }
 
+/****************************************************
+ Logica de actividad de Arrastrar y soltar 
+  **************************************************/
+function validarArrastres (idpregunta, idopcion ){
+    
+    const contenedoropciones = document.getElementById(`contenedoropciones[${idpregunta}]`)
+    const contenedorarrastre = document.getElementById(`contenedorarrastre[${idpregunta}]`)
+    const opcionSeleccionda = document.getElementById(`opcion-${idopcion}`)
+    const cajarespuesta = document.getElementById(`caja-respuesta[${idpregunta}]`)
+            
+   
+    console.log("nodo a checkear :" + idopcion)
+    console.log("nodo a checkear :" + opcionSeleccionda)
 
+        contenedoropciones.addEventListener("dragstart", e => {
+            e.dataTransfer.setData("id", e.target.id)
+            
+            e.target.classList.add("grabbing")
+    
+        })
+        contenedoropciones.addEventListener("drag", e => {
+           
+            
+            e.target.classList.add("grabbing")
+    
+        })  
+        contenedorarrastre.addEventListener('dragover', e => {
+
+            e.preventDefault()
+            e.target.classList.add("hover")
+        })
+        contenedorarrastre.addEventListener('dragleave', e => {
+
+            e.target.classList.remove("hover")
+        })
+        contenedorarrastre.addEventListener('drop', e => {
+            
+            e.target.classList.remove("hover")
+
+            const id = e.dataTransfer.getData("id")
+           
+            const opcion = document.getElementById(id)
+
+            
+            
+            if (opcion.dataset.puntos > 0  ) {
+                modal_correcto.classList.add('active');
+                modal_correcto.style.animation = 'animationIn 1s forwards';
+                opcionSeleccionda.setAttribute("checked","checked")
+
+                cajarespuesta.appendChild(opcion)
+            }else{
+                modal_incorrecto.classList.add('active');
+                modal_incorrecto.style.animation = 'animationIn 1s forwards';
+            }
+        })
+}
+            
+
+    
+            
+        
+
+  
 
 
