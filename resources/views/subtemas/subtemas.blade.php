@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
 <header class="header activity">
-    <a href="/home" class="icons-container">
+    <a href="/home" class="icons-container icon-bg-white">
         <img class="logo-header" src="/images/icon_back.svg"/>
         <span class="atras">Atras</span>
     </a>
     <div class="icons-container">
-        <div class="icons">
+        <div class="icons icon-bg-white">
             <span class="pistas">Pistas</span>
             <img class="logo-header idea" src="/images/icon_idea.svg"/>
         </div>

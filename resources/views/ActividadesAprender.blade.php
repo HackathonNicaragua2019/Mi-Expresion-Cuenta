@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <header class="header activity">
-    <a href="{{ URL::previous() }}" class="icons-container">
+    <a href="{{ URL::previous() }}" class="icons-container icon-bg-white">
         <img class="logo-header" src="/images/icon_back.svg"/>
         <span class="atras">Atras</span>
     </a>
@@ -17,11 +17,22 @@
         <h2 class="title aprender">{{ $app->pregunta}}</h2>
         <p class="parrafos">{{ $app->respuestapregunta}}</p>
         <p class="title aprender">Ejemplo</p>
-        <p class="parrafos">{{ $app->imgejemplo}}</p>
+        <figure class="container-banner">
+            <img class="baner-aprender" src="{{ $app->imgejemplo}}" alt="images sobre {{ $app->titulo}}">
+        </figure>
+        
         <p class="parrafos">{{ $app->ejemplos}}</p>
-        <p class="parrafos">{{ $app->imgejemplo2}}</p>
+
+        <figure class="container-banner">
+            <img class="baner-aprender" src="{{ $app->imgejemplo2}}" alt="images sobre {{ $app->titulo}}">
+        </figure>
+        
         <p class="parrafos">{{ $app->ejemplos2}}</p>
-        <p class="parrafos">{{ $app->imgejemplo3}}</p>
+
+        <figure class="container-banner">
+            <img class="baner-aprender" src="{{ $app->imgejemplo3}}" alt="images sobre {{ $app->titulo}}">
+        </figure>
+      
         <p class="parrafos">{{ $app->ejemplos3}}</p>
         <br>
         <div class="videoWrapper" style="--aspect-ratio: 3 / 4;">

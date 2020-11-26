@@ -1,12 +1,12 @@
 @extends('layouts.actividades')
 @section('content')
 <header class="header activity">
-    <a href="{{ URL::previous() }}" class="icons-container" @if (Request::is('home')) style="visibility :hidden " @endif>
+    <a href="{{ URL::previous() }}" class="icons-container icon-bg-white" @if (Request::is('home')) style="visibility :hidden " @endif>
         <img class="logo-header" src="/images/icon_back.svg"/>
         <span class="atras">Atras</span>
     </a>
     <div class="icons-container">
-        <div class="icons" id='pista_actividad'>
+        <div class="icons icon-bg-white" id='pista_actividad'>
             <span class="pistas" >Pistas</span>
             <img class="logo-header idea" src="/images/icon_idea.svg"/>
         </div>
