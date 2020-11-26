@@ -11,8 +11,6 @@
     &.activity
         position sticky
         top 0
-        background white
-        border-radius borderHeader
         
     &.blue
         background: colorBlue
@@ -52,9 +50,6 @@
         display: flex
         justify-content: flex-end
         align-items: center
-        background: white;
-        border-radius: 30px;
-        padding: 1em;
         
     & .atras
         margin-left: 1em
@@ -63,6 +58,10 @@
     &:hover .content-pistas
         display: inline-flex
         animation fadeInBottom 1s
+.icon-bg-white
+    background: white;
+    border-radius: 30px;
+    padding: .1em .5em;
         
 
 .fondo_azul
@@ -78,7 +77,9 @@
         display: flex
         cursor pointer
         align-items: center
+        justify-content: flex-end
         color:white
+        min-width: 15em;
         @media screen and (max-width 426px)
             display none
         & .user

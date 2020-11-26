@@ -3,6 +3,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color: #3c3c3c;
+  overscroll-behavior-y: none;
 }
 ::-webkit-scrollbar {
   width: 17px;
@@ -557,8 +558,6 @@ a {
 .header.activity {
   position: sticky;
   top: 0;
-  background: #fff;
-  border-radius: 7px;
 }
 .header.blue {
   background: #3e64ff;
@@ -609,9 +608,6 @@ a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background: #fff;
-  border-radius: 30px;
-  padding: 1em;
 }
 .icons-container .atras {
   margin-left: 1em;
@@ -622,6 +618,11 @@ a {
 .icons-container:hover .content-pistas {
   display: inline-flex;
   animation: fadeInBottom 1s;
+}
+.icon-bg-white {
+  background: #fff;
+  border-radius: 30px;
+  padding: 0.1em 0.5em;
 }
 .fondo_azul {
   background: #3e64ff;
@@ -642,7 +643,9 @@ a {
   display: flex;
   cursor: pointer;
   align-items: center;
+  justify-content: flex-end;
   color: #fff;
+  min-width: 15em;
 }
 @media screen and (max-width: 426px) {
   .navbar .items {
