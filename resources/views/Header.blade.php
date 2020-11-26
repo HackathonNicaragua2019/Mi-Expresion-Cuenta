@@ -1,4 +1,4 @@
-@if (Request::is('home','login','register'))
+@if (Request::is('home','login','register','textovoz'))
 <header  @if (Auth::guest()) class="header white" @endif class="header blue">
     
     <a href="{{ url('/home') }}">

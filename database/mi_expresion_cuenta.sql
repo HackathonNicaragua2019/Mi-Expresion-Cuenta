@@ -272,6 +272,21 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
   INDEX `password_resets_email_index` (`email` ASC))
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `Diccionariovoz`
+-- -----------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `diccionariovoz` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+`idusuario` INT NOT NULL,
+`frase` VARCHAR(250) NOT NULL,
+
+  constraint usuario_id
+  foreign key (idusuario)
+  references users(id)
+
+)
+ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- INSERT Table `modulos`
@@ -739,7 +754,7 @@ INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) V
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Acuático', '10', '40');
 
 
----------------------------------------------
+--- ------------------------------------------
 -- INSERT Table `Preguntas - conjunciones coordinales`
 -- -----------------------------------------------------
 
@@ -787,7 +802,7 @@ INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) V
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('pero', '0', '45');
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Ni', '0', '45');
 
----------------------------------------------
+-- -------------------------------------------
 -- INSERT Table `Preguntas - conjunciones coordinales 2`
 -- -----------------------------------------------------
 
@@ -819,7 +834,7 @@ INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) V
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('pero', '0', '48');
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('y', '0', '48');
 
----------------------------------------------
+-- -------------------------------------------
 -- INSERT Table `Preguntas - conjunciones subordinantes`
 -- -----------------------------------------------------
 
@@ -855,7 +870,7 @@ INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) V
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('aunque', '0', '52');
 
 
----------------------------------------------
+-- -------------------------------------------
 -- INSERT Table `Preguntas - conjunciones subordinantes 2`
 -- -----------------------------------------------------
 
@@ -890,7 +905,7 @@ INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) V
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('conque', '10', '52');
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('aunque', '0', '52');
 
----------------------------------------------
+-- -------------------------------------------
 -- INSERT Table `Preguntas - adverbios de cantidad`
 -- -----------------------------------------------------
 
@@ -914,7 +929,7 @@ INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) V
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Mucho', '0', '55');
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Demasiado', '10', '55');
 
----------------------------------------------
+-- -------------------------------------------
 -- INSERT Table `Preguntas - adverbios de lugar`
 -- -----------------------------------------------------
 
@@ -960,7 +975,7 @@ INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) V
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Cerca', '0', '60');
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Afuera', '10', '60');
 
----------------------------------------------
+-- -------------------------------------------
 -- INSERT Table `Preguntas - adverbios de tiempo`
 -- -----------------------------------------------------
 
@@ -1006,7 +1021,7 @@ INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) V
 INSERT INTO `miexpresioncuenta`.`opciones` (`nombre`, `puntos`, `id_pregunta`) VALUES ('Siempre', '10', '65');
 
 
----------------------------------------------
+-- -------------------------------------------
 -- INSERT Table `Preguntas - adverbios de modo`
 -- -----------------------------------------------------
 

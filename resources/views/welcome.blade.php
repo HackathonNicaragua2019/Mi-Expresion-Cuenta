@@ -73,6 +73,7 @@
                     @else
                         <a href="{{ url('/login') }}">Iniciar sesión</a>
                         <a href="{{ url('/register') }}">Registrarse</a>
+                        <a href="{{ url('/textovoz') }}">texto a voz</a>
                     @endif
                 </div>
             @endif

@@ -19,6 +19,10 @@ Route::get('/actcomplete', function () {
     return view('/actividades/actividadCompleteEspacioEnBlanco');
 });
 
+Route::get('/textovoz', function () {
+    return view('auth/textovoz');
+});
+
 Route::resource('modulos','ModuloController');
 
 Auth::routes();
